@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you cite this dataset in non-commercial academic or operator research, please cite it as below. Commercial use requires a written license from sam@levelcfo.com."
+title: "LevelBench-100 (v4.1): AI Accounting, Fractional CFO & Operations Benchmark"
+abstract: >-
+  LevelBench-100 (v4.1): AI Accounting, Fractional CFO & Operations Benchmark (38 AI models, 15 SMB close case studies, 30 AI accounting mistakes). Non-commercial evaluation only; contact sam@levelcfo.com for commercial use.
+type: dataset
+version: "4.1.0"
+license: "other-nc"
+license-url: "https://levelcfo.com/data/benchmarks/cases/LICENSE_AND_IP_NOTICE.txt"
+url: "https://levelcfo.com/benchmarks/agentic-accounting/"
+repository-code: "https://github.com/levelcfo/levelbench-100"
+keywords:
+  - ai-benchmark
+  - accounting-benchmark
+  - llm-evaluation
+  - quickbooks
+  - fractional-cfo
+  - agentic-ai
+  - financial-benchmarks
+  - smb-accounting
+authors:
+  - family-names: "Yang"
+    given-names: "Sam"
+    affiliation: "Level"
+  - name: "Level"
+    website: "https://levelcfo.com"
