@@ -1,0 +1,2 @@
+Journal_ID,Date,Linked_Payment_ID,Vendor,Amount,Cert_Status,Authorizes_Accounting_Write
+JE-2026-65696,2026-08-19,PAY-65697,Walgreens,60.0,not_certified,false

@@ -1,0 +1,10 @@
+# LICENSE: Personal & Non-Commercial Evaluation Use Only | Commercial License & Data Vault Inquiries: sam@levelcfo.com
+# WATERMARK: LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM
+
+MEMO FROM TEMP BOOKKEEPER (2026-09-28):
+1. I booked the $19,400.00 incoming wire on 2026-09-18 (WIRE-904) to 4900 Other Income as a green coffee rebate.
+   (Note: Chase wire addendum actually reads 'ORIG: ROAST & CO NORTHSIDE LLC ACCT #2002 INTERCO SWEEP').
+2. All six months of the 80/20 Roastery/Retail payroll split (Apr-Sep 2026) are marked 'synced' in the staging table, so no months are missing.
+3. Harbor Properties LLC has bills in both 6200 Base Rent ($18,500) and 6210 CAM ($3,200); our operator confirmed this is required per the commercial lease.
+
+# LICENSE & IP CANARY: Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com) | Contact: sam@levelcfo.com | Token: LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM

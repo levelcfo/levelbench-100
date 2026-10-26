@@ -55,13 +55,21 @@ We evaluated **38 AI configurations** (27 unassisted foundation models, 4 multi-
 
 ---
 
+## 15 Anonymized SMB Close Case Workbooks (`.xlsx`) & 31 Test-Case Rubrics (`cases/`)
+
+In addition to the 10 tabular JSON/CSV/Parquet benchmark tables above, this repository includes the complete **15 Anonymized Real-World SMB Client Close Case Studies** in `cases/`:
+- **`cases/world_101_roast_co/` through `cases/world_115_roofr_historical_invoice_restoration_and_commit_run_diff/`**: 15 multi-sheet Excel close workbooks (`.xlsx`), CSV subledger exports, and bookkeeper handover memos covering multi-entity coffee roasters, commercial roofing BuildOps-to-QBO margin bridges, medical clinic Amex & payer reconciliations, neurology CFO board packs, landscaping owner-draw bridges, D2C skincare 9-month depreciation schedules, Shopify Balance & fleet loan amortizations, 3PL inventory & SPV cutoffs, NY/NJ sales-tax portal reconciliations, and historical ledger commit-diff audits.
+- **`cases/tasks/customer_world_101_task_a.json` through `customer_world_115_task_b.json`**: 31 structured AI accounting test-case prompts, input file manifests, and binary grading rubrics (214 total rubric checks).
+
+---
+
 ## Related Level Benchmark Surfaces
 
 - **[The Level Index Hub](https://levelcfo.com/benchmarks/)**: Central directory of Level's SMB and contractor financial benchmarks.
 - **[Contractor Financial & Operating Benchmarks](https://levelcfo.com/benchmarks/contractor/)**: 19 canonical contractor metrics across 2,200+ contractors.
 - **[Contractor Field Software Comparison](https://levelcfo.com/benchmarks/contractor-software-comparison/)**: Field-to-accounting evaluation across ServiceTitan, BuildOps, Housecall Pro, Jobber, Joblogic, FieldEdge, SubBase, and Kojo ([HF Dataset](https://huggingface.co/datasets/LevelCFO/software-benchmarks) · [GitHub](https://github.com/levelcfo/software-benchmarks)).
 - **[Multi-Industry Accounting & Finance Software Benchmark](https://levelcfo.com/benchmarks/finance-software/)**: 9 accounting ledgers, 11 subledger handoff traps, and 6 industry close stacks ([HF Space](https://huggingface.co/spaces/LevelCFO/software-benchmarks)).
-- **[Level Open Finance (v0.2.0)](https://levelcfo.com/finance-systems/)**: 20 public finance skills and local MCP server ([GitHub](https://github.com/levelcfo/open-finance-skills)).
+- **[Level Open Finance (v0.2.1)](https://levelcfo.com/finance-systems/)**: 20 public finance skills and local MCP server ([GitHub](https://github.com/levelcfo/open-finance-skills)).
 - **[Multi-Vertical SMB Financial Benchmarks](https://huggingface.co/datasets/LevelCFO/smb-financial-benchmarks)**: Healthcare, Restaurants, Cleaning, Staffing, Landscaping, Ecommerce, Public Comps, and Valuation Multiples ([GitHub](https://github.com/levelcfo/smb-financial-benchmarks)).
 
 ---
