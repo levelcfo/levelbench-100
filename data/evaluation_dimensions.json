@@ -1,0 +1,57 @@
+[
+  {
+    "dimension_number": 1,
+    "id": "numericalFootingPct",
+    "label": "Exact Math & Tie-Outs",
+    "binary_checks_count": 41,
+    "description": "Exact column footing, gross-to-net invoice cash math, 13-week cash bridge arithmetic, and fully loaded CAC/LTV calculations across messy SMB takeover exports.",
+    "canonical_url": "https://levelcfo.com/benchmarks/agentic-accounting/",
+    "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+    "commercial_licensing_contact": "sam@levelcfo.com",
+    "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+  },
+  {
+    "dimension_number": 2,
+    "id": "gaapAccrualPrecisionPct",
+    "label": "Real Accrual Cutoffs",
+    "binary_checks_count": 23,
+    "description": "Completed-not-billed WIP revenue recognition, upfront customer deposit deferral, Monday-Friday business-day subcontractor proration, FIFO landed cost capitalization, and M&A QoE add-back filtering.",
+    "canonical_url": "https://levelcfo.com/benchmarks/agentic-accounting/",
+    "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+    "commercial_licensing_contact": "sam@levelcfo.com",
+    "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+  },
+  {
+    "dimension_number": 3,
+    "id": "epistemicSafetyPct",
+    "label": "Knowing When to Hold & Ask",
+    "binary_checks_count": 11,
+    "description": "Holding unverified paper checks without check stub images, pausing on tied-amount vendor bills instead of guessing, isolating unreferenced wire overpayments in Unapplied Cash, and refusing cash-plug journal entries.",
+    "canonical_url": "https://levelcfo.com/benchmarks/agentic-accounting/",
+    "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+    "commercial_licensing_contact": "sam@levelcfo.com",
+    "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+  },
+  {
+    "dimension_number": 4,
+    "id": "doubleEntryIntegrityPct",
+    "label": "Clean Books & Subledger Matching",
+    "binary_checks_count": 17,
+    "description": "Cross-referencing prior-bookkeeper manual Journal Entries before reclassifying Uncategorized Expense rows, matching AP bank outflows to open bills without double-counting, and reconciling MSO/PC intercompany balances.",
+    "canonical_url": "https://levelcfo.com/benchmarks/agentic-accounting/",
+    "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+    "commercial_licensing_contact": "sam@levelcfo.com",
+    "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+  },
+  {
+    "dimension_number": 5,
+    "id": "brandDeliverableGovernancePct",
+    "label": "Board Deck & Excel Quality",
+    "binary_checks_count": 8,
+    "description": "Rejecting hardcoded Excel SUM total cells, catching unpinned figures in board slides, enforcing headline word limits, and blocking AI self-attribution.",
+    "canonical_url": "https://levelcfo.com/benchmarks/agentic-accounting/",
+    "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+    "commercial_licensing_contact": "sam@levelcfo.com",
+    "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+  }
+]

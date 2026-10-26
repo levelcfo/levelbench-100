@@ -1,0 +1,62 @@
+[
+  {
+    "entity_number": 1,
+    "entity_id": "companyco_apex_field",
+    "legal_name": "Summit Climate Mechanical & Landscaping LLC",
+    "industry": "Field Services & Commercial Contracting",
+    "accounting_basis": "Accrual (migrating from hybrid cash-basis QBO after bookkeeper turnover)",
+    "erp_and_subledgers": "QuickBooks Online + Field Service CRM (BuildOps / LMN)",
+    "annual_revenue_usd": 4850000,
+    "chart_of_accounts_summary": "1010 Operating Checking 4102 - Bank | 1020 Income Checking 4188 - Bank | 1030 Savings 8820 - Bank | 1200 Accounts Receivable - Accounts Receivable | 1310 Prepaid Expenses - Other Current Asset | 1350 Unbilled WIP Revenue Receivable - Other Current Asset | 2010 Accounts Payable - Accounts Payable | 2110 Payroll Clearing - Other Current Liability | 2150 Capital One Corporate Card - Credit Card | 2400 Deferred Customer Deposits - Other Current Liability | 25 Uncategorized Expense - Expense | 6120 Merchant Processing Fees - Expense | 6400 Insurance Expense - Expense | 6510 Equipment Rental - Expense | 6800 Depreciation Expense - Expense | 3110 Owner's Equity:Owner's Draw:4410 Distribution - Equity",
+    "onboarding_memos_summary": "Fathom Onboarding Call Transcript (2026-09-02) - Owner / CEO, Summit Climate Mechanical: Our old part-time bookkeeper left in mid-September and the books are pretty messy. Account ending in 4410 is my personal bank account - sometimes I transfer money out to 4410 and jot 'tools?' in the mobile memo even when I don't have a receipt, and sometimes the bank sweeps money from 4410 back into 4102 when operating cash dips. We also write paper checks to local nurseries and casual helpers, though my office manager hasn't scanned September's check stubs yet. || Prior Bookkeeper Exit Email (2026-09-18) - Former Part-Time Bookkeeper: Quick handover notes: (1) When equipment leases or W-2 payroll hit Account 25 in the bank feed, I sometimes booked a separate manual Journal Entry instead of categorizing the bank feed line. (2) If the bank statement didn't match QBO at month-end, I usually booked a plug adjustment to Reconciliation Discrepancies. (3) August 2026 is already closed for our state tax filing.",
+    "canonical_url": "https://levelcfo.com/benchmarks/agentic-accounting/",
+    "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+    "commercial_licensing_contact": "sam@levelcfo.com",
+    "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+  },
+  {
+    "entity_number": 2,
+    "entity_id": "companyco_harbor_retail",
+    "legal_name": "CompanyCo Harbor Specialty Roasters LLC",
+    "industry": "Multi-Location Cafe POS, E-Commerce & Wholesale",
+    "accounting_basis": "Accrual",
+    "erp_and_subledgers": "QuickBooks Online + Square POS + Shopify",
+    "annual_revenue_usd": 6200000,
+    "chart_of_accounts_summary": "1001 Main Operating Checking - Bank | 2001 Accounts Payable (Trade) - Accounts Payable | 5100 Green Coffee Purchases (COGS) - Cost of Goods Sold | 5200 Milk & Alt-Dairy (COGS) - Cost of Goods Sold | 6100 Packaging Supplies - Expense | 6150 Bank & Wire Fees - Expense | 6300 Paid Digital Marketing - Expense",
+    "onboarding_memos_summary": "Bookkeeper Handover Note (2026-09-15) - Prior Bookkeeper: Our warehouse manager enters vendor bills into QBO Accounts Payable when pallets arrive, but our bank feed rules often auto-add outgoing ACHs and wires directly to COGS or Expense accounts. Note that international/domestic supplier wires usually carry a $200 bank wire fee on top of the invoice amount, and our roaster sometimes buys walk-in sample bags COD at the dock without an AP bill. || Founder Slack Message on Q3 Marketing & Cash (2026-09-28) - Co-Founder: We dumped a bunch of Amex and Mastercard swipes into Account 6300 Marketing this quarter, including our Northstar growth agency and some client dinners or travel. We need to know our true Q3 customer acquisition cost and per-order margin (Stripe charges us 2.9% + $0.30 per order), plus whether our 13-week cash forecast stays above our $100k bank covenant if commercial AR slips.",
+    "canonical_url": "https://levelcfo.com/benchmarks/agentic-accounting/",
+    "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+    "commercial_licensing_contact": "sam@levelcfo.com",
+    "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+  },
+  {
+    "entity_number": 3,
+    "entity_id": "companyco_summit_health",
+    "legal_name": "CompanyCo Summit MSO LLC & CompanyCo Summit Clinical PC",
+    "industry": "Multi-Entity Healthcare Services (MSO + Friendly PC)",
+    "accounting_basis": "Accrual (Consolidated & Entity-Level)",
+    "erp_and_subledgers": "QuickBooks Online (2 Linked Realms) + Rippling Payroll",
+    "annual_revenue_usd": 8900000,
+    "chart_of_accounts_summary": "1450 Due From CompanyCo Summit Clinical PC (MSO Asset) - Other Current Asset | 2450 Due To CompanyCo Summit MSO LLC (PC Liability) - Other Current Liability | 219 Due to Owner - 4410 Sweep - Other Current Liability | 3110 Owner's Equity:Owner's Draw:4410 Distribution - Equity",
+    "onboarding_memos_summary": "Clinic Practice Manager Note (2026-09-30) - Practice Manager: We run two QuickBooks realms (Summit MSO LLC and Summit Clinical PC). The MSO bills a monthly management fee and fronts Rippling payroll, and sometimes the two clinics rotate $12k of operating cash for a few days during the month. Our prior bookkeeper also mixed owner draws and bank sweep protection inside Account 219.",
+    "canonical_url": "https://levelcfo.com/benchmarks/agentic-accounting/",
+    "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+    "commercial_licensing_contact": "sam@levelcfo.com",
+    "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+  },
+  {
+    "entity_number": 4,
+    "entity_id": "companyco_pacific_wholesale",
+    "legal_name": "CompanyCo Pacific Wholesale Goods LLC",
+    "industry": "B2B Wholesale Distribution & Imported Inventory",
+    "accounting_basis": "Accrual (FIFO Landed Cost)",
+    "erp_and_subledgers": "QuickBooks Online + Warehouse WMS + Shopify Wholesale",
+    "annual_revenue_usd": 7400000,
+    "chart_of_accounts_summary": "1200 Accounts Receivable (Wholesale) - Accounts Receivable | 1400 Inventory Asset (FIFO Landed) - Other Current Asset | 2350 Unapplied Customer Cash / Overpayments - Other Current Liability | 4150 Contra-Revenue: Promotional Allowances & Rebates - Income | 4160 Contra-Revenue: Early-Pay Cash Discounts - Income | 5000 Cost of Goods Sold (FIFO) - Cost of Goods Sold | 5050 Inventory Shrinkage & Write-Offs - Cost of Goods Sold",
+    "onboarding_memos_summary": "Operations & Warehouse Handover Note (2026-09-20) - VP Operations: Our grocery chain buyers deduct promotional allowances and early-pay discounts from their ACH wires, and sometimes include unreferenced credit-memo top-ups. Also, some wholesale customers order through our Shopify Wholesale portal but mail a paper check instead of paying via ACH. On the inventory side, our old bookkeeper just expensed September's import container directly to COGS 5000 without updating Beginning Inventory or physical count shrinkage.",
+    "canonical_url": "https://levelcfo.com/benchmarks/agentic-accounting/",
+    "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+    "commercial_licensing_contact": "sam@levelcfo.com",
+    "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+  }
+]

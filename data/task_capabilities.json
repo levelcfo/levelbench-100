@@ -237,7 +237,7 @@
     "title": "12. M&A Quality of Earnings (QoE) & EBITDA Add-Back Audit",
     "workflows": "WF11 (8 binary checks)",
     "short_summary": "Auditing a seller's EBITDA add-back schedule during due diligence and rejecting bogus software or routine labor add-backs.",
-    "plain_english_description": "Auditing a seller's M&A EBITDA bridge ($828,500.00 normalized Adjusted EBITDA) by accepting documented excess owner compensation (+$150k), personal boat/travel (+$42.5k), one-time legal settlement (+$35k), ERC grant deduction (-$65k), and warranty reserve (-$24k) while rejecting bogus broker add-backs for ongoing QuickBooks/CRM software ($14,000) and rainy-day technician drive time ($22,000).",
+    "plain_english_description": "Auditing a seller's M&A EBITDA bridge starting from $590,000.00 reported EBITDA to reach $728,500.00 normalized Adjusted EBITDA by accepting documented excess owner compensation (+$150k), personal boat/travel (+$42.5k), one-time legal settlement (+$35k), ERC grant deduction (-$65k), and warranty reserve (-$24k) while rejecting bogus broker add-backs for ongoing QuickBooks/CRM software ($14,000) and rainy-day technician drive time ($22,000).",
     "top_raw_model_pct": 50,
     "top_raw_model_label": "Gemini 4 Argon Medium (50.0%) / Claude Opus 5.5 (25.0%)",
     "gpt_5_6_terra_raw_pct": 25,

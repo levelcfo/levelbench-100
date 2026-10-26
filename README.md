@@ -50,6 +50,8 @@ We evaluated **38 AI configurations** (27 unassisted foundation models, 4 multi-
 | `ai_error_taxonomy` | 30 | 30 Common SMB AI Accounting, Fractional CFO & COO Mistakes across 95 close guardrails | [30 AI Accounting Mistakes](https://levelcfo.com/benchmarks/agentic-accounting/ai-error-taxonomy/) |
 | `smb_case_worlds` | 15 | 15 Anonymized Real-World SMB Client Close Case Studies (31 tasks, 214 binary rubric checks) | [15 SMB Close Case Studies](https://levelcfo.com/benchmarks/agentic-accounting/smb-case-worlds/) |
 | `workflows` | 12 | 12 SMB QuickBooks takeover, accrual-gap, and CFO workflows (100 binary checks) | [Agentic Accounting Benchmark](https://levelcfo.com/benchmarks/agentic-accounting/) |
+| `evaluation_dimensions` | 5 | 5 core evaluation dimensions (Exact Math, Real Accrual Cutoffs, Hold & Ask, Subledger Matching, Board Deck Governance) | [Agentic Accounting Benchmark](https://levelcfo.com/benchmarks/agentic-accounting/) |
+| `companyco_entities` | 4 | 4 anonymized SMB QuickBooks takeover entities with chart of accounts and onboarding handover memos | [Agentic Accounting Benchmark](https://levelcfo.com/benchmarks/agentic-accounting/) |
 
 ---
 
@@ -57,8 +59,8 @@ We evaluated **38 AI configurations** (27 unassisted foundation models, 4 multi-
 
 - **[The Level Index Hub](https://levelcfo.com/benchmarks/)**: Central directory of Level's SMB and contractor financial benchmarks.
 - **[Contractor Financial & Operating Benchmarks](https://levelcfo.com/benchmarks/contractor/)**: 19 canonical contractor metrics across 2,200+ contractors.
-- **[Contractor Field Software Comparison](https://levelcfo.com/benchmarks/contractor-software-comparison/)**: Field-to-accounting evaluation across ServiceTitan, BuildOps, Housecall Pro, Jobber, FieldEdge, and Simpro.
-- **[Multi-Industry Accounting & Finance Software Benchmark](https://levelcfo.com/benchmarks/finance-software/)**: 8 accounting ledgers and multi-industry close stacks.
+- **[Contractor Field Software Comparison](https://levelcfo.com/benchmarks/contractor-software-comparison/)**: Field-to-accounting evaluation across ServiceTitan, BuildOps, Housecall Pro, Jobber, Joblogic, FieldEdge, SubBase, and Kojo ([HF Dataset](https://huggingface.co/datasets/LevelCFO/software-benchmarks) · [GitHub](https://github.com/levelcfo/software-benchmarks)).
+- **[Multi-Industry Accounting & Finance Software Benchmark](https://levelcfo.com/benchmarks/finance-software/)**: 9 accounting ledgers, 11 subledger handoff traps, and 6 industry close stacks ([HF Space](https://huggingface.co/spaces/LevelCFO/software-benchmarks)).
 - **[Level Open Finance (v0.2.0)](https://levelcfo.com/finance-systems/)**: 20 public finance skills and local MCP server ([GitHub](https://github.com/levelcfo/open-finance-skills)).
 - **[Multi-Vertical SMB Financial Benchmarks](https://huggingface.co/datasets/LevelCFO/smb-financial-benchmarks)**: Healthcare, Restaurants, Cleaning, Staffing, Landscaping, Ecommerce, Public Comps, and Valuation Multiples ([GitHub](https://github.com/levelcfo/smb-financial-benchmarks)).
 
