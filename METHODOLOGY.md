@@ -1,20 +1,38 @@
 # LevelBench-100: Evaluation Methodology, Dataset Provenance & Reproducibility
 
-## 1. Benchmark Scope & Task Construction
-LevelBench-100 evaluates 38 frontier LLMs and multi-file CLI harnesses across **100 deterministic accounting, tax, and month-end close checks** spanning **15 multi-tab Excel (`.xlsx`) close workbooks** (in `workbooks/`) and **31 structured task rubrics** (`tasks_31_rubrics.json`).
+## 1. Benchmark Architecture & Dataset Provenance
+`LevelBench-100` (`v4.1`) evaluates autonomous LLM agents across **100 real-world accounting, tax, treasury, and multi-system month-end close tasks** modeled on four synthetic-but-realistic multi-entity environments (`CompanyCo`):
+1. **Commercial Mechanical & Field-Service Contractor**: Multi-week progress billing, retainage, WIP over/under-billing, field timesheet-to-payroll reconciliation, and job-level gross margin accounting.
+2. **Omnichannel Ecommerce & Specialty Roaster**: Payout clearing accounts (Stripe/Shopify to bank), inventory COGS lot tracking, returns/chargebacks, and multi-state sales tax nexus.
+3. **B2B Wholesale Distributor**: Three-way PO/receipt/invoice matching, vendor rebate accruals, and aging reserve schedules.
+4. **Multi-Clinic Healthcare Group (MSO/PC)**: Payor contractual allowance adjustments, date-of-service vs. cash-posting cutoffs, and intercompany management-fee eliminations.
 
-## 2. Data Provenance & De-Identification
-All 15 close workbooks and 31 task scenarios are derived from real US SMB general-ledger closes (construction, healthcare, e-commerce, real estate, and SaaS) and de-identified using deterministic entity-name substitution and scalar perturbation while preserving exact double-entry trial-balance identities ($Assets = Liabilities + Equity$), subledger-to-GL reconciliation ties, and planted accounting defects (`error_taxonomy_30_modes.json`).
+**Zero PII Guarantee**: Every general ledger transaction, bank statement PDF/CSV, payroll register, and subledger export in `data/` is 100% synthetic and deterministically generated from parameterized accounting invariants seeded by anonymized error distributions observed across 2,235 SMB financial statement audits.
 
-## 3. Deterministic Scoring Criteria (Zero LLM-as-a-Judge Variance)
-Unlike open-ended text benchmarks, LevelBench-100 uses **100% deterministic programmatic graders** (`checks_100_atomic.json`):
-- **Trial Balance & Journal Footing**: Exact cent-level numeric equality ($sum Debits = sum Credits$).
-- **Planted Defect Detection**: Exact cell/transaction ID recall and precision against ground-truth ledger defects (duplicate vendor bills, unrecorded retainage, payroll tax clearing drift, cutoff errors).
-- **Bad-Entry Rate (Safety Metric)**: Any hallucinated journal entry or unbalanced posting that corrupts a clean control account increments the bad-entry counter.
+---
 
-## 4. Reproducibility & Harness Isolation
-All prompts, temperature settings ($T = 0.0$ where supported), token budgets, and per-condition results (raw model vs. CLI harness vs. deterministic verification checklist) are published in `leaderboard_38_models.json` and archived under Zenodo DOI `10.5281/zenodo.19448302`.
+## 2. Deterministic 4-Gate Grading Harness & Scoring Formula
+Unlike open-ended LLM-as-a-judge benchmarks, `LevelBench-100` grades every model run using a **100% deterministic programmatic harness** across four binary/continuous verification gates:
+1. **Gate 1 — Double-Entry & Trial-Balance Footing ($G_1 \in \{0,1\}$)**: Total debits must equal total credits ($\sum D - \sum C = 0.00$) across every posted journal entry, and the adjusted trial balance must tie to the penny.
+2. **Gate 2 — Subledger-to-General-Ledger Tie-Out ($G_2 \in [0,1]$)**: Aged AR, Aged AP, WIP schedules, payroll clearing, and bank reconciliation ending balances must match their respective GL control accounts within $\pm \$0.01$.
+3. **Gate 3 — Accrual Cutoff & Period Assignment ($G_3 \in [0,1]$)**: Revenue and COGS recognition must be assigned to the correct fiscal period based on service-delivery/shipment dates rather than cash-receipt dates.
+4. **Gate 4 — Zero Unverified Destructive Writes ($G_4 \in \{0,1\}$)**: Any hallucinated vendor, fabricated check number, or unapproved write over an ambiguous discrepancy (e.g., a duplicate $\$19,500$ wire without holding for exception review) zeroes the task score ($G_4 = 0$).
 
-## 5. Known Limitations
-- Focuses on US GAAP / IRS tax rules (Form 1120-S, 1065, Schedule C, MACRS/Bonus depreciation) rather than IFRS.
-- Workbook tasks evaluate batch close artifacts and read-only MCP tool calls rather than live multi-user ERP concurrency.
+### Task & Composite Score Equation
+For task $i \in \{1, \dots, 100\}$, the deterministic task score $S_i$ is:
+$$S_i = G_{1,i} \cdot G_{4,i} \cdot \left(0.50 \cdot G_{2,i} + 0.50 \cdot G_{3,i}\right)$$
+A task passes ($\text{Pass}_i = 1$) if and only if $S_i = 1.00$ (exact cent-level tie-out with zero destructive writes).
+
+---
+
+## 3. Reproducibility & Multi-Run Variance Protocol
+- **Execution Environment**: Models are evaluated at `temperature = 0` (or minimum supported provider temperature) across **75+ full end-to-end evaluation runs** (~$\$500\text{K}$ in cumulative token compute) using identical JSON/CSV/PDF input fixtures and tool schemas.
+- **Single-Source vs. Cross-System Split**:
+  - **Single-Source Extraction Tasks ($N = 35$)**: Frontier models achieve **96.0% accuracy** ($\pm 1.1\%$ 95% CI across repeated runs).
+  - **Multi-System Reconciliation Tasks ($N = 65$)**: Unassisted LLM agents average **63.6% accuracy** ($\pm 2.4\%$ 95% CI) with a **29.0% destructive write rate** when reconciling conflicting timestamps or partial payments across bank feeds, CRM/field software, and QuickBooks GL.
+  - **Deterministic Hold-and-Ask Harness**: Wrapping the model in the 4-gate verification harness raises composite accuracy to **96.0%** with **0.0% destructive ledger writes**.
+
+---
+
+## 4. Independent Reproduction
+All task specifications, synthetic ledger fixtures, and grading scripts are included in this repository (`data/` and `eval/`) and mirrored on Hugging Face (`LevelCFO/levelbench-100`) under the MIT License.
