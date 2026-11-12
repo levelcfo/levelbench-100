@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_136_task_a",
+  "world_id": "world_136_prepaid_unscheduled_balance_and_asc350_cca",
+  "task_name": "World 136 Task A  -  Prepaid Rollforward, ASC 350-40 Cloud Implementation Split, Draft Rejection & Disclosed vs Undisclosed Unscheduled Carryforward",
+  "prompt": "Review the QuickBooks Online chart of accounts, 1350 prepaid and vendor-advance schedule, vendor contracts and invoices, prior-bookkeeper draft and disclosure table (including close_disclosed_items across prior and current snapshots), and posted October 2026 QuickBooks Online general ledger for Northstar Logistics & Cold-Chain Inc. in northstar_coldchain_oct2026_prepaids_and_asc350_cca.xlsx. Build the schedule-backed October 2026 rollforward for the commercial GL and cyber insurance policies, the Arctic Rack Systems equipment advance, and the CloudCold WMS cloud computing arrangement under ASC 350-40 (separating hosted SaaS subscription, application-development configuration, and data migration/training), evaluate the junior bookkeeper's unposted insurance draft, and determine exact October 31, 2026 ending balances for scheduled 1350, unscheduled 1350 (distinguishing the disclosed slice from the undisclosed slice), and 1370.",
+  "context_files": [
+    "northstar_coldchain_oct2026_prepaids_and_asc350_cca.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw136a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes October 2026 insurance amortization from 1350 as $3,000.00 on POL-2026-GL ($27,000.00 carrying -> $24,000.00 ending) and $1,500.00 on POL-2026-CYBER ($18,000.00 paid Oct 1 -> $16,500.00 ending), totaling $4,500.00 Dr 6310 Insurance Expense / Cr 1350."
+    },
+    {
+      "id": "cw136a_c2",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Rejects unposted junior draft DRAFT-JE-409 ($4,500.00 crediting 2190 Accrued Expenses with $0.00 prior liability instead of 1350), explaining that both policies were already paid upfront into 1350 and crediting/releasing 2190 would leave 1350 overstated and distort 2190."
+    },
+    {
+      "id": "cw136a_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Retains the $12,000.00 Arctic Rack Systems wire advance (BILL-PMT-712, 0% delivered in October 2026) in 1350 at $12,000.00 ($0.00 October P&L expense) under a provisional_with_true_up trigger upon December 2026 racking delivery and installation."
+    },
+    {
+      "id": "cw136a_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Splits CloudCold WMS arrangement INV-WMS-901 ($54,000.00) under ASC 350-40 into (1) $18,000.00 Year-1 hosted SaaS subscription ($1,500.00 Oct amortization, $16,500.00 ending in 1350), (2) $24,000.00 capitalizable application-development configuration reclassified to 1370 and amortized over the 36-month hosted term ($666.67 Oct amortization, $23,333.33 ending net 1370), and (3) $12,000.00 non-capitalizable data migration ($7,200.00) and training ($4,800.00) expensed 100% in October 2026."
+    },
+    {
+      "id": "cw136a_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes the October 31, 2026 scheduled active carrying balance in 1350 as $69,000.00 ($24,000.00 POL-2026-GL + $16,500.00 POL-2026-CYBER + $12,000.00 BILL-PMT-712 advance + $16,500.00 INV-WMS-901 Year-1 SaaS)."
+    },
+    {
+      "id": "cw136a_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Retains the full $17,850.00 unscheduled carryforward in 1350 without fabricating a 12-month amortization schedule or writing it off unsupported, decomposing it into $3,240.00 disclosed utility deposit (LEGACY-DEP-01) and $14,610.00 undisclosed prior-CPA migration lump sum (LEGACY-LUMP-02)."
+    },
+    {
+      "id": "cw136a_c7",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Applies snapshot-lineage carryforward rules to confirm DISC-1350-UTIL ($3,240.00 in close_disclosed_items) remains validly disclosed across snapshot bump 10447 -> 10555 because its account_activity_sha256 (9f4b2c81e0a3) is unchanged, whereas UNDISC-1350-LUMP ($14,610.00) lacks disclosure and triggers an unscheduled_balance close hold."
+    },
+    {
+      "id": "cw136a_c8",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles total 1350 Prepaid Expenses & Vendor Advances from $128,850.00 unadjusted on October 31, 2026 ($44,850.00 opening + $84,000.00 October additions) to $86,850.00 audited ($69,000.00 scheduled + $17,850.00 unscheduled carryforward; -$42,000.00 net credit adjustment), alongside $23,333.33 net in 1370."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Prepaid Unscheduled Carryforward Holds, Snapshot-Lineage Disclosed Slices & ASC 350-40 Cloud Computing Implementation",
+    "subcategory": "Disclosed vs Undisclosed Unscheduled Carryforward Slice Across Snapshot Bump, Negative-Liability Draft Rejection, Vendor Advances & ASC 350-40 Hosted WMS Implementation",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

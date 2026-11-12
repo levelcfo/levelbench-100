@@ -1,6 +1,3 @@
-# LICENSE: Personal & Non-Commercial Evaluation Use Only | Commercial License & Data Vault Inquiries: sam@levelcfo.com
-# WATERMARK: LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM
-
 MEMO FROM TEMP BOOKKEEPER (2026-09-28):
 1. I booked the $19,400.00 incoming wire on 2026-09-18 (WIRE-904) to 4900 Other Income as a green coffee rebate.
    (Note: Chase wire addendum actually reads 'ORIG: ROAST & CO NORTHSIDE LLC ACCT #2002 INTERCO SWEEP').

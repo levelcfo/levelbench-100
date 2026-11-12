@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_120_task_b",
+  "world_id": "world_120_saas_deferred_rev_prepaid_and_loan_split",
+  "task_name": "World 120 Task B  -  Prepaid Vendor Advance vs. Unscheduled Insurance, Negative AP Sign, Equipment Loan Split & Paid Receipt Cutoff",
+  "prompt": "Perform a comprehensive B2B SaaS Deferred Revenue Ratable Recognition, Prepaid Amortization & Loan Amortization Split review using the world files (`northstar_oct2026_saas_prepaid_and_loan_close.xlsx`). Identify all accounting, reconciliation, cutoff, or operational variances; state the exact dollar figures, percentages, and transaction/journal/work-order IDs; propose any required correcting journal entries (with exact Debit and Credit accounts); and enforce all close certification guardrails.",
+  "context_files": [
+    "northstar_oct2026_saas_prepaid_and_loan_close.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw120b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Retains BILL-4402 / PAY-4402 ($16,800.00 under PO-719 for 2026-11-25 tooling delivery) in 1350 Prepaid Expenses as a verified provisional paid vendor advance ($0.00 October expense) with a bounded 2026-11-30 true-up check."
+    },
+    {
+      "id": "cw120b_c2",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Refuses to accept the preparer's vendor_advance workpaper tag on CHK-5108 ($14,400.00 Sentinel Specialty Insurance) and holds $14,400.00 as an unscheduled insurance policy with unmeasured 2026-10 amortization rather than inventing an unsupported 12-month schedule without the declaration page."
+    },
+    {
+      "id": "cw120b_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles 2000 Accounts Payable at $32,230.00 net ($38,650.00 open bills on BILL-4410 plus -$6,420.00 negative balance on CloudScale Hosting Inc. from unapplied payment PAY-3912) and refuses to reclassify -$6,420.00 to 1350 Prepaid Expenses from negative AP sign alone."
+    },
+    {
+      "id": "cw120b_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Splits equipment loan payment CHK-7820 ($4,365.00 booked to 6320 Equipment Loan Expense under statement STM-LN-7820-202610) into $3,620.00 principal reduction ($118,400.00 opening less $114,780.00 ending principal) and $745.00 interest expense, reconciling 2620 Equipment Notes Payable to $114,780.00."
+    },
+    {
+      "id": "cw120b_c5",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the correcting journal entry for CHK-7820: Dr 2620 Equipment Notes Payable $3,620.00, Dr 7110 Interest Expense $745.00, Cr 6320 Equipment Loan Expense $4,365.00."
+    },
+    {
+      "id": "cw120b_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Excludes paid corporate card receipt PUR-8904 ($8,750.00 Stratos Security Labs, already paid 2026-10-26 and booked in 6410 Security Testing Expense) with $0.00 accrual so a paid receipt in the close folder is never double-accrued."
+    },
+    {
+      "id": "cw120b_c7",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Accrues unpaid October legal invoice BILL-4490 ($5,400.00 received 2026-11-03 for 2026-10 MSA redlines) via Dr 6420 Legal & Professional Fees $5,400.00 and Cr 2110 Accrued Expenses $5,400.00 (paired with a 2026-11-01 reversal of $5,400.00), yielding a net +$1,780.00 pre-tax expense increase from measured adjustments prior to pending CHK-5108 policy-declaration amortization."
+    },
+    {
+      "id": "cw120b_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Discloses the $14,400.00 unscheduled CHK-5108 policy declaration hold and the -$6,420.00 PAY-3912 missing-bill investigation with 2026-11-30 true-up triggers, reports close disposition as closed with estimates rather than certified under POL-PREPAID-AP, and never credits 1350 Prepaid Expenses for unpaid accruals."
+    }
+  ],
+  "metadata": {
+    "domain": "Fractional_CFO",
+    "category": "B2B SaaS Deferred Revenue Ratable Recognition, Prepaid Amortization & Loan Amortization Split",
+    "subcategory": "ASC 606 Multi-Month Ratable vs Unstarted Milestone Deferral, Straight-Line Prepaid vs Hardware Capex & Effective-Interest Loan Split",
+    "estimated_completion_hours": 2.5
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

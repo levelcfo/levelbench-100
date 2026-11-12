@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_120_task_a",
+  "world_id": "world_120_saas_deferred_rev_prepaid_and_loan_split",
+  "task_name": "World 120 Task A  -  ASC 606 SaaS Ratability, Pre-Commencement Subscription Cutoff & Uncompleted UAT Milestone Deferral",
+  "prompt": "Perform a comprehensive B2B SaaS Deferred Revenue Ratable Recognition, Prepaid Amortization & Loan Amortization Split review using the world files (`northstar_oct2026_saas_prepaid_and_loan_close.xlsx`). Identify all accounting, reconciliation, cutoff, or operational variances; state the exact dollar figures, percentages, and transaction/journal/work-order IDs; propose any required correcting journal entries (with exact Debit and Credit accounts); and enforce all close certification guardrails.",
+  "context_files": [
+    "northstar_oct2026_saas_prepaid_and_loan_close.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw120a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes unadjusted October 2026 GL revenue across INV-8803, INV-8810, and INV-8824 as $92,400.00 ($69,600.00 in 4100 SaaS Subscription Revenue and $22,800.00 in 4200 Implementation Revenue)."
+    },
+    {
+      "id": "cw120a_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Verifies that INV-8803 (DEP-6094, $14,400.00 total) requires $0.00 deferral because $9,600.00 October SaaS service (2026-10-01 to 2026-10-31) was delivered and $4,800.00 implementation milestone JOB-911 achieved signed customer UAT acceptance on 2026-10-19."
+    },
+    {
+      "id": "cw120a_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Splits the $36,000.00 12-month SaaS line on INV-8810 (DEP-6102, 2026-10-01 to 2027-09-30) into $3,000.00 (1 month) earned in 2026-10 and $33,000.00 (11 months) deferred to 2410 Deferred Revenue  -  Current."
+    },
+    {
+      "id": "cw120a_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Defers 100.00% ($18,000.00) of uncompleted implementation milestone JOB-914 on INV-8810 ($0.00 earned in 2026-10) to 2420 Deferred Revenue  -  Uncompleted Milestones because staging failed UAT on 2026-10-29 and customer sign-off is scheduled for 2026-11-12."
+    },
+    {
+      "id": "cw120a_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Defers 100.00% ($24,000.00) of pre-billed annual contract INV-8824 (paid on DEP-6119 on 2026-10-30 for service term starting 2026-11-01) to 2410 Deferred Revenue  -  Current ($0.00 earned in 2026-10)."
+    },
+    {
+      "id": "cw120a_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes total October 2026 revenue deferral of $75,000.00 (81.17% of unadjusted booked revenue deferred) and adjusted recognized revenue of $17,400.00 ($12,600.00 in 4100 SaaS Subscription Revenue and $4,800.00 in 4200 Implementation Revenue)."
+    },
+    {
+      "id": "cw120a_c7",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the exact ASC 606 correcting journal entry: Dr 4100 SaaS Subscription Revenue $57,000.00, Dr 4200 Implementation Revenue $18,000.00, Cr 2410 Deferred Revenue  -  Current $57,000.00, Cr 2420 Deferred Revenue  -  Uncompleted Milestones $18,000.00."
+    },
+    {
+      "id": "cw120a_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Refuses to recognize partial percentage-of-completion revenue on JOB-914 from internal staging deployment before customer UAT acceptance and confirms cash collected prior to term start on INV-8824 is a contract liability under ASC 606."
+    }
+  ],
+  "metadata": {
+    "domain": "Fractional_CFO",
+    "category": "B2B SaaS Deferred Revenue Ratable Recognition, Prepaid Amortization & Loan Amortization Split",
+    "subcategory": "ASC 606 Multi-Month Ratable vs Unstarted Milestone Deferral, Straight-Line Prepaid vs Hardware Capex & Effective-Interest Loan Split",
+    "estimated_completion_hours": 2.5
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "cw_471_task_c",
+  "world_id": "world_471_benadmin_payroll_edi_and_sec125_audit",
+  "task_name": "World 471 Task C  -  Biweekly Hourly + Salaried Batch Merge, ERISA 401(k) Remittance Cutoff & Carrier Portal vs. Placeholder AP Audit",
+  "prompt": "Review the Payroll_401k_And_Carrier_AP schedule in `benadmin_ease_vs_payroll_nov2026.xlsx`. Reconcile clean payroll gross and total cash required after salaried PTO base offsets, compute cumulative unremitted October and November 401(k) withholdings including amounts masked by uncleared checks, and reconcile the placeholder medical carrier bill against the actual carrier portal invoice.",
+  "context_files": [
+    "benadmin_ease_vs_payroll_nov2026.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw471c_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles unmerged TimeImprt + 1.Regular gross $152,799.07 less -$5,636.50 (72.00h salaried PTO base offset) to $147,162.57 clean gross and $140,082.87 total cash required across 43 paid employees."
+    },
+    {
+      "id": "cw471c_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes $23,452.31 of unremitted October 2026 401(k) withholdings ($11,656.28 from 10/16 + $336.64 from 10/23 = $11,992.92 masked by pre-booked uncleared QBO checks, plus $11,459.39 from 10/30), reaching $34,393.99 cumulative with $10,941.68 on the 11/13 draft."
+    },
+    {
+      "id": "cw471c_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies that QBO Nov 1 placeholder medical bill $47,755.71 exceeds actual November carrier portal invoice $24,709.02 by $23,046.69 (-$23,046.69 adjustment), leaving $72,464.73 combined October + November carrier balance due."
+    }
+  ],
+  "metadata": {
+    "domain": "Fractional_CFO",
+    "category": "BenAdmin-to-Payroll EDI, IRC Sec 125 Post-Tax Domestic Partner & Asymmetric Tab Termination Audit",
+    "subcategory": "Section 125 Non-Dependent Partner Post-Tax Split, Summary-Tab Layoff Residuals, ERISA 401(k) Cutoff & Multi-Lever Workforce Cost Bridge",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

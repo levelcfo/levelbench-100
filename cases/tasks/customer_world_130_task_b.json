@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_130_task_b",
+  "world_id": "world_130_payroll_completeness_horizon_and_cohort_cutoff",
+  "task_name": "World 130 Task B  -  Equal-Dollar Gusto ACH Pool Capacity, Unverified Off-Cycle Run Hold, Staged Draft Queue Governance & October Close Status",
+  "prompt": "Review the chart of accounts, QBO completeness and detail supplement status exports, payroll provider run register, synced general ledger postings, and bank statement ACH and staged payroll draft records for VascularCraft BioDevices LLC in meddevice_oct2026_payroll_completeness_horizon.xlsx for October 2026. Audit the equal-dollar October 15 Gusto bank ACH debits under one-to-one pool capacity matching, evaluate the auto-categorized Purchase entry and missing payroll run documentation (reclassifying any misbooked bank debit to 2140 Payroll Clearing and placing any unsupported payroll settlement on a named unverified_payroll_run_hold without guessing a wage/tax gross-up), adjudicate each pending item in the staged payroll draft queue while clamping withdrawal lookahead to the verified completeness horizon, reconcile posted-audited October 2026 balances for 6110, 6120, 6180, 2130, and 2140 prior to held items, and assign the governed October 2026 close status (certified, closed_with_estimates, or blocked_on_completeness_and_source_holds).",
+  "context_files": [
+    "meddevice_oct2026_payroll_completeness_horizon.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw130b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Audits the two equal-dollar $11,480.00 Gusto bank ACH debits on 2026-10-15 (ACH-1015A 'GUSTO PAY 991042 REG' and ACH-1015B 'GUSTO PAY 991088 OFF-CYCLE', $22,960.00 combined cash outflow on 1000 Operating Checking) and binds native payroll journal JE-1055 (doc_num='GUSTO-991042' for PR-2026-30: Dr 6110 $15,000.00, Dr 6120 $1,147.50, Cr 2140 $11,480.00, Cr 2150 $4,667.50) exclusively 1-to-1 to ACH-1015A, exhausting JE-1055's pool capacity of 1 so JE-1055 cannot double-claim ACH-1015B."
+    },
+    {
+      "id": "cw130b_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies that Purchase PUR-6012 ($11,480.00 on 2026-10-15 for ACH-1015B 'GUSTO PAY 991088 OFF-CYCLE') was wrongly auto-categorized by a QBO bank rule to 6180 Office Supplies, inflating 6180 from $1,250.00 actual Staples invoice PUR-6004 to $12,730.00 unadjusted, and provides the reclassifying entry Dr 2140 Payroll Clearing $11,480.00 / Cr 6180 Office Supplies $11,480.00."
+    },
+    {
+      "id": "cw130b_c3",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Confirms that no provider payroll export exists in Payroll_Provider_Run_Register for off-cycle Gusto run 991088 and places ACH-1015B ($11,480.00 in 2140 Payroll Clearing) on a named unverified_payroll_run_hold, refusing to guess or extrapolate a gross-wage, employer-tax, and employee-withholding split from regular run 991042 until the authoritative Gusto run 991088 register is ingested."
+    },
+    {
+      "id": "cw130b_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Evaluates pending staged payroll draft STG-301 (2026-10-22, $44,136.50: Dr 6110 $41,000.00 + Dr 6120 $3,136.50 / Cr 2130 $44,136.50 for mid-month run PR-2026-20) within the verified 2026-11-07 completeness horizon, confirming native payroll journal JE-1062 ($41,000.00 wages + $3,136.50 employer tax) is already synced on 2026-10-22 and withdrawing STG-301 as redundant to prevent a $44,136.50 double-count."
+    },
+    {
+      "id": "cw130b_c5",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Evaluates pending 2026-11-01 Day-1 reversal draft STG-302 (auto-inverse of PR-2026-21's $41,337.60 October 31 cutoff accrual with Requested_Lookahead_End='2026-12-31'), clamping the withdrawal lookahead window end from 2026-12-31 to the 2026-11-07 verified supplement horizon rather than failing or trusting unmeasured dates, and retaining STG-302 ($41,337.60: Dr 2130 $41,337.60 / Cr 6110 $38,400.00 + Cr 6120 $2,937.60) on 2026-11-01 because $0.00 native QBO payroll journal entries exist for PR-2026-21 through 2026-11-07."
+    },
+    {
+      "id": "cw130b_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles October 2026 P&L accounts on posted-audited items prior to held runs from unadjusted balances ($108,200.00 in 6110 Gross Wages, $8,277.30 in 6120 Employer Payroll Taxes, and $12,730.00 in 6180 Office Supplies) to $146,600.00 in 6110 Gross Wages (+$38,400.00 PR-2026-21 accrual), $11,214.90 in 6120 Employer Payroll Taxes (+$2,937.60 PR-2026-21 accrual), and $1,250.00 in 6180 Office Supplies (-$11,480.00 PUR-6012 reclassification, retaining only PUR-6004)."
+    },
+    {
+      "id": "cw130b_c7",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles October 31, 2026 payroll liability and clearing balances prior to held runs from $0.00 unadjusted 2130 Accrued Payroll & Taxes ($36,278.05 opening balance cleared by $15,286.30 JE-0991 and $20,991.75 JE-0992) and $0.00 unadjusted 2140 Payroll Clearing to $41,337.60 credit in 2130 Accrued Payroll & Taxes (PR-2026-21 cutoff accrual) and $11,480.00 debit balance in 2140 Payroll Clearing (held ACH-1015B / PUR-6012 reclassification pending Gusto run 991088)."
+    },
+    {
+      "id": "cw130b_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Refuses to assign close status certified or closed_with_estimates for 2026-10 and assigns blocked_on_completeness_and_source_holds until both completeness_horizon_hold on PR-2026-22 ($49,519.00 candidate R&D payroll accrual past the 2026-11-07 supplement horizon) and unverified_payroll_run_hold on ACH-1015B ($11,480.00 off-cycle Gusto run 991088 lacking a provider register) are resolved."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Payroll Verified Completeness Horizon, Multi-Cohort Service-Period Cutoff & Equal-Dollar Pool Matching",
+    "subcategory": "Detail Supplement vs Header Completeness Horizon Clamping, Overlapping Cohort Wage/FICA Accrual, Equal-Dollar Gusto ACH Pool Capacity & Unverified Settlement Hold",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_128_task_a",
+  "world_id": "world_128_asc842_lease_ti_allowance_and_equipment_cap",
+  "task_name": "World 128 Task A  -  ASC 842 Operating Lease Commencement, Landlord TI Lease Incentive & Leasehold Amortization Life Cap",
+  "prompt": "Review the chart of accounts and accounting policies, clinic operating lease agreement and tenant improvement buildout records, and October 2026 general ledger postings for Apex Dental & Ortho Partners PLLC in apex_dental_oct2026_asc842_ti_and_fixed_assets.xlsx. Audit the operating lease commencement balance, landlord tenant improvement allowance cash receipt, monthly straight-line lease expense, operating lease liability accretion and right-of-use asset amortization, and lessee-owned leasehold improvement amortization life; quantify the net October 2026 pre-tax income impact; and provide all required adjusting journal entries.",
+  "context_files": [
+    "apex_dental_oct2026_asc842_ti_and_fixed_assets.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw128a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies that the $120,000.00 cash Landlord Tenant Improvement (TI) Allowance received on 2026-10-02 (WIRE-TI-1002 / DEP-TI-1002 under LEASE-2026-HQ) is a lease incentive under ASC 842-20-30-5 rather than other income, reducing initial 1650 Operating Lease ROU Asset from $491,392.83 to $371,392.83 while retaining the gross $180,000.00 lessee-owned clinic buildout (INV-BLD-201 / WIRE-BLD-201) in 1540 Leasehold Improvements."
+    },
+    {
+      "id": "cw128a_c2",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the 2026-10-02 ASC 842-20-30-5 adjusting journal entry for WIRE-TI-1002 (DEP-TI-1002): Dr 4900 Other Income $120,000.00 / Cr 1650 Operating Lease ROU Asset $120,000.00, and explains that Apex Dental owns the clinic buildout improvements (must not credit 1540)."
+    },
+    {
+      "id": "cw128a_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes total net lease cost over the 60-month noncancelable term of LEASE-2026-HQ as $450,000.00 ($570,000.00 gross contractual cash rent at $9,500.00/mo across 60 months less the $120,000.00 landlord TI lease incentive) and single straight-line monthly lease cost in 6210 Operating Lease Expense as $7,500.00 ($2,000.00 lower than the $9,500.00 cash rent check CHK-4101)."
+    },
+    {
+      "id": "cw128a_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes Month-1 (2026-10) operating lease liability interest accretion at the 0.50% monthly discount rate on $491,392.83 as $2,456.96, principal reduction from the $9,500.00 cash rent payment as $7,043.04, ending 2650 Operating Lease Liability as $484,349.79, Month-1 ROU asset amortization after TI reduction as $5,043.04 ($7,500.00 straight-line lease cost less $2,456.96 accretion), and ending 1650 Operating Lease ROU Asset as $366,349.79."
+    },
+    {
+      "id": "cw128a_c5",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the 2026-10-31 ASC 842 operating lease adjusting entry for CHK-4101: Dr 2650 Operating Lease Liability $7,043.04 / Cr 1650 Operating Lease ROU Asset $5,043.04 / Cr 6210 Operating Lease Expense $2,000.00."
+    },
+    {
+      "id": "cw128a_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Applies ASC 842-20-35-12 to the $180,000.00 lessee-owned clinic buildout (INV-BLD-201) in 1540 Leasehold Improvements, capping the amortization period at the 60-month remaining noncancelable lease term rather than the 180-month physical life (renewal not reasonably certain), requiring $3,000.00 monthly amortization instead of the $1,000.00 booked ($2,000.00 understatement)."
+    },
+    {
+      "id": "cw128a_c7",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the 2026-10-31 leasehold improvement amortization adjusting entry: Dr 6520 Depreciation & Amortization $2,000.00 / Cr 1545 Accumulated Amortization  -  Leasehold Improvements $2,000.00, bringing ending 1545 to $3,000.00 and net 1540/1545 carrying value to $177,000.00."
+    },
+    {
+      "id": "cw128a_c8",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Quantifies the combined 2026-10 pre-tax net income overstatement from the three Task A lease and buildout errors as $120,000.00 (-$120,000.00 from reversing 4900 Other Income, +$2,000.00 from reducing 6210 Operating Lease Expense from $9,500.00 to $7,500.00, and -$2,000.00 from increasing 6520 Depreciation & Amortization on 1540 from $1,000.00 to $3,000.00)."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "ASC 842 Operating Lease & Tenant Improvement Allowance, Fixed-Asset Capitalization & Cash-Flow Bridge",
+    "subcategory": "ASC 842 Annuity PV ROU/Liability Recognition, Landlord TI Allowance Reduction vs Revenue Trap, Leasehold Term Cap, Equipment CapEx vs Repair Whipsaw & Non-Cash Disposal Cash-Flow Bridge",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

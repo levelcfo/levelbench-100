@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_137_task_b",
+  "world_id": "world_137_opening_balance_equity_pending_cpa_tb_and_principal_agent",
+  "task_name": "World 137 Task B  -  ASC 606 Principal-vs-Agent Gross-to-Net Adjustments, Gross Margin % Bridge, Balance Sheet Tie-Out & Close Hold",
+  "prompt": "Continuing your October 2026 close audit of Beacon Retail Media & Fulfillment LLC in beacon_retail_media_oct2026_obe_cpa_tb_and_principal_agent.xlsx, evaluate the three October 2026 revenue streams in Client_Contracts_Oct2026 (Velvet Home ad-spend management pass-through, Harbor Grocers custom kitted retail displays, and third-party brand drop-ship marketplace orders) under ASC 606-10-55-36 through 55-40 Principal vs. Agent indicators. Provide the ASC 606 gross-to-net adjusting journal entries, reconcile unadjusted to audited October 2026 GAAP Net Revenue, COGS, Gross Margin %, Operating Expenses (including any reclassified marketing expense from Task A), and Net Income, and prove the October 31, 2026 Balance Sheet tie-out and close-readiness status.",
+  "context_files": [
+    "beacon_retail_media_oct2026_obe_cpa_tb_and_principal_agent.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw137b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Evaluates STREAM-1 (Velvet Home ad-spend management) as Agent under ASC 606-10-55-36..40 (client owns ad accounts, zero inventory risk, zero pricing discretion), netting $100,000.00 pass-through media spend via Dr 4100 Agency Media Revenue $100,000.00 / Cr 5100 Media Pass-Through Cost COGS $100,000.00 to report $15,000.00 GAAP Net Agency Fee Revenue ($0.00 5100 COGS)."
+    },
+    {
+      "id": "cw137b_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Evaluates STREAM-2 (Harbor Grocers custom POP displays) as Principal under ASC 606-10-55-36..40 (Beacon contracts factory production in its own name, warehouses inventory, bears transit/damage risk, and sets standalone price), retaining gross $68,000.00 Revenue in 4110 and $41,500.00 COGS in 5110."
+    },
+    {
+      "id": "cw137b_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Evaluates STREAM-3 (third-party brand drop-ship marketplace) as Agent under ASC 606-10-55-36..40 (brands set retail prices, ship directly from brand warehouses, and bear return/inventory risk), netting $70,400.00 brand remittances via Dr 4120 Drop-Ship Marketplace Revenue $70,400.00 / Cr 5120 Drop-Ship Brand Remittance COGS $70,400.00 to report $9,600.00 GAAP Net Commission Revenue ($0.00 5120 COGS)."
+    },
+    {
+      "id": "cw137b_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles total October 2026 Revenue from $263,000.00 unadjusted gross ($115,000.00 + $68,000.00 + $80,000.00) to $92,600.00 GAAP Net Revenue (-$170,400.00 agent netting = $15,000.00 + $68,000.00 + $9,600.00)."
+    },
+    {
+      "id": "cw137b_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles total October 2026 COGS from $211,900.00 unadjusted ($100,000.00 + $41,500.00 + $70,400.00) to $41,500.00 GAAP COGS (-$170,400.00 agent netting), conserving $51,100.00 Gross Profit while correcting Gross Margin % from 19.43% distorted to 55.18% ($51,100.00 / $92,600.00)."
+    },
+    {
+      "id": "cw137b_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles October 2026 Operating Expenses from $28,400.00 unadjusted (6110) to $32,600.00 audited (+$4,200.00 Check #1842 in 6150 Marketing & Trade Shows), reconciling Net Income from $22,700.00 unadjusted to $18,500.00 audited (-$4,200.00 change)."
+    },
+    {
+      "id": "cw137b_c7",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Proves the post-close October 31, 2026 Balance Sheet tie-out: Total Assets $260,400.00 ($112,400.00 1010 + $25,000.00 1020 + $123,000.00 1100) equals Total Liabilities $77,300.00 (2000 AP) plus Total Members' Equity $183,100.00 ($130,000.00 3200 Retained Earnings + $34,600.00 3900 Opening Balance Equity + $18,500.00 audited Net Income)."
+    },
+    {
+      "id": "cw137b_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Reports October 2026 close status as held under pending_cpa_trial_balance until Keller & Associates CPAs delivers the signed 2025 Form 1065 and final adjusted trial balance to clear the $34,600.00 cutover 3900 balance."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Opening Balance Equity Pending CPA Trial Balance Hold, Bank-Feed Opening Duplicates & ASC 606 Principal-vs-Agent",
+    "subcategory": "Unauthorized OBE-to-Retained-Earnings Sweep Reversal, Plaid Auto-Opening Duplicate Reversal, Pending CPA TB Hold & ASC 606-10-55-36 Gross-vs-Net Revenue",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

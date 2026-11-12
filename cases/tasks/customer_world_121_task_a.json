@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_121_task_a",
+  "world_id": "world_121_bank_resemblance_card_refund_and_estimate_reversal",
+  "task_name": "World 121 Task A  -  Bank Institution Resemblance Guard, Unmeasured Negative-Bank Disclosure & Card Refund vs. Processor Fee Direction",
+  "prompt": "Review the Chart of Accounts, cash accounts, bank statement inventory, and corporate card and merchant deposit fee schedules in aether_diagnostics_oct2026_close_sources.xlsx. Evaluate whether institution-name similarity justifies zeroing or remapping any bank account, state the reconciliation and disclosure treatment for any negative book cash account lacking a bank statement, and determine the proper direction and net expense for corporate card fee refunds versus merchant deposit processor fee deductions.",
+  "context_files": [
+    "aether_diagnostics_oct2026_close_sources.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw121a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Preserves both First Commercial Bank accounts 1010 ($64,250.00) and 1020 ($14,800.00) for $79,050.00 combined reconciled positive cash."
+    },
+    {
+      "id": "cw121a_c2",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Refuses to zero or remap 1020 ($14,800.00) as a duplicate bank feed solely from shared institution name because account numbers 8162 and 2473 and account types are distinct."
+    },
+    {
+      "id": "cw121a_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes net 2026-10 book cash across 1010, 1020, and 1030 (-$8,420.50) as $70,629.50 while retaining the -$8,420.50 book balance without an unsupported plug."
+    },
+    {
+      "id": "cw121a_c4",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Discloses 1030 (-$8,420.50) as an unmeasured bank statement reconciliation item with a 2026-11-30 true-up rather than certifying a verified bank overdraft."
+    },
+    {
+      "id": "cw121a_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Preserves native Credit=true corporate card annual-fee refund TXN-CC-901 ($695.00) as a credit to 6435 rather than dropping or retiring it as interest."
+    },
+    {
+      "id": "cw121a_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Sums the 5 merchant deposit processor fee deductions DEP-4401 through DEP-4405 ($182.90, $160.15, $208.60, $144.45, and $149.10) as debits to 6435 totaling $845.20 against $28,570.00 gross deposits ($27,724.80 net cash)."
+    },
+    {
+      "id": "cw121a_c7",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Refuses to flip DEP-4401 through DEP-4405 labeled CREDIT CARD PROC FEE into fee reversals, keeping all 5 lines as positive processor fee charges."
+    },
+    {
+      "id": "cw121a_c8",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes audited 2026-10 net expense in 6435 Bank & Card Fees as $150.20 ($845.20 processor fee charges less $695.00 annual-fee refund credit) with $0.00 reclassification required."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Med-Tech Bank Resemblance Guard, Card Fee Refund Polarity & Day-1 Estimate Reversal Close Status",
+    "subcategory": "Institution-Resemblance Zero-Write Block, Negative Depository Checking Sign Guard, Card Fee Refund vs Merchant Fee & Prior-Period Estimate Reversal Exclusion",
+    "estimated_completion_hours": 2.5
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

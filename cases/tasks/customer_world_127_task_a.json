@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_127_task_a",
+  "world_id": "world_127_saas_contract_mod_ratable_rev_and_commissions",
+  "task_name": "World 127 Task A  -  SaaS Cumulative Ratable Ceiling Trap, ASC 606-10-25-12 Prospective Modification & Uncompleted UAT Milestone",
+  "prompt": "Review the chart of accounts and ASC 606 revenue policy, SaaS subscription contracts, modification addenda, implementation milestones, and October 2026 general ledger postings for CloudPulse Analytics Inc. in cloudpulse_oct2026_saas_mod_and_asc340_commissions.xlsx. Audit each active subscription and implementation arrangement from its opening October 1, 2026 deferred revenue balance through October 31, 2026; evaluate any cumulative elapsed-month recognition errors, mid-term contract modifications under ASC 606-10-25-12, and uncompleted customer UAT milestones; provide the required adjusting journal entries; and reconcile unadjusted to audited October 2026 subscription revenue, implementation revenue, total revenue, and ending deferred revenue by contract and in total.",
+  "context_files": [
+    "cloudpulse_oct2026_saas_mod_and_asc340_commissions.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw127a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Audits enterprise subscription SAAS-401 (Northstar Bio, 12-month $144,000.00 contract from 2026-09-01 to 2027-08-31 at $12,000.00 per month with $12,000.00 recognized in 2026-09 and $132,000.00 opening 2400 Deferred Revenue on 2026-10-01), identifying that JE-1041 booked the 2-month cumulative elapsed amount of $24,000.00 to October 2026-10 4100 Subscription Revenue (overstating cumulative recognized revenue at $36,000.00 and reducing SAAS-401 unadjusted 2400 to $108,000.00)."
+    },
+    {
+      "id": "cw127a_c2",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the correcting journal entry on SAAS-401 to reverse the double-recognized September revenue: Dr 4100 Subscription Revenue $12,000.00 / Cr 2400 Deferred Revenue $12,000.00, restoring October 2026-10 revenue on SAAS-401 to $12,000.00 and ending 2400 Deferred Revenue on SAAS-401 to $120,000.00 across 10 remaining months."
+    },
+    {
+      "id": "cw127a_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Evaluates Vanguard Logistics contract SAAS-402 ($72,000.00 original 12-month subscription from 2026-07-01 to 2027-06-30 at $6,000.00 per month, $18,000.00 recognized Jul-Sep, and $54,000.00 opening 2400 Deferred Revenue on 2026-10-01) and 2026-10-01 modification MOD-402-01 ($27,000.00 incremental billing for integrated seat and tier expansion discounted below standalone selling price across the 9 remaining months 2026-10-01 to 2027-06-30), computing an $81,000.00 prospective unrecognized revenue pool and a $9,000.00 per month prospective recognition rate under ASC 606-10-25-12."
+    },
+    {
+      "id": "cw127a_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies that October 2026-10 postings on SAAS-402 recognized $33,000.00 in 4100 Subscription Revenue ($6,000.00 base amortization on JE-1042 plus $27,000.00 upfront modification cash on DEP-402-MOD, leaving $48,000.00 unadjusted in 2400), overstating October revenue on SAAS-402 by $24,000.00 relative to the $9,000.00 earned rate ($6,000.00 base plus $3,000.00 expansion)."
+    },
+    {
+      "id": "cw127a_c5",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the ASC 606-10-25-12 adjusting journal entry for SAAS-402: Dr 4100 Subscription Revenue $24,000.00 / Cr 2400 Deferred Revenue $24,000.00, restoring SAAS-402 October 4100 Subscription Revenue to $9,000.00 and ending 2400 Deferred Revenue to $72,000.00 across 8 remaining months (refusing immediate upfront recognition or retrospective catch-up to closed Jul-Sep periods)."
+    },
+    {
+      "id": "cw127a_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies that Aegis Health custom HIPAA SSO integration milestone IMP-403 ($18,000.00 billed and collected on 2026-10-15 via DEP-403-IMP in 4200 Implementation Revenue) had 0.00% customer delivery in 2026-10 because signed Production UAT acceptance occurred on 2026-11-12, requiring 100.00% deferral ($18,000.00) with $0.00 October implementation revenue."
+    },
+    {
+      "id": "cw127a_c7",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the adjusting journal entry for uncompleted milestone IMP-403: Dr 4200 Implementation Revenue $18,000.00 / Cr 2400 Deferred Revenue $18,000.00, refusing partial over-time recognition prior to signed customer UAT acceptance."
+    },
+    {
+      "id": "cw127a_c8",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles CloudPulse Analytics Inc. October 2026-10 revenue from $75,000.00 unadjusted ($57,000.00 in 4100 Subscription Revenue and $18,000.00 in 4200 Implementation Revenue) down by $54,000.00 total deferrals to $21,000.00 audited ($21,000.00 in 4100 and $0.00 in 4200), and reconciles ending 2400 Deferred Revenue at 2026-10-31 from $156,000.00 unadjusted to $210,000.00 audited ($120,000.00 SAAS-401 + $72,000.00 SAAS-402 + $18,000.00 IMP-403)."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Multi-Period SaaS Ratable Revenue, ASC 606 Contract Modifications & ASC 340-40 Commissions",
+    "subcategory": "Cumulative Ratable Recognition Ceiling, Mid-Term Distinct Seat Expansion Modification, Uncompleted UAT Implementation Milestone & ASC 340-40 Commission Capitalization/Impairment",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

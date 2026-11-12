@@ -1,0 +1,61 @@
+{
+  "task_id": "cw_102_task_c",
+  "world_id": "world_102_summit_roofing",
+  "task_name": "Trades close source recognition and legitimate exceptions",
+  "prompt": "Review the contract, payroll, supplier cutoff, noncash transfer and loan source facts in trades_close_recognition_sources.xlsx. Distinguish supported corrections from missing information, reconstruct the stated incentive basis and explain the accounting and cash-flow effects. Preserve legitimate exceptions and state the remaining close limits.",
+  "context_files": [
+    "buildops_vs_qbo_margin_bridge_2026_Q3.xlsx",
+    "trades_close_recognition_sources.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw102c_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Retains October labor $3,500.00 already booked and corrects its unpaid offset with debit Prepaids / credit supplier liability $3,500.00; no added cost."
+    },
+    {
+      "id": "cw102c_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Pairs the November offset reversal; October assets and liabilities each increase $3,500.00 and profit/cash effect is $0.00."
+    },
+    {
+      "id": "cw102c_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "From retained March-September basis derives revenue bonus $15,127.03, EBITDA bonus $483.57 and total formula entitlement $15,610.60."
+    },
+    {
+      "id": "cw102c_c4",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Uses cumulative positive pre-bonus EBITDA from the contracted earned start; separate May payout is excluded, not deducted, and negative cumulative EBITDA contributes zero."
+    },
+    {
+      "id": "cw102c_c5",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "October exact true-up remains unmeasured until cumulative sources and prior net formula recognition are reconciled; isolated monthly EBITDA and cash payouts do not prove entitlement."
+    },
+    {
+      "id": "cw102c_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Explains the $239.54 balanced card reclass and resulting -$5,019.62 adjusted Card A movement and $0.00 Card B movement; no correction or new cash is warranted."
+    },
+    {
+      "id": "cw102c_c7",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Classifies June $15,000.00 proceeds and July -$15,000.00 repayment as financing, not operating; maturity does not alter cash nature."
+    },
+    {
+      "id": "cw102c_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Does not plug WIP or costs to a target margin, mandate reversal of supported cumulative balances, or turn an assigned reviewer into actual human approval."
+    }
+  ],
+  "metadata": {
+    "domain": "Fractional_COO",
+    "category": "Fractional COO & Job-Cost Accounting",
+    "subcategory": "BuildOps vs. QBO COGS Margin Bridge, Loaded Labor Burden, Two-Sided WIP Cutoff Reversal & Unstarted Deposit Liability",
+    "estimated_completion_hours": 2.5
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

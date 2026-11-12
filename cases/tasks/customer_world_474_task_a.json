@@ -1,0 +1,35 @@
+{
+  "task_id": "cw_474_task_a",
+  "world_id": "world_474_monthly_pl_cleanliness_catchup_span_and_zero_activity_statement_continuity",
+  "task_name": "World 474 Task A  -  Cross-Month Negative Expense Detection, Multi-Month Catch-Up Refusal & Cash-Basis Accrual Reversal",
+  "prompt": "Review the Monthly_PL_And_Catchup_JEs schedule in `roast_bloom_cafes_oct2026_monthly_cleanliness_and_continuity.xlsx`. Identify any single-month negative expense column masked by a positive year-to-date total, evaluate multi-month catch-up lump entries lacking period-of-origin schedules, audit cash-basis branch payroll accruals, and state the pre-render PDF cleanliness gate outcome.",
+  "context_files": [
+    "roast_bloom_cafes_oct2026_monthly_cleanliness_and_continuity.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw474a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Flags September -$2,149.56 negative Taxes & Licenses column despite positive +$3,839.88 YTD total."
+    },
+    {
+      "id": "cw474a_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Refuses unallocated 9-month $18,450.00 payroll-tax catch-up lump in September ($2,050.00 monthly run-rate across $20,500.00 10-month total) without period-of-origin schedule."
+    },
+    {
+      "id": "cw474a_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reverses the $1,957.71 October 31 payroll accrual on the pure cash-basis Downtown branch and blocks client PDF generation while monthly distortions remain."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Single-Month Negative P&L Cleanliness, Multi-Month Catch-Up Span Refusal & Zero-Activity Statement Continuity",
+    "subcategory": "Cross-Month Negative Expense Detection Behind Positive YTD, Multi-Month Catch-Up JE Refusal, Cash-Basis Accrual Reversal & Zero-Activity Statement Continuity Gate",
+    "estimated_completion_hours": 2.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

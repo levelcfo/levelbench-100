@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_138_task_b",
+  "world_id": "world_138_saw_precedent_draws_partner_payroll_and_estimate_netting",
+  "task_name": "World 138 Task B  -  Custom Clearing Fee-Netted Duplicate Revenue, Equity True-Up Plug, Advance-Netted Sod & Neutralized Estimate Register",
+  "prompt": "Continuing your October 2026 close audit of Ironwood Commercial Landscaping LLC in ironwood_landscaping_oct2026_partner_payroll_draws_and_cutoff.xlsx, audit (1) custom clearing account 1095 Client Remittance Holding and the October 25 fee-netted Stripe payout, (2) the October 27 Harbor View HOA retainer check posted to 3110 Partners' Capital with an equity true-up memo, and (3) the October Valley Sod Farms delivery (including prior vendor deposit 1360, net cash purchase, and the October 31 controlled estimate entries alongside the active Timberline Mulch accrual). Provide all Task B journal entries, determine the true active month-end controlled estimate balance, and reconcile unadjusted to audited October 2026 Revenue, total COGS and operating expenses, Net Income, and the October 31, 2026 Balance Sheet.",
+  "context_files": [
+    "ironwood_landscaping_oct2026_partner_payroll_draws_and_cutoff.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw138b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Matches the October 25, 2026 $9,680.00 fee-netted Stripe payout DEP-66602 (+7 days, net of 3.20% = $320.00 processing fee) against the $10,000.00 Crestview payment PMT-4410 stranded in custom clearing account 1095 Client Remittance Holding, booking Dr 4100 Landscaping Revenue $9,680.00 and Dr 6450 Merchant Processing Fees $320.00 / Cr 1095 Client Remittance Holding $10,000.00 (clearing 1095 to $0.00)."
+    },
+    {
+      "id": "cw138b_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Catches the $14,200.00 Harbor View HOA winterizing retainer check DEP-EQ-901 posted to 3110 Partners' Capital with memo 'equity true-up' (0% performed in October 2026), reclassifying Dr 3110 Partners' Capital $14,200.00 / Cr 2310 Unearned Winterizing Retainers $14,200.00 (restoring 3110 to $170,560.00)."
+    },
+    {
+      "id": "cw138b_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Applies the $2,560.00 September vendor advance sitting in 1360 Vendor Deposits against Valley Sod Farms invoice INV-9042 ($5,000.00 gross sod delivered October 28 less $2,440.00 net cash paid via PUR-12091) via Dr 5200 Job Materials COGS $2,560.00 / Cr 1360 Vendor Deposits $2,560.00 (bringing 1360 to $0.00 and total INV-9042 recognized cost to $5,000.00)."
+    },
+    {
+      "id": "cw138b_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Determines that October 31 duplicate estimate JE-12128 ($2,440.00) and same-month reversal JE-12190 (-$2,440.00) cancel 1-for-1 to $0.00 and must both be excluded from the active month-end controlled estimate register, reporting $9,000.00 of active controlled estimates (EST-1088 Timberline Mulch only) and rejecting the inflated $11,440.00 register total."
+    },
+    {
+      "id": "cw138b_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles October 2026 4100 Landscaping Revenue from $134,680.00 unadjusted ($125,000.00 INV-4010 + $9,680.00 duplicate DEP-66602) to $125,000.00 audited (-$9,680.00 adjustment)."
+    },
+    {
+      "id": "cw138b_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles total October 2026 COGS and operating expenses from $80,493.15 unadjusted to $84,077.60 audited (+$3,584.45 net adjustment: 5200 $42,250.00 + 5300 $2,500.00 + 6110 $18,400.00 + 6120 $8,700.00 + 6130 $1,407.60 + 6180 $4,000.00 + 6410 $6,500.00 + 6450 $320.00)."
+    },
+    {
+      "id": "cw138b_c7",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles October 2026 Net Income from $54,186.85 unadjusted ($134,680.00 less $80,493.15) to $40,922.40 audited ($125,000.00 less $84,077.60; net -$13,264.45 change)."
+    },
+    {
+      "id": "cw138b_c8",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Proves the post-close October 31, 2026 Balance Sheet tie-out: Total Assets $271,682.40 ($209,016.85 1010 + $0.00 1095 + $62,000.00 1100 + $0.00 1360 + $665.55 1390) equals Total Liabilities $63,200.00 ($40,000.00 2000 + $9,000.00 2110 + $14,200.00 2310) plus Total Partners' Equity $208,482.40 ($170,560.00 3110 Partners' Capital less $3,000.00 3120 Partner Draws plus $40,922.40 audited Net Income)."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Precedent-Based Partner Draws, Form 1065 Partner Payroll (Rev. Rul. 69-184), Custom Clearing & Neutralized Estimates",
+    "subcategory": "Zero-Precedent Commercial Spend in Partner Draws, Form 1065 Partner W-2 & FICA Remediation, Custom Non-Regex Clearing Fee-Netted Duplicate, Equity Plug & Same-Month Neutralized Estimate Netting",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

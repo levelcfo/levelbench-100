@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_127_task_b",
+  "world_id": "world_127_saas_contract_mod_ratable_rev_and_commissions",
+  "task_name": "World 127 Task B  -  ASC 340-40 Commission Capitalization & Churn Impairment, Paid Hosting Double-Accrual & Checklist Guard",
+  "prompt": "Review the chart of accounts and close policies, ASC 340-40 sales commission subledger, cloud hosting invoices and telemetry cutoff records, October 2026 general ledger postings, and close checklist sign-off log for CloudPulse Analytics Inc. in cloudpulse_oct2026_saas_mod_and_asc340_commissions.xlsx. Audit incremental contract acquisition cost capitalization, monthly commission amortization, and churned-customer commission impairment; evaluate cloud hosting direct-debit purchases and month-end expense accruals; provide all required adjusting journal entries; reconcile unadjusted to audited deferred contract acquisition costs, commission expense and amortization, hosting COGS, and accrued expenses; and audit the close checklist formula and sign-off controls to determine the governed October 2026 close status.",
+  "context_files": [
+    "cloudpulse_oct2026_saas_mod_and_asc340_commissions.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw127b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies that $14,400.00 incremental AE closing commission COMM-401 on Northstar Bio (vested and paid 2026-10-01 via PAY-COMM-401) was expensed 100.00% upfront to 6140 Sales Commissions Expense rather than capitalized under ASC 340-40 over the 24-month expected customer benefit period ($600.00 per month amortization rate)."
+    },
+    {
+      "id": "cw127b_c2",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the ASC 340-40 capitalization and October 2026-10 amortization entries for COMM-401: Dr 1450 Deferred Contract Acquisition Costs $14,400.00 / Cr 6140 Sales Commissions Expense $14,400.00 and Dr 6150 Sales Commission Amortization $600.00 / Cr 1450 Deferred Contract Acquisition Costs $600.00, reducing 6140 to $0.00 and establishing $13,800.00 ending 1450 on COMM-401 (23 remaining months)."
+    },
+    {
+      "id": "cw127b_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies on COMM-388 (Zenith Retail, $5,400.00 opening unamortized balance in 1450 Deferred Contract Acquisition Costs on 2026-10-01) that the customer terminated for cause effective 2026-10-25 with $0.00 recoverable future cash flows, while JE-1088 booked only the $300.00 scheduled monthly amortization and left $5,100.00 stranded in 1450."
+    },
+    {
+      "id": "cw127b_c4",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the ASC 340-40-35-4 impairment write-off entry for churned contract COMM-388: Dr 6150 Sales Commission Amortization $5,100.00 / Cr 1450 Deferred Contract Acquisition Costs $5,100.00, reducing COMM-388 ending 1450 to $0.00 and bringing total audited October 2026-10 6150 Sales Commission Amortization to $6,000.00 ($600.00 COMM-401 + $300.00 scheduled COMM-388 + $5,100.00 impairment COMM-388) and total audited ending 1450 to $13,800.00 (up from $5,100.00 unadjusted)."
+    },
+    {
+      "id": "cw127b_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies that AWS Cloud October hosting receipt DOC-7741 ($8,250.00) was already paid and recorded via direct auto-debit native Purchase qbo:purchase:4412 on 2026-10-30 in 5210 Hosting COGS and was double-accrued on 2026-10-31 in JE-1099 (Dr 5210 Hosting COGS $8,250.00 / Cr 2110 Accrued Expenses $8,250.00), while unpaid Snowflake telemetry meter estimate MTR-1031 ($1,450.00 in JE-1098) is a valid provisional October accrual."
+    },
+    {
+      "id": "cw127b_c6",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the reversing journal entry for duplicate hosting accrual JE-1099 on DOC-7741: Dr 2110 Accrued Expenses $8,250.00 / Cr 5210 Hosting COGS $8,250.00, reconciling October 2026-10 5210 Hosting COGS from $17,950.00 unadjusted down to $9,700.00 audited ($8,250.00 paid AWS DOC-7741 plus $1,450.00 provisional Snowflake MTR-1031) and 2110 Accrued Expenses from $9,700.00 unadjusted down to $1,450.00 audited."
+    },
+    {
+      "id": "cw127b_c7",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Identifies the close worksheet control defect on CHKLIST-SAAS-10 where Subledger_Tie_Formula='=GL_1450_Balance - GL_1450_Balance' subtracts the $5,100.00 unadjusted 1450 GL balance from itself to report a false $0.00 variance (masking the $8,700.00 net understatement in 1450 vs. $13,800.00 audited and omitting 2400 Deferred Revenue) while Reviewer_Signoff_Receipt is null."
+    },
+    {
+      "id": "cw127b_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Refuses preparer self-attestation Preparer_Status='certified' on CHKLIST-SAAS-10 and assigns governed 2026-10 close status closed_with_estimates rather than certified, citing the pending signed November customer UAT completion on IMP-403 (2026-11-12) and the $1,450.00 provisional cloud usage meter true-up on MTR-1031 due by 2026-11-30."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Multi-Period SaaS Ratable Revenue, ASC 606 Contract Modifications & ASC 340-40 Commissions",
+    "subcategory": "Cumulative Ratable Recognition Ceiling, Mid-Term Distinct Seat Expansion Modification, Uncompleted UAT Implementation Milestone & ASC 340-40 Commission Capitalization/Impairment",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

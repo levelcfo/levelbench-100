@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_132_task_b",
+  "world_id": "world_132_profit_first_multibank_allocation_sweeps",
+  "task_name": "World 132 Task B  -  S-Corp Owner's Comp Off-Payroll Draws vs W-2 Wages, IRS Form 1040-ES vs Elected CA PTET & Post-Close Balance Sheet",
+  "prompt": "Review the QuickBooks Online chart of accounts, Relay five-account bank statements, posted October 2026 QuickBooks Online general ledger, and Gusto W-2 payroll and tax payment records for SummitPeak Digital Agency Inc. in profitfirst_oct2026_multibank_allocation_sweeps.xlsx. Audit all Owner's Comp checking disbursements (distinguishing W-2 officer payroll from off-payroll shareholder draws), Profit Hold bonus payouts, and Tax Hold checking disbursements (distinguishing personal shareholder federal estimated income tax payments from elected entity-level state Pass-Through Entity Tax payments); provide all required reclassifying journal entries; and reconcile unadjusted to audited October 2026 Officer Wages, tax expenses, total expenses, Net Income, Shareholder Distributions, and the October 31, 2026 post-close Balance Sheet.",
+  "context_files": [
+    "profitfirst_oct2026_multibank_allocation_sweeps.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw132b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Distinguishes Gusto W-2 officer payroll PR-1015 ($10,000.00 gross officer wages in 6110 + $765.00 employer FICA in 6120 = $10,765.00 cash draft) from off-payroll shareholder Zelle/ACH draws PAY-OC-101 ($14,000.00 on 2026-10-12) and PAY-OC-102 ($14,000.00 on 2026-10-27), reclassifying Dr 3310 Shareholder Distributions $28,000.00 / Cr 6110 Officer Wages & Salaries $28,000.00 so 6110 reconciles from $38,000.00 unadjusted to $10,000.00 audited W-2 wages."
+    },
+    {
+      "id": "cw132b_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reclassifies the 2026-10-15 $16,500.00 IRS EFTPS Form 1040-ES individual estimated tax payment (ACH-IRS-1040ES, applied to the sole shareholder's personal SSN) via Dr 3310 Shareholder Distributions $16,500.00 / Cr 6890 Corporate Income Tax Expense $16,500.00, reducing 6890 from $16,500.00 unadjusted to $0.00 audited."
+    },
+    {
+      "id": "cw132b_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Recognizes the 2026-10-15 $9,300.00 California FTB Form 3893 Pass-Through Entity Tax payment (ACH-CA-PTET, Entity FEIN, timely 2026 AB 150 / IRS Notice 2020-75 entity-level state income tax election) as an entity-level expense, reclassifying Dr 6895 State Pass-Through Entity Tax (PTET) Expense $9,300.00 / Cr 3310 Shareholder Distributions $9,300.00."
+    },
+    {
+      "id": "cw132b_c4",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Preserves the 2026-10-03 $3,000.00 Profit Hold shareholder bonus distribution (ACH-PF-DIST) in 3310 Shareholder Distributions ($0.00 adjustment) and preserves third-party operating expenses in 6310 ($38,500.00 across PUR-5501 $32,000.00 media and PUR-5503 $6,500.00 Gusto 1099 contractor) and 6410 ($14,200.00 PUR-5502 SaaS) with $0.00 reclassification."
+    },
+    {
+      "id": "cw132b_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles 3310 Shareholder Distributions from $12,300.00 unadjusted ($3,000.00 ACH-PF-DIST + $9,300.00 misposted ACH-CA-PTET) to $47,500.00 audited ($12,300.00 unadjusted + $28,000.00 off-payroll 1030 draws + $16,500.00 IRS Form 1040-ES - $9,300.00 CA PTET reclass = $47,500.00, comprising $28,000.00 + $16,500.00 + $3,000.00; net +$35,200.00 increase)."
+    },
+    {
+      "id": "cw132b_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles total October 2026 expenses from $119,965.00 unadjusted (6110 $38,000.00 + 6120 $765.00 + 6310 $38,500.00 + 6410 $14,200.00 + 6820 $12,000.00 + 6890 $16,500.00) to $72,765.00 audited (6110 $10,000.00 + 6120 $765.00 + 6310 $38,500.00 + 6410 $14,200.00 + 6895 $9,300.00; net -$47,200.00 reduction)."
+    },
+    {
+      "id": "cw132b_c7",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles October 2026 Net Income from $92,035.00 unadjusted ($212,000.00 unadjusted income less $119,965.00 unadjusted expenses) to $87,235.00 audited ($160,000.00 audited 4100 revenue less $72,765.00 audited total expenses; net -$4,800.00 change = -$40,000.00 Task A sweep fixes + $35,200.00 Task B draw/tax reclassifications)."
+    },
+    {
+      "id": "cw132b_c8",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Proves the post-close October 31, 2026 Balance Sheet tie-out: Total Assets $123,735.00 ($103,735.00 across the five Relay checking accounts + $20,000.00 1095 Cash in Transit  -  Interbank Sweeps + $0.00 1099) equals Total Liabilities $6,500.00 (2000 Accounts Payable) plus Total Stockholders' Equity $117,235.00 ($77,500.00 3100 Common Stock & Retained Earnings + $87,235.00 audited Net Income - $47,500.00 3310 Shareholder Distributions)."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Profit First Multi-Bank Allocation Sweeps, Off-Payroll Draws & Pass-Through Entity Tax (PTET)",
+    "subcategory": "Five-Account Relay Allocation Sweep P&L Elimination, Duplicate Bank-Feed Transfers, Month-End Straddling Sweep Cash-in-Transit, S-Corp W-2 vs Off-Payroll Draws & 1040-ES vs Elected CA PTET",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

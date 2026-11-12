@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_134_task_a",
+  "world_id": "world_134_undeposited_funds_cleanup_and_pto_bonus_accruals",
+  "task_name": "World 134 Task A  -  Undeposited Funds OBE Plug Reversal, Double-Counted Bank-Feed Revenue, Stripe Fee Netting & Deposit in Transit",
+  "prompt": "Review the October 2026 chart of accounts and Undeposited Funds and bank-feed deposit register for PrecisionValve Industrial Supply LLC in mfg_oct2026_undeposited_funds_and_pto_bonus.xlsx. Audit the month-end manual cleanup journal entry posted to Opening Balance Equity, reconcile all customer Receive Payment rows against the bank-feed deposits and processor fees, provide all required October 2026 correcting journal entries, and determine the audited October 31, 2026 balances of Undeposited Funds, Opening Balance Equity, Merchant Processing Fees, and Product Sales.",
+  "context_files": [
+    "mfg_oct2026_undeposited_funds_and_pto_bonus.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw134a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies JE-UF-99 (-$38,450.00 credited to 12000 Undeposited Funds against Dr 3900 Opening Balance Equity $38,450.00) as an improper equity cleanup plug and reverses it via Dr 12000 Undeposited Funds $38,450.00 / Cr 3900 Opening Balance Equity $38,450.00, restoring 3900 to $0.00 and pre-cleanup 12000 to $47,850.00."
+    },
+    {
+      "id": "cw134a_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Matches mobile check deposit batch DEP-1010 ($29,700.00 on 2026-10-10) to customer payments PMT-801 ($18,500.00) and PMT-802 ($11,200.00) and eliminates the duplicate bank-feed revenue via Dr 4100 Product Sales $29,700.00 / Cr 12000 Undeposited Funds $29,700.00."
+    },
+    {
+      "id": "cw134a_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Matches net Stripe payout DEP-1020 ($8,750.00 net cash on 2026-10-20) to customer payment PMT-803 ($9,000.00 gross less $250.00 Stripe fee) and records Dr 4100 Product Sales $8,750.00 and Dr 6540 Merchant Processing Fees $250.00 / Cr 12000 Undeposited Funds $9,000.00."
+    },
+    {
+      "id": "cw134a_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Explains why the bookkeeper's $38,450.00 net-cash plug misstated 12000 Undeposited Funds at $9,400.00 by $250.00 (omitting the $250.00 Stripe fee withheld from PMT-803's $9,000.00 gross receipt)."
+    },
+    {
+      "id": "cw134a_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Retains PMT-804 ($9,150.00 physical check received 2026-10-31 and cleared bank 2026-11-03) in 12000 Undeposited Funds as a genuine month-end deposit in transit, verifying audited 12000 Undeposited Funds = $9,150.00."
+    },
+    {
+      "id": "cw134a_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes total duplicate bank-feed revenue removed from 4100 Product Sales as $38,450.00 ($29,700.00 DEP-1010 + $8,750.00 DEP-1020), reconciling 4100 Product Sales from $278,450.00 unadjusted to $240,000.00 audited."
+    },
+    {
+      "id": "cw134a_c7",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles audited 6540 Merchant Processing Fees from $410.00 unadjusted to $660.00 (+$250.00 Stripe fee on PMT-803) while keeping 1010 Operating Checking unchanged at $164,200.00 ($0.00 bank-statement variance)."
+    },
+    {
+      "id": "cw134a_c8",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes the net Task A pre-accrual P&L impact as -$38,700.00 (-$38,450.00 duplicate revenue reversal and +$250.00 merchant fee expense)."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Undeposited Funds OBE Plug Reversal, Fee-Netted Duplicate Revenue & ASC 710 Vested PTO/Bonus Accruals",
+    "subcategory": "Cosmetic Opening Balance Equity Plug Reversal, Unmatched Bank-Feed Sales Double-Count, Stripe Fee-Netted Payout Reconciliation, Vested Vacation Pay-Rate & Employer FICA Rollforward & CA Non-Vesting Sick Exclusion",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

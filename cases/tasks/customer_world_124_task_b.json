@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_124_task_b",
+  "world_id": "world_124_construction_retainage_and_aia_poc_cutoffs",
+  "task_name": "World 124 Task B  -  Subcontractor Retainage Gross-Up, Unbilled Field Ticket Cutoff, Underbilled WIP Asset & Gross Balance Sheet Presentation",
+  "prompt": "Review the chart of accounts and ASC 606 construction close policy, contracts, October 2026 subcontractor pay applications and superintendent-signed field tickets, customer AIA progress billings, posted October general ledger entries, and the close checklist log for Ironclad Mechanical Contractors LLC in ironclad_oct2026_aia_wip_and_retainage_close.xlsx. Audit the data center cooling-loop contract for subcontractor retainage, unbilled month-end field-ticket cutoffs, cost-to-cost percentage of completion, and under/over-billing adjustments; evaluate the preparer's Balance Sheet WIP netting proposal and close checklist sign-off status across all active contracts; reconcile company-wide October recognized revenue, installed job COGS, and ending retainage; and provide all required adjusting and Day-1 reversing journal entries.",
+  "context_files": [
+    "ironclad_oct2026_aia_wip_and_retainage_close.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw124b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies that Apex Sheetmetal Inc. AIA progress bill SUB-402-01 ($90,000.00 gross completed duct fabrication, 10% retainage withheld = $9,000.00, $81,000.00 net payable) was booked on BILL-402-SUB1 at only $81,000.00 in 5120 Subcontractor COGS, omitting $9,000.00 of subcontractor retainage and understating JOB-402 cost."
+    },
+    {
+      "id": "cw124b_c2",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the adjusting journal entry for SUB-402-01: Dr 5120 Subcontractor COGS $9,000.00 / Cr 2020 Subcontractor Retainage Payable $9,000.00, bringing recognized SUB-402-01 subcontractor cost to $90,000.00 while preserving $81,000.00 current trade AP in 2000."
+    },
+    {
+      "id": "cw124b_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Accrues unbilled October 30-31 crane rigging field ticket FT-402-19 ($8,000.00 Titan Crane & Rigging LLC signed by the site superintendent on 2026-10-31, vendor invoice received 2026-11-04 and unbooked at 2026-10-31) via Dr 5120 Subcontractor COGS $8,000.00 / Cr 2110 Accrued Subcontractor Job Costs $8,000.00, paired with a 2026-11-01 Day-1 reversing entry of $8,000.00."
+    },
+    {
+      "id": "cw124b_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes true October 2026 installed job cost on JOB-402 (Metro Data Center Cooling Loop, $500,000.00 approved contract price and $400,000.00 total estimated contract cost, $0.00 prior activity) as $160,000.00 ($62,000.00 direct labor/materials in 5100 + $90,000.00 gross SUB-402-01 + $8,000.00 FT-402-19 accrual), exact cost-to-cost POC as 40.00% ($160,000.00 / $400,000.00), and October 2026 earned revenue as $200,000.00 (40.00% of $500,000.00)."
+    },
+    {
+      "id": "cw124b_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Verifies that JOB-402 AIA Pay App AIA-402-01 was properly split at $165,000.00 gross ($148,500.00 in 1200 Progress Accounts Receivable and $16,500.00 in 1220 Customer Retainage Receivable) and computes a $35,000.00 underbilled WIP position ($200,000.00 cumulative earned revenue minus $165,000.00 cumulative gross AIA billed)."
+    },
+    {
+      "id": "cw124b_c6",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the 2026-10-31 underbilling WIP adjusting entry on JOB-402: Dr 1280 Costs and Estimated Earnings in Excess of Billings (Contract Asset) $35,000.00 / Cr 4150 Over/Under-Billing WIP Revenue Adjustment $35,000.00 (paired with a 2026-11-01 Day-1 reversal), bringing total company-wide adjusted October 2026 recognized revenue across JOB-401 ($170,000.00) and JOB-402 ($200,000.00) to $370,000.00 and total installed job COGS to $296,000.00 ($72,500.00 total ending 1220 Customer Retainage Receivable)."
+    },
+    {
+      "id": "cw124b_c7",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Refuses the bookkeeper's proposal on CHKLIST-WIP-10 (Workpaper_Target_Formula='=Net_WIP_Balance') to net JOB-402's $35,000.00 Contract Asset (1280) against JOB-401's $50,000.00 Contract Liability (2420) into a single $15,000.00 net liability, presenting $35,000.00 gross in 1280 Current Assets and $50,000.00 gross in 2420 Current Liabilities under ASC 606-10-45-1."
+    },
+    {
+      "id": "cw124b_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Refuses preparer self-attestation on CHKLIST-WIP-10 (Reviewer_Signoff_Receipt is null and Workpaper_Target_Formula='=Net_WIP_Balance') and assigns close status closed_with_estimates rather than certified because open POC estimated total contract costs ($680,000.00 on JOB-401 and $400,000.00 on JOB-402) and the unbilled FT-402-19 cutoff accrual (2026-11-30 true-up) remain open."
+    }
+  ],
+  "metadata": {
+    "domain": "Fractional_COO",
+    "category": "Construction AIA G702/G703 Retainage, Cost-to-Cost POC & Gross WIP Cutoffs",
+    "subcategory": "ASC 606 Cost-to-Cost POC, Uninstalled Yard Materials Exclusion, Unsigned Change Order Guard, Customer/Subcontractor 10% Retainage Gross-Up, Field-Ticket Cutoff & Gross Contract Asset/Liability Presentation",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

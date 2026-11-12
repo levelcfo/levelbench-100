@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_130_task_a",
+  "world_id": "world_130_payroll_completeness_horizon_and_cohort_cutoff",
+  "task_name": "World 130 Task A  -  Split Payroll Completeness Horizon (Supplement vs. Measured-Through) & Multi-Cohort Service-Period Cutoff",
+  "prompt": "Review the chart of accounts, QBO completeness and detail supplement status exports, payroll provider run register and daily shift timecards, and synced general ledger postings for VascularCraft BioDevices LLC in meddevice_oct2026_payroll_completeness_horizon.xlsx for the October 2026 close. Determine the effective verified ledger completeness horizon across header completeness and detail supplement coverage, evaluate all prior-period accrual reversals, mid-month payroll postings, and period-end service-period cutoffs across the cleanroom hourly manufacturing and lagged R&D clinical engineering payroll cohorts, reconcile verified full-month October cleanroom payroll expense, provide any supported October 31 accrual and November 1 auto-reversal journal entries (excluding employee withholdings from employer expense), and place any payroll run whose settlement date falls beyond the verified completeness horizon on a named completeness_horizon_hold with its exact candidate exposure.",
+  "context_files": [
+    "meddevice_oct2026_payroll_completeness_horizon.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw130a_c1",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Determines from QBO_Completeness_Supplement (sync 2026-11-07T15:00:00Z) that although qbo_ledger_completeness reports measured_through='2026-11-30', GL_Detail_Supplement_And_Billable_Lines reports verified_through='2026-11-07' (status='incomplete_after_2026-11-07' across 1,918 API-unavailable detail rows), bounding the effective verified ledger completeness horizon at 2026-11-07 rather than 2026-11-30."
+    },
+    {
+      "id": "cw130a_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Verifies that Cleanroom Hourly Cohort A straddle run PR-2026-21 (service 2026-10-19 to 2026-11-01, check date 2026-11-05 <= 2026-11-07 verified horizon) has $0.00 native QBO payroll journal entries through 2026-11-07 (only raw bank debit ACH-1105 for $27,456.00 in 2140 Payroll Clearing) and computes the exact October 19-31 slice across 10 scheduled cleanroom shifts (1,200.0 hours at $32.00/hr out of 1,320.0 total run hours / $42,240.00 total gross wages, excluding Sunday 2026-11-01 shift of $3,840.00 wages and $293.76 employer tax) as $38,400.00 gross wages plus $2,937.60 employer payroll taxes at 7.65% = $41,337.60 total October employer accrual."
+    },
+    {
+      "id": "cw130a_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Excludes PR-2026-21 employee withholdings totaling $14,784.00 ($6,336.00 employee 401(k) and medical withholdings plus $8,448.00 employee income and FICA tax withholdings, which reduce $42,240.00 run gross wages to the $27,456.00 net direct deposit ACH-1105) from employer payroll expense, confirming must not include $14,784.00 employee withholdings in employer expense."
+    },
+    {
+      "id": "cw130a_c4",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the 2026-10-31 cutoff accrual journal entry for PR-2026-21: Dr 6110 Gross Wages $38,400.00 and Dr 6120 Employer Payroll Taxes $2,937.60 / Cr 2130 Accrued Payroll & Taxes $41,337.60, paired with the 2026-11-01 Day-1 auto-reversal entry Dr 2130 Accrued Payroll & Taxes $41,337.60 / Cr 6110 Gross Wages $38,400.00 and Cr 6120 Employer Payroll Taxes $2,937.60."
+    },
+    {
+      "id": "cw130a_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Verifies Cohort A prior-period reversal JE-0991 on 2026-10-01 (Dr 2130 $15,286.30 / Cr 6110 $14,200.00 and Cr 6120 $1,086.30 against PR-2026-18's $20,400.00 wages and $1,560.60 employer tax on JE-1018, leaving $6,200.00 wages and $474.30 employer tax for October 1-4) plus mid-month PR-2026-20 on JE-1062 ($41,000.00 wages and $3,136.50 employer tax) and PR-2026-21's October accrual ($38,400.00 wages and $2,937.60 employer tax), reconciling Cohort A full-month October expense to $85,600.00 in 6110 Gross Wages and $6,548.40 in 6120 Employer Payroll Taxes ($92,148.40 total Cohort A employer cost)."
+    },
+    {
+      "id": "cw130a_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Evaluates Lagged Semimonthly R&D Cohort B prior-period reversal JE-0992 on 2026-10-01 (Dr 2130 $20,991.75 / Cr 6110 $19,500.00 and Cr 6120 $1,491.75, which nets against PR-2026-17's JE-1034 on 2026-10-12 to $0.00 October impact) alongside first-half October run PR-2026-19 on JE-1071 ($46,000.00 wages and $3,519.00 employer tax) and second-half October run PR-2026-22 (service 2026-10-16 to 2026-10-31, $46,000.00 gross wages plus $3,519.00 employer tax = $49,519.00 candidate employer accrual)."
+    },
+    {
+      "id": "cw130a_c7",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Identifies that PR-2026-22's scheduled check and posting date of 2026-11-12 falls past the 2026-11-07 verified supplement completeness horizon (2026-11-12 > 2026-11-07), rendering absence of a native QBO payroll journal on 2026-11-12 unmeasured despite qbo_ledger_completeness reporting measured_through='2026-11-30'."
+    },
+    {
+      "id": "cw130a_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Fails closed by placing PR-2026-22 on a named completeness_horizon_hold for $49,519.00 ($46,000.00 wages + $3,519.00 employer tax), refusing both unverified accrual posting and silent omission until GL_Detail_Supplement_And_Billable_Lines is synced and verified through at least 2026-11-12."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Payroll Verified Completeness Horizon, Multi-Cohort Service-Period Cutoff & Equal-Dollar Pool Matching",
+    "subcategory": "Detail Supplement vs Header Completeness Horizon Clamping, Overlapping Cohort Wage/FICA Accrual, Equal-Dollar Gusto ACH Pool Capacity & Unverified Settlement Hold",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

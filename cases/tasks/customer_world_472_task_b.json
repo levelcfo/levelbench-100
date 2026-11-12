@@ -1,0 +1,40 @@
+{
+  "task_id": "cw_472_task_b",
+  "world_id": "world_472_roofing_bank_feed_and_lender_draws",
+  "task_name": "World 472 Task B  -  Un-Invoiced Won Proposal 50% Consumer Financing Draw & Round-Loan Dealer-Fee Hold",
+  "prompt": "Evaluate the remaining unmatched third-party consumer financing wires in `desert_crest_bank_feed_and_crm_nov2026.xlsx` against the open Accounts Receivable and un-invoiced signed Won Proposals schedules. Reconstruct the implied progress-draw percentage or round-loan dealer-fee schedules, determine which un-invoiced CRM job corresponds to the custodial financing draw, and state the required operational and GAAP controls to prevent duplicate revenue recognition.",
+  "context_files": [
+    "desert_crest_bank_feed_and_crm_nov2026.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw472b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Holds the 2 third-party financing wires totaling $26,430.00 ($17,500.00 BF-1104B GreenSky Custodial + $8,930.00 BF-1106C Service Finance) out of the $67,435.36 total pending bank-feed deposits."
+    },
+    {
+      "id": "cw472b_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies BF-1104B ($17,500.00) as a 49.99% (~50% Stage 1 progress draw, $3.14 rounding delta vs. $17,503.14) against T. Denham's un-invoiced signed Won Proposal on JOB-11870848 ($35,006.28, 0 CRM invoices)."
+    },
+    {
+      "id": "cw472b_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes the exact round-loan dealer-fee hypotheses on BF-1106C ($8,930.00): 6.00% fee ($570.00) on a $9,500.00 gross loan or 5.00% fee ($470.00) on a $9,400.00 gross loan."
+    },
+    {
+      "id": "cw472b_c4",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Explains that operations must generate the official CRM invoice on JOB-11870848 before matching (never fabricating an un-numbered QBO invoice or booking directly to Sales, which would duplicate $35,006.28 when nightly CRM sync imports the invoice)."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Bank-Feed Multi-Source Cash Application, Commercial Property-Address Matching & Pre-Invoice Financing Draws",
+    "subcategory": "Commercial LLC Check Street-Address Matching, Pre-Match Missing CRM Invoice Sync & Un-Invoiced Won Proposal 50% Financing-Draw Hold",
+    "estimated_completion_hours": 2.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

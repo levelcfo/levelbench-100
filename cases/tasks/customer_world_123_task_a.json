@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_123_task_a",
+  "world_id": "world_123_multientity_fx_intercompany_elimination_chain",
+  "task_name": "World 123 Task A  -  Monetary IC Loan Remeasurement, Management Fee Avg-vs-Spot Translation & Day-31 Wire-in-Transit",
+  "prompt": "Review the foreign-exchange rate table, entity functional-currency and consolidation policies, chart of accounts, and October 2026 intercompany loan, management fee, component sales, and wire schedules for Helios Photonics Group (Helios US Inc., Helios GmbH, and Helios Canada Ltd.) in helios_oct2026_multientity_fx_ic_consolidation.xlsx. Audit all foreign-currency monetary remeasurements, monthly average versus closing spot translations, bank wire fees, and month-end cash-in-transit cutoffs; reconcile total three-entity intercompany receivables and payables from unadjusted to audited balances; and provide all required adjusting journal entries.",
+  "context_files": [
+    "helios_oct2026_multientity_fx_ic_consolidation.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw123a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Translates Helios GmbH's EUR 100,000.00 short-term loan receivable IC-LOAN-401 in 1350 Intercompany Due From at the 2026-10-31 closing spot rate of 1.1000 to $110,000.00, identifying a $2,000.00 discrepancy against Helios US Inc.'s unadjusted 2350 Intercompany Due To balance of $108,000.00 booked at the 2026-10-01 historical spot rate of 1.0800."
+    },
+    {
+      "id": "cw123a_c2",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the 2026-10-31 ASC 830 monetary remeasurement journal entry on Helios US Inc. for IC-LOAN-401: Dr 7910 Foreign Currency Remeasurement Gain/Loss $2,000.00 / Cr 2350 Intercompany Due To $2,000.00, remeasuring Helios US Inc.'s 2350 liability to $110,000.00."
+    },
+    {
+      "id": "cw123a_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Verifies that monthly management fee INV-IC-1026 ($32,550.00 billed by Helios US Inc. in 4800 Intercompany Management Fee Revenue and EUR 30,000.00 booked by Helios GmbH in 6800 Intercompany Management Fee Expense at the 1.0850 October monthly average rate) translates to $32,550.00 in consolidated P&L with $0.00 revenue-vs-expense elimination variance, whereas unadjusted EUR 30,000.00 in GmbH 2350 translates at the 1.1000 closing spot rate to $33,000.00 ($450.00 overstatement)."
+    },
+    {
+      "id": "cw123a_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Remeasures Helios GmbH's unpaid $32,550.00 USD-denominated payable on INV-IC-1026 at the 2026-10-31 closing spot rate of 1.1000 to EUR 29,590.91, recognizing an FX remeasurement gain of EUR 409.09 on Helios GmbH's books (Dr 2350 Intercompany Due To EUR 409.09 / Cr 7910 Foreign Currency Remeasurement Gain/Loss EUR 409.09) that translates at the 1.0850 monthly average rate to $443.86 in consolidated P&L and aligns GmbH's translated 2350 balance to $32,550.00."
+    },
+    {
+      "id": "cw123a_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes net consolidated 2026-10 P&L expense in 7910 Foreign Currency Remeasurement Gain/Loss across Helios US Inc. ($2,000.00 loss) and Helios GmbH ($443.86 translated gain) as $1,556.14 net FX remeasurement loss."
+    },
+    {
+      "id": "cw123a_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Decomposes Helios Canada Ltd.'s 2026-10-31 outgoing bank debit WIRE-IC-1031 ($15,045.00 debited entirely to 2350 Intercompany Due To) into $15,000.00 intercompany wire principal and $45.00 bank wire fee, providing the reclassification entry on Helios Canada Ltd.: Dr 6440 Bank & Wire Fees $45.00 / Cr 2350 Intercompany Due To $45.00 (restoring Canada's 2350 balance from $44,955.00 unadjusted to $45,000.00)."
+    },
+    {
+      "id": "cw123a_c7",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Records the 2026-10-31 wire in transit on Helios US Inc. for WIRE-IC-1031 (settled at US bank on 2026-11-02): Dr 1360 Cash in Transit $15,000.00 / Cr 1350 Intercompany Due From $15,000.00, reducing Helios US Inc.'s 1350 receivable from Canada from $60,000.00 to $45,000.00 while retaining $15,000.00 in consolidated 1360 Cash in Transit."
+    },
+    {
+      "id": "cw123a_c8",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles total three-entity intercompany balances at 2026-10-31 from $202,550.00 unadjusted 1350 vs. $185,955.00 unadjusted 2350 ($16,595.00 pre-audit imbalance) to $187,550.00 audited 1350 ($77,550.00 US + $110,000.00 GmbH) and $187,550.00 audited 2350 ($110,000.00 US + $32,550.00 GmbH + $45,000.00 Canada), eliminating $187,550.00 to $0.00 in consolidation."
+    }
+  ],
+  "metadata": {
+    "domain": "Fractional_CFO",
+    "category": "Multi-Entity FX Remeasurement, Translation & Intercompany Elimination Chain",
+    "subcategory": "ASC 830 Closing Monetary FX vs Average Management Fee Translation, Intercompany Wire Fee & Cash-in-Transit Cutoff, ASC 810 Unrealized Inventory Markup & Self-Referencing Worksheet Refusal",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

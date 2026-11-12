@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_132_task_a",
+  "world_id": "world_132_profit_first_multibank_allocation_sweeps",
+  "task_name": "World 132 Task A  -  Profit First Multi-Bank Sweep Revenue/Expense Elimination, Duplicate Feed Transfer & Month-End In-Transit Cutoff",
+  "prompt": "Review the QuickBooks Online chart of accounts, the five Relay checking account statements, and the posted October 2026 QuickBooks Online general ledger for SummitPeak Digital Agency Inc. (a single-shareholder S-Corporation operating a five-account Profit First cash sweep structure) in profitfirst_oct2026_multibank_allocation_sweeps.xlsx. Reconcile true October 2026 customer retainer collections across the allocation batches; audit every interbank sweep and bank-feed transfer posting for revenue or expense double-counting, duplicate bank-feed transfers, and month-end straddling sweep in-transit cutoffs; provide all required correcting journal entries; and reconcile all five QuickBooks bank accounts plus cash in transit to their October 31, 2026 Relay statement ending balances.",
+  "context_files": [
+    "profitfirst_oct2026_multibank_allocation_sweeps.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw132a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles October 2026 true customer retainer collections in 1010 Relay Income Checking to $160,000.00 ($80,000.00 Oct 10 batch from DEP-1001 $48,000.00 + DEP-1002 $32,000.00; $60,000.00 Oct 25 batch from DEP-1003 $35,000.00 + DEP-1004 $25,000.00; and $20,000.00 Oct 31 batch from DEP-1005) and verifies the 5% / 30% / 15% / 50% Profit First sweep allocations totaling $160,000.00 ($8,000.00 Profit, $48,000.00 Owner's Comp, $24,000.00 Tax Hold, and $80,000.00 OpEx)."
+    },
+    {
+      "id": "cw132a_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Eliminates the $40,000.00 phantom retainer revenue and uncategorized asset on the 2026-10-10 50% OpEx sweep TXN-PF-10A (FEED-1010-10A and FEED-1050-10A) via Dr 4100 Agency Retainer Revenue $40,000.00 / Cr 1099 Uncategorized Asset $40,000.00, reducing 4100 Agency Retainer Revenue from $200,000.00 unadjusted to $160,000.00 audited and clearing 1099 Uncategorized Asset from $40,000.00 to $0.00."
+    },
+    {
+      "id": "cw132a_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Eliminates both phantom P&L legs on the 2026-10-10 15% Tax Hold sweep TXN-PF-10B (FEED-1010-10B and FEED-1040-10B) via Dr 4900 Other Income $12,000.00 / Cr 6820 Taxes & Licenses $12,000.00, reducing both 4900 Other Income and 6820 Taxes & Licenses from $12,000.00 unadjusted to $0.00 audited."
+    },
+    {
+      "id": "cw132a_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies that the 2026-10-25 5% Profit sweep TXN-PF-25P ($3,000.00) was added twice as separate bank-feed transfers (JE-XFER-25A and JE-XFER-25B, booking $6,000.00 total) and reverses the duplicate transfer via Dr 1010 Relay Income Checking $3,000.00 / Cr 1020 Relay Profit Hold Checking $3,000.00."
+    },
+    {
+      "id": "cw132a_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Records the 2026-10-31 month-end straddling sweep cutoff for TXN-PF-31S ($20,000.00 cleared on 1010 statement on 2026-10-31 across $1,000.00 #0102, $6,000.00 #0103, $3,000.00 #0104, and $10,000.00 #0105, settling destination accounts on 2026-11-02) via Dr 1095 Cash in Transit  -  Interbank Sweeps $20,000.00 / Cr 1010 Relay Income Checking $20,000.00, with $0.00 premature destination bank debits on 2026-10-31."
+    },
+    {
+      "id": "cw132a_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles 1010 Relay Income Checking from $17,000.00 unadjusted to $0.00 audited (+$3,000.00 duplicate transfer reversal less $20,000.00 TXN-PF-31S sweep) and 1020 Relay Profit Hold Checking from $19,000.00 unadjusted to $16,000.00 audited (-$3,000.00 duplicate transfer reversal), tying 100% to their October 31, 2026 Relay statement ending balances."
+    },
+    {
+      "id": "cw132a_c7",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Confirms $0.00 bank-balance adjustments on 1030 Relay Owner's Comp Checking ($18,235.00), 1040 Relay Tax Hold Checking ($17,200.00), and 1050 Relay OpEx Checking ($52,300.00), reconciling all five Relay checking accounts ($103,735.00 combined October 31 statement ending cash) plus 1095 Cash in Transit  -  Interbank Sweeps ($20,000.00) to $123,735.00 consolidated cash and cash in transit."
+    },
+    {
+      "id": "cw132a_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Quantifies the net Task A interbank sweep P&L adjustment as -$52,000.00 total reported income (from $212,000.00 unadjusted across 4100 $200,000.00 + 4900 $12,000.00 to $160,000.00 true revenue), -$12,000.00 in 6820 Taxes & Licenses, and -$40,000.00 net reduction in pre-Task-B Net Income, while preserving all matched interbank transfers (JE-XFER-10P, JE-XFER-10C, JE-XFER-25A, JE-XFER-25C, JE-XFER-25T, JE-XFER-25X)."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Profit First Multi-Bank Allocation Sweeps, Off-Payroll Draws & Pass-Through Entity Tax (PTET)",
+    "subcategory": "Five-Account Relay Allocation Sweep P&L Elimination, Duplicate Bank-Feed Transfers, Month-End Straddling Sweep Cash-in-Transit, S-Corp W-2 vs Off-Payroll Draws & 1040-ES vs Elected CA PTET",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

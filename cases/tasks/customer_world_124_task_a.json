@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_124_task_a",
+  "world_id": "world_124_construction_retainage_and_aia_poc_cutoffs",
+  "task_name": "World 124 Task A  -  AIA G702/G703 Cost-to-Cost POC, Uninstalled Stored Materials Reclass, Unsigned Change Order Exclusion & Customer Retainage Gross-Up",
+  "prompt": "Review the chart of accounts and ASC 606 construction close policy, executed contracts and change orders, October 2026 job cost and warehouse delivery records, AIA progress pay applications, and posted October general ledger entries for Ironclad Mechanical Contractors LLC in ironclad_oct2026_aia_wip_and_retainage_close.xlsx. Audit the hospital chiller plant contract for approved contract price, stored materials vs. site-installed job costs, cost-to-cost percentage of completion, customer retainage on progress billings, prior-period WIP reversal, and month-end over/under-billing cutoff; compute October and cumulative earned revenue; and provide all required adjusting and Day-1 reversing journal entries.",
+  "context_files": [
+    "ironclad_oct2026_aia_wip_and_retainage_close.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw124a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Determines the ASC 606 approved contract price on JOB-401 (Civic Hospital Chiller Plant) as $850,000.00 ($800,000.00 executed base contract BASE-401 plus $50,000.00 signed change order CO-401-1) with $680,000.00 total estimated contract cost, excluding unsigned pending change order CO-401-2 ($40,000.00 with Customer_Signoff='PENDING_UNSIGNED') from the $890,000.00 PM spreadsheet total."
+    },
+    {
+      "id": "cw124a_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies that October 2026 postings in 5100 Direct Job Labor & Installed Materials COGS on JOB-401 ($170,000.00 unadjusted) include $34,000.00 of generic copper pipe bundles under PO-MAT-908 (BILL-MAT-908 delivered 2026-10-30 to the off-site warehouse with Site_Install_Status='UNINSTALLED_YARD_STOCK') alongside $136,000.00 of site-installed labor and piping, and excludes $34,000.00 from the POC cost numerator."
+    },
+    {
+      "id": "cw124a_c3",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the reclassifying journal entry for PO-MAT-908 (BILL-MAT-908): Dr 1260 Uninstalled Stored Materials Inventory $34,000.00 / Cr 5100 Direct Job Labor & Installed Materials COGS $34,000.00, reducing October 2026 installed COGS on JOB-401 to $136,000.00."
+    },
+    {
+      "id": "cw124a_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes cumulative installed cost on JOB-401 through 2026-10-31 as $408,000.00 ($272,000.00 prior cumulative installed cost through 2026-09-30 plus $136,000.00 true October 2026 installed cost), exact cost-to-cost POC as 60.00% ($408,000.00 / $680,000.00), cumulative earned revenue as $510,000.00 (60.00% of $850,000.00), and October 2026 earned revenue as $170,000.00 ($510,000.00 less $340,000.00 prior cumulative earned revenue)."
+    },
+    {
+      "id": "cw124a_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies that INV-401-04 recorded only $189,000.00 net current progress AR from AIA-401-04 ($210,000.00 gross progress billing less 10% retainage of $21,000.00), records Dr 1220 Customer Retainage Receivable $21,000.00 / Cr 4100 Construction Contract Revenue $21,000.00, and reconciles JOB-401 October gross progress billings to $210,000.00 and cumulative gross AIA billings to $560,000.00 ($350,000.00 prior plus $210,000.00 October)."
+    },
+    {
+      "id": "cw124a_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Compares JOB-401 cumulative earned revenue ($510,000.00) against cumulative gross AIA progress billings ($560,000.00) to determine a -$50,000.00 overbilled WIP position at 2026-10-31, requiring a $50,000.00 ending credit balance in 2420 Billings in Excess of Costs and Estimated Earnings (Contract Liability)."
+    },
+    {
+      "id": "cw124a_c7",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Accounts for the $10,000.00 Day-1 reversal JE-2026-1001-REV on 2026-10-01 (which reversed the $10,000.00 2026-09-30 overbilling from $340,000.00 prior earned vs $350,000.00 prior gross billed by debiting 2420 and crediting 4150 $10,000.00) and books the 2026-10-31 overbilling deferral Dr 4150 Over/Under-Billing WIP Revenue Adjustment $50,000.00 / Cr 2420 Billings in Excess of Costs and Estimated Earnings (Contract Liability) $50,000.00, reconciling net October 2026 recognized revenue on JOB-401 to $170,000.00 ($210,000.00 in 4100 + $10,000.00 Oct 1 credit in 4150 - $50,000.00 Oct 31 debit in 4150)."
+    },
+    {
+      "id": "cw124a_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Pairs the $50,000.00 2026-10-31 overbilling deferral on JOB-401 with a 2026-11-01 Day-1 reversing entry (Dr 2420 $50,000.00 / Cr 4150 $50,000.00) and refuses to inflate POC progress with uninstalled generic yard inventory or recognize revenue on unsigned change order CO-401-2."
+    }
+  ],
+  "metadata": {
+    "domain": "Fractional_COO",
+    "category": "Construction AIA G702/G703 Retainage, Cost-to-Cost POC & Gross WIP Cutoffs",
+    "subcategory": "ASC 606 Cost-to-Cost POC, Uninstalled Yard Materials Exclusion, Unsigned Change Order Guard, Customer/Subcontractor 10% Retainage Gross-Up, Field-Ticket Cutoff & Gross Contract Asset/Liability Presentation",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

@@ -1,0 +1,40 @@
+{
+  "task_id": "cw_116_task_a",
+  "world_id": "world_116_meddevice_cmo_lhr_billing",
+  "task_name": "World 116 Task A  -  Medical Device CMO LHR-to-Invoice Quantity, Testing Add-On & Sub-Lot Material Reconciliation",
+  "prompt": "Perform a comprehensive Accounting & CFO Close review using the world files (`cmo_lhr_invoicing_and_qc_archive_audit_2026.xlsx`). Identify all accounting, reconciliation, cutoff, or operational variances; state the exact dollar figures, percentages, and transaction/journal/work-order IDs; propose any required correcting journal entries (with exact Debit and Credit accounts); and enforce all close certification guardrails.",
+  "context_files": [
+    "cmo_lhr_invoicing_and_qc_archive_audit_2026.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw116a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles Lot 011926B (NeuroVasc Corp): 17 FG units at $285.00 ($4,845.00) plus paper-only LHR testing pulls of 3 LAL samples at $145.00 ($435.00) and 2 LotRT samples at $210.00 ($420.00) for a true billable total of $5,700.00, catching an $855.00 (15.00%) ERP under-billing variance."
+    },
+    {
+      "id": "cw116a_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles Lot 070826H (VentricFlow Inc): 24 Good FG units at $310.00 ($7,440.00), 3 Scrap units on a mandatory $0.00-rate line (27 total build units), plus $1,323.00 of billable CMO-supplied sub-lot materials (RJ-45110-1 54 units at $18.50 = $999.00 and RJ-45110-2 27 units at $12.00 = $324.00) while excluding $1,215.00 of customer-consigned CMP-99012 hubs, for a total invoice of $8,763.00."
+    },
+    {
+      "id": "cw116a_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles Lot 031826A (SinglePass Med) across base LHR and Rework PD 157: 18 initial good FG + 1 rework-recovered FG = 19 net billable FG units at $260.00 ($4,940.00) and 1 final scrap unit, catching a -$260.00 over-billing adjustment versus the 20-unit ($5,200.00) unadjusted ERP draft."
+    },
+    {
+      "id": "cw116a_c4",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Enforces the CMO source-packet governance rule: never certify or release a customer invoice from ERP headline quantities alone without pinning the SHA-256 LHR/CoC packet, reading sibling sub-lot material packets (RJ-45110-1/2), and reconciling companion Rework/PD packets."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Accounting Close",
+    "subcategory": "World 116 Task A  -  Medical Device CMO LHR-to-Invoice Quantity, Testing Add-On & Sub-Lot Material Reconciliation",
+    "estimated_completion_hours": 2.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

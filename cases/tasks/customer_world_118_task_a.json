@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_118_task_a",
+  "world_id": "world_118_trades_payroll_cutoff_and_precedent_draws",
+  "task_name": "World 118 Task A  -  Cross-Month Payroll Service-Period Cutoff, Single-Use Estimate Consumption & Provider Funding Reconciliation",
+  "prompt": "Review the Chart of Accounts and close policy, payroll provider run export, and posted GL payroll journal lines in ironwood_trades_oct2026_close_sources.xlsx. Reconcile prior-month accrual consumption and any unaccrued prior-period wage and employer tax shares across overlapping runs, compute the month-end straddling payroll accrual from calendar weekdays, and distinguish scheduled funding notices and employee tax withholdings from settled cash and employer expense.",
+  "context_files": [
+    "ironwood_trades_oct2026_close_sources.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw118a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies prior-period reversal pair JE-2026-0930 / JE-2026-1001 ($12,312.00 total: $11,400.00 wages in 5110 and $912.00 employer tax in 5130) and consumes it once against PR-2026-1002A (8 of 10 Mon-Fri weekdays = 80.00% in 2026-09)."
+    },
+    {
+      "id": "cw118a_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes combined 2026-09 service-period payroll across PR-2026-1002A and PR-2026-1002B as $18,250.00 wages and $1,460.00 employer tax ($19,710.00 total), isolating the unaccrued $7,398.00 2026-09 share on PR-2026-1002B ($6,850.00 wages and $548.00 employer tax)."
+    },
+    {
+      "id": "cw118a_c3",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Refuses to reuse JE-2026-0930 across both overlapping runs and records the comparative prior-period cutoff true-up (2026-09: Dr 5110 $6,850.00, Dr 5130 $548.00, Cr 2120 $7,398.00; 2026-10: Dr 2120 $7,398.00, Cr 5110 $6,850.00, Cr 5130 $548.00) to remove $7,398.00 of overstated 2026-10 payroll expense."
+    },
+    {
+      "id": "cw118a_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Derives the 60.00% (6 of 10 Mon-Fri weekdays: Oct 23 and Oct 26-30 vs. Nov 2-5) 2026-10 service-period proration on straddling run PR-2026-1104 ($28,500.00 gross wages and $2,450.00 employer tax)."
+    },
+    {
+      "id": "cw118a_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Records the 2026-10 straddling payroll accrual on PR-2026-1104 via Dr 5110 Direct Field Labor $17,100.00, Dr 5130 Employer Payroll Taxes $1,470.00, and Cr 2120 Accrued Payroll & Payroll Taxes $18,570.00."
+    },
+    {
+      "id": "cw118a_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Excludes the $4,120.00 employee tax withholding on PR-2026-1104 from employer tax expense so total run employer cost is $30,950.00 rather than $35,070.00."
+    },
+    {
+      "id": "cw118a_c7",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Verifies that run employer tax expense on PR-2026-1104 is $2,450.00 rather than the $6,570.00 combined tax draft."
+    },
+    {
+      "id": "cw118a_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Treats provider notice PAY-2026-1104 ($30,950.00 scheduled 2026-11-06 funding) as an unpaid month-end accrual paired with a 2026-11-01 reversal rather than a settled 2026-10 bank cash debit."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Commercial Trades Payroll Service-Period Cutoff, Precedent Owner Draws & WIP / Deposit Liability",
+    "subcategory": "Shared Cohort Payroll Accrual Consumption, Weekday Straddling Proration, Employee Withholding Guard & Precedent Draw vs WIP Recognition",
+    "estimated_completion_hours": 2.5
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

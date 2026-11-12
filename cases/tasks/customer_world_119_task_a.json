@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_119_task_a",
+  "world_id": "world_119_ecommerce_payout_fx_and_sales_tax_cutoff",
+  "task_name": "World 119 Task A  -  Shopify Processor Payout Clearing vs. Duplicate Bank-Feed Revenue & EUR/USD FX Intercompany Loan Mirror",
+  "prompt": "Perform a comprehensive Omnichannel E-Commerce Payout Clearing, EUR/USD FX Settlement & Multi-State Sales Tax Cutoff review using the world files (`lumina_oct2026_payout_fx_and_salestax_close.xlsx`). Identify all accounting, reconciliation, cutoff, or operational variances; state the exact dollar figures, percentages, and transaction/journal/work-order IDs; propose any required correcting journal entries (with exact Debit and Credit accounts); and enforce all close certification guardrails.",
+  "context_files": [
+    "lumina_oct2026_payout_fx_and_salestax_close.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw119a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes October 2026 tax-exclusive Gross D2C Product Revenue (4010) across PAY-8841, PAY-8892, and PAY-8905 as $142,400.00 (vs. $191,037.20 unadjusted GL), Sales Returns & Refunds (4090) as $3,920.00, Merchant Processing Fees (6430) as $4,192.80, and Processor Reserve Hold (1090 asset) as $5,500.00."
+    },
+    {
+      "id": "cw119a_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies that bank deposit DEP-8892 ($48,637.20 on 2026-10-30 for PAY-8892) bypassed 1070 Shopify Payout Clearing and was credited directly to 4010 D2C Product Revenue after JE-2026-1028 had already recognized gross revenue."
+    },
+    {
+      "id": "cw119a_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles 1070 Shopify Payout Clearing ($0.00 opening balance per OPEN-1070 and POL-PAYOUT-TAX) from $67,522.60 unadjusted down to the $18,885.40 October 31 deposit-in-transit balance (PAY-8905, settled on DEP-8905 on 2026-11-03) via Dr 4010 D2C Product Revenue $48,637.20 and Cr 1070 Shopify Payout Clearing $48,637.20."
+    },
+    {
+      "id": "cw119a_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Decomposes Wise EUR settlement WIRE-FX-401 ($16,038.50 total USD debit for AlpenFlora INV-AF-912 of EUR 14,500.00 at 0.9080 EUR per 1 USD) into $15,969.16 converted principal and $69.34 Wise wire fee, and computes the $164.16 realized FX loss against open AP bill BILL-AF-912 ($15,805.00)."
+    },
+    {
+      "id": "cw119a_c5",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the correcting entry for WIRE-FX-401 and BILL-AF-912: Dr 2000 Accounts Payable $15,805.00, Dr 7210 Realized FX Loss $164.16, Dr 6440 Bank & FX Fees $69.34, Cr 5120 Botanical Raw Materials COGS $16,038.50."
+    },
+    {
+      "id": "cw119a_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles the $34,900.00 intercompany balance on Lumina Botanics Corp (1350 Due from Lumina Soho LLC) by restoring deleted September entry JE-2026-0929 ($6,400.00 on 2026-09-29) and reclassifying October wire DEP-IC-702 / WIRE-IC-702 ($28,500.00) on Lumina Soho Retail LLC."
+    },
+    {
+      "id": "cw119a_c7",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides period-separated Lumina Soho Retail LLC intercompany entries per POL-IC-PARITY: restore 2026-09-29 Audit Log pre-image Dr 1410 Retail Merchandise Inventory $6,400.00 / Cr 2350 Due to Lumina Corp $6,400.00, and record 2026-10 reclassification Dr 4900 Other Miscellaneous Income $18,500.00, Dr 3200 Member Contributions $10,000.00, Cr 2350 Due to Lumina Corp $28,500.00."
+    },
+    {
+      "id": "cw119a_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Enforces processor reserve asset classification (keeping the $5,500.00 rolling reserve in 1090 Processor Reserve Hold rather than expensing it) and holds close sign-off pending post-posting read-back confirming two-sided clearing and 1350 = 2350 ($34,900.00) intercompany parity."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Omnichannel E-Commerce Payout Clearing, EUR/USD FX Settlement & Multi-State Sales Tax Cutoff",
+    "subcategory": "Shopify/Amazon Clearing & Rolling Reserve, Intercompany Loan vs Capital Symmetry, EUR AP FX Wire Fee Split & NY/NJ Facilitator Tax Bifurcation",
+    "estimated_completion_hours": 2.5
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

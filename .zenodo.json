@@ -1,7 +1,7 @@
 {
   "upload_type": "dataset",
-  "title": "LevelBench-100 (v4.1): AI Accounting, Fractional CFO & Operations Benchmark",
-  "description": "LevelBench-100 (v4.1): AI Accounting, Fractional CFO & Operations Benchmark (38 AI models, 15 SMB close case studies, 30 AI accounting mistakes). Non-commercial evaluation only; contact sam@levelcfo.com for commercial use.",
+  "title": "LevelBench-100 (v5.0.0): AI Accounting, Fractional CFO & Operations Benchmark",
+  "description": "LevelBench-100 (v5.0): AI Accounting, Fractional CFO & Operations Benchmark (58 AI model runs incl. Gemini 4 Carbon, 40 SMB close case studies, 36 AI accounting mistakes). Non-commercial evaluation only; contact sam@levelcfo.com for commercial use.",
   "creators": [
     {
       "name": "Yang, Sam",
@@ -10,7 +10,7 @@
   ],
   "license": "other-nc",
   "access_right": "open",
-  "version": "4.1.0",
+  "version": "5.0.0",
   "language": "eng",
   "keywords": [
     "ai-benchmark",

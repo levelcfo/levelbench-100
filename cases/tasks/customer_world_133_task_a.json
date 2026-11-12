@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_133_task_a",
+  "world_id": "world_133_scorp_owner_draws_personal_card_and_basis_traps",
+  "task_name": "World 133 Task A  -  S-Corp Personal Card Commingling, Unsubstantiated Cash Withdrawals & >2% Shareholder Health Insurance",
+  "prompt": "Review the October 2026 chart of accounts, shareholder ownership and W-2 schedule, and checking and corporate Amex ledger for Crestline Specialty Contracting Inc. in scorp_oct2026_owner_draws_personal_card_and_equity.xlsx. Identify all personal shareholder charges and unreceipted cash withdrawals improperly buried in COGS and operating expenses (separating documented jobsite expenses), audit the >2% S-corporation shareholder health insurance postings in 6135 Employee Health Benefits, and reconcile October 2026 COGS, operating expenses, and Net Income.",
+  "context_files": [
+    "scorp_oct2026_owner_draws_personal_card_and_equity.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw133a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies $18,200.00 of personal Corporate Amex charges by 60% Shareholder A (AMEX-401 $11,400.00 residential kitchen cabinets in 5210, AMEX-404 $4,850.00 family Hawaii trip in 6410, and AMEX-409 $1,950.00 country club dues in 6420) plus $6,000.00 of unsubstantiated cash withdrawals (CHK-WDR-01 $3,500.00 and CHK-WDR-02 $2,500.00 in 6290), totaling $24,200.00 for Shareholder A."
+    },
+    {
+      "id": "cw133a_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies AMEX-412 ($3,800.00 personal luxury watch in 6450 Promotional Gifts) as personal spend by 40% Shareholder B while retaining AMEX-415 ($2,400.00 FallTech OSHA roof harnesses delivered to Job #26-44) in 5210 Job Materials COGS."
+    },
+    {
+      "id": "cw133a_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes total disguised personal spend removed from COGS and operating expenses as $28,000.00 ($24,200.00 Shareholder A + $3,800.00 Shareholder B), reducing 5210 Job Materials COGS from $68,400.00 to $57,000.00."
+    },
+    {
+      "id": "cw133a_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles audited expense sub-accounts after personal-spend removal to $3,200.00 in 6290 Shop Supplies, $1,300.00 in 6410 Business Travel, $800.00 in 6420 Client Meals, and $500.00 in 6450 Promotional Gifts."
+    },
+    {
+      "id": "cw133a_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies $3,500.00 of >2% S-corporation shareholder medical premiums (ACH-MED-A $2,100.00 for 60% Shareholder A and ACH-MED-B $1,400.00 for 40% Shareholder B) improperly posted to tax-free 6135 Employee Health Benefits alongside $5,400.00 of non-owner crew medical."
+    },
+    {
+      "id": "cw133a_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reclassifies Dr 6115 Officer >2% Health Insurance $3,500.00 / Cr 6135 Employee Health Benefits $3,500.00 (leaving $5,400.00 in 6135 and $0.00 net P&L change)."
+    },
+    {
+      "id": "cw133a_c7",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Flags a mandatory payroll compliance hold requiring the >2% shareholder health insurance premiums ($2,100.00 SH-A and $1,400.00 SH-B) to be included in W-2 Box 1 wages (and Box 14) before year-end under IRC Section 162(l) and IRS Notice 2008-1 to preserve corporate deductibility."
+    },
+    {
+      "id": "cw133a_c8",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles October 2026 total COGS and operating expenses from $157,000.00 unadjusted to $129,000.00 audited (-$28,000.00) and October 2026 Net Income from $38,000.00 unadjusted to $66,000.00 audited on $195,000.00 revenue."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "S-Corporation Personal Card Commingling, >2% Shareholder Health Insurance, 60/40 Bylaws Equalization & Stock Basis",
+    "subcategory": "Personal Amex/Cash Removal from COGS/OpEx, >2% Officer Health Insurance W-2 Box 1 Hold, Section 7.4 Pro-Rata Distribution Equalization vs Shareholder Loan, Zero-W2 Active Officer Risk & IRC 1368(b)(2) Excess Distribution",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

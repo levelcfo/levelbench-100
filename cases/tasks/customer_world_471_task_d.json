@@ -1,0 +1,35 @@
+{
+  "task_id": "cw_471_task_d",
+  "world_id": "world_471_benadmin_payroll_edi_and_sec125_audit",
+  "task_name": "World 471 Task D  -  Multi-Lever CFO Workforce & Benefits Cost-Reduction Bridge & Hidden Carrier Roster Leak Audit",
+  "prompt": "Review the CFO_Multi_Lever_Savings schedule in `benadmin_ease_vs_payroll_nov2026.xlsx`. Reconcile biweekly, monthly, and annualized employer payroll and tax savings alongside the EFT wire reduction, compute steady-state employer medical and total annualized run-rate savings excluding one-time carrier credits, and quantify hidden carrier roster leaks requiring executive confirmation.",
+  "context_files": [
+    "benadmin_ease_vs_payroll_nov2026.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw471d_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes $22,434.35 per-biweekly-run employer payroll + tax cost reduction ($179,822.69 to $157,388.34, or $48,607.76 monthly / $583,293.10 annualized) and reconciles the $25,446.13 payroll EFT wire reduction ($22,434.35 employer cost reduction + $3,011.78 higher withheld employee deductions)."
+    },
+    {
+      "id": "cw471d_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes steady-state monthly employer medical reduction from $44,113.26 ($47,755.71 less $3,642.45 EE) to $9,302.25 ($20,806.71 steady-state less $11,504.46 pre+post-tax EE), saving $34,811.01 monthly ($417,732.12 annualized) plus $5,613.92 dependent Dental/Vision shift = $1,006,639.14 total annualized run-rate savings while excluding the -$8,027.21 one-time retroactive DELSUB credit."
+    },
+    {
+      "id": "cw471d_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies $674.44 per month ($8,093.28 annualized) of hidden carrier roster items ($544.61 on zero-hour unpaid-leave employee with $0 paycheck deduction + $129.83 on non-payroll Excluded enrollee) requiring explicit CEO confirmation before cancellation."
+    }
+  ],
+  "metadata": {
+    "domain": "Fractional_CFO",
+    "category": "BenAdmin-to-Payroll EDI, IRC Sec 125 Post-Tax Domestic Partner & Asymmetric Tab Termination Audit",
+    "subcategory": "Section 125 Non-Dependent Partner Post-Tax Split, Summary-Tab Layoff Residuals, ERISA 401(k) Cutoff & Multi-Lever Workforce Cost Bridge",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

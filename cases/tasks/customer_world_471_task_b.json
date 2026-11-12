@@ -1,0 +1,40 @@
+{
+  "task_id": "cw_471_task_b",
+  "world_id": "world_471_benadmin_payroll_edi_and_sec125_audit",
+  "task_name": "World 471 Task B  -  Asymmetric Summary-Tab Termination Clearance & Mid-Plan-Year Dependent Shift",
+  "prompt": "Review the Summary_Residuals_And_Guardian schedule in `benadmin_ease_vs_payroll_nov2026.xlsx`. Quantify residual terminated medical rows and open payroll deductions, compute clean employer Dental and Vision costs, calculate the per-pay-period, monthly, and annual savings from shifting dependent Dental and Vision from half to full employee-paid, and state the Section 125 plan-year and W-2 Box 12 Code DD controls.",
+  "context_files": [
+    "benadmin_ease_vs_payroll_nov2026.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw471b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies $846.21 per pay period ($330.61 ER + $515.60 EE, or $1,833.46 monthly) of residual terminated medical rows still Active on the Summary tab and $389.02 per pay period of open payroll MDCL deductions."
+    },
+    {
+      "id": "cw471b_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes clean employer Guardian costs of $671.95 per pay period ($1,455.89 monthly) for Dental and $94.75 per pay period ($205.29 monthly) for Vision across 27 active enrollees."
+    },
+    {
+      "id": "cw471b_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Quantifies the 50% to 100% employee-paid dependent shift from $215.82 per pay period ($195.29 Dental + $20.53 Vision, $467.61 monthly) to $431.74 per pay period ($390.61 Dental + $41.13 Vision, $935.44 monthly), saving $5,613.92 annually."
+    },
+    {
+      "id": "cw471b_c4",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Verifies that mid-plan-year dependent contribution changes respect the 2026-04-01 to 2027-03-31 Section 125 plan year and that terminated employees stop ongoing post-termination deductions and W-2 Box 12 Code DD employer accruals while preserving valid YTD coverage."
+    }
+  ],
+  "metadata": {
+    "domain": "Fractional_CFO",
+    "category": "BenAdmin-to-Payroll EDI, IRC Sec 125 Post-Tax Domestic Partner & Asymmetric Tab Termination Audit",
+    "subcategory": "Section 125 Non-Dependent Partner Post-Tax Split, Summary-Tab Layoff Residuals, ERISA 401(k) Cutoff & Multi-Lever Workforce Cost Bridge",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

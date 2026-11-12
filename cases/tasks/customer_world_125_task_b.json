@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_125_task_b",
+  "world_id": "world_125_multicard_processor_chargebacks_and_dispute_reversals",
+  "task_name": "World 125 Task B  -  Amex 10% Rolling Reserve Reclass, Duplicate Bank-Feed Stripe Payout, Oct 30-31 Shopify Batch Cutoff & Checklist Guard",
+  "prompt": "Review the chart of accounts and processor accounting policy, October 2026 processor settlement batches, bank statement deposits, general ledger postings, chargeback register, and close checklist sign-off log for Veloce Espresso Gear Co. in veloce_oct2026_multicard_chargebacks_and_reserves.xlsx. Audit Amex rolling reserve holdbacks, Stripe payout and bank-feed postings, month-end Shopify captured batches in transit, total audited October GAAP Net Revenue, merchant processing fees, operating checking, and close checklist sign-off status, providing all required journal entries.",
+  "context_files": [
+    "veloce_oct2026_multicard_chargebacks_and_reserves.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw125b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Audits October 2026-10 Amex OptBlue settlement BATCH-AMX-1030 ($86,400.00 gross charges = $80,000.00 in 4000 Gross Product Sales + $6,400.00 in 2210 Sales Tax Payable at 8.00%, with $75,254.40 cash remitted to 1000 Operating Checking), identifying that JE-AMX-1030A debited $11,145.60 to 6240 Merchant Processing & Dispute Fees by combining $2,505.60 (2.90% processing fees) with $8,640.00 (10.00% rolling 90-day reserve holdback)."
+    },
+    {
+      "id": "cw125b_c2",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the reclassifying journal entry for the Amex rolling reserve: Dr 1078 Processor Rolling Reserve Receivable $8,640.00 / Cr 6240 Merchant Processing & Dispute Fees $8,640.00, refusing to expense recoverable rolling reserve holdbacks in 6240 and leaving $2,505.60 true Amex fees in 6240."
+    },
+    {
+      "id": "cw125b_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies from single bank deposit trace TRC-STR-1028 ($24,300.00 on 2026-10-28) that native payout entry JE-STR-1028 (Dr 1000 Operating Checking $24,300.00 / Cr 1070 Stripe Clearing $24,300.00) already recorded cash settlement, so bank-feed auto-rule deposit DEP-STR-1028 (Dr 1000 Operating Checking $24,300.00 / Cr 4000 Gross Product Sales $24,300.00) overstates both 1000 cash and 4000 revenue by $24,300.00."
+    },
+    {
+      "id": "cw125b_c4",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the reversing journal entry for duplicate bank-feed deposit DEP-STR-1028: Dr 4000 Gross Product Sales $24,300.00 / Cr 1000 Operating Checking $24,300.00, reconciling ending 1000 Operating Checking from $406,471.68 unadjusted down to $382,171.68 ($180,000.00 opening + $202,171.68 settled bank deposits, $0.00 outflows) with ending 1070 Stripe Clearing at $0.00."
+    },
+    {
+      "id": "cw125b_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies unbooked Shopify Payments Oct 30-31 captured batch in transit BATCH-SHP-1031 ($12,960.00 gross = $12,000.00 ex-tax sales + $960.00 8.00% sales tax less $375.84 2.90% processing fees, settled $12,584.16 net on 2026-11-02), and provides the 2026-10-31 cutoff journal entry Dr 1072 Shopify Payments Clearing $12,584.16 + Dr 6240 Merchant Processing & Dispute Fees $375.84 / Cr 4000 Gross Product Sales $12,000.00 + Cr 2210 Sales Tax Payable $960.00, reconciling ending 1072 to $12,584.16."
+    },
+    {
+      "id": "cw125b_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles October 2026-10 4000 Gross Product Sales from $226,244.00 unadjusted to $212,000.00 audited ($226,244.00 - $1,944.00 DSP-901 - $24,300.00 DEP-STR-1028 + $12,000.00 BATCH-SHP-1031) and total audited October GAAP Net Revenue (4000 less 4090) from $225,581.00 unadjusted ($226,244.00 - $663.00) to $211,000.00 ($212,000.00 - $1,000.00)."
+    },
+    {
+      "id": "cw125b_c7",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles October 2026-10 6240 Merchant Processing & Dispute Fees from $15,109.32 unadjusted to $6,860.16 audited ($15,109.32 + $15.00 DSP-1004 fee - $8,640.00 Amex reserve + $375.84 BATCH-SHP-1031 fee) and ending 2210 Sales Tax Payable from $21,400.00 unadjusted to $22,280.00 ($5,400.00 opening + $16,960.00 October tax - $80.00 DSP-902 tax credit)."
+    },
+    {
+      "id": "cw125b_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Refuses to accept preparer self-attestation on CHKLIST-PROC-10 because Workpaper_Target_Formula='=GL_Balance' compares the $3,024.00 unadjusted GL receivable balance against itself (versus $21,872.16 audited combined 1070/1072/1075/1078/1290 processor and dispute receivables: $12,584.16 in 1072 + $8,640.00 in 1078 + $648.00 in 1290) and Reviewer_Signoff_Receipt is null, assigning close status closed_with_estimates rather than certified pending open dispute DSP-1004 resolution."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Multi-Card Processor Chargeback Lifecycle, Rolling Reserves & Duplicate Bank-Feed Reversal",
+    "subcategory": "Prior-Period Won Dispute Revenue Double-Count Guard, Lost Dispute Contra-Revenue vs Sales Tax Split, Open Dispute Receivable vs Fee Expense, Amex Rolling Reserve & Duplicate Stripe Bank-Feed Reversal",
+    "estimated_completion_hours": 2.5
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

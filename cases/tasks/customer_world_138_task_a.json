@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_138_task_a",
+  "world_id": "world_138_saw_precedent_draws_partner_payroll_and_estimate_netting",
+  "task_name": "World 138 Task A  -  Precedent-Based Partner Draws Audit & Form 1065 Gusto Payroll Unbundling under Rev. Rul. 69-184",
+  "prompt": "Review the QuickBooks Online chart of accounts, LLC tax and operating-agreement profile, vendor precedent history, Gusto October 25, 2026 payroll breakdown, and posted October 2026 QuickBooks Online general ledger for Ironwood Commercial Landscaping LLC (a multi-member LLC taxed as a Form 1065 partnership) in ironwood_landscaping_oct2026_partner_payroll_draws_and_cutoff.xlsx. Audit 3120 Partner Draws against historical vendor precedent (distinguishing commercial operating spend with zero personal precedent from confirmed recurring personal partner draws), unbundle the mixed October 25 Gusto payroll postings under IRS Rev. Rul. 69-184 and Operating Agreement Section 5.2 (W-2 crew wages, Managing Partner guaranteed payments, erroneous employer FICA on partner compensation, 1099 subcontractors, and partner draws), and provide all Task A reclassifications plus audited October 31, 2026 balances for 3120, 6110, 6120, 6130, 1390, and 5300.",
+  "context_files": [
+    "ironwood_landscaping_oct2026_partner_payroll_draws_and_cutoff.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw138a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies $2,870.00 of commercial operating debit-card spend misclassified in 3120 Partner Draws with zero personal precedent ($1,840.00 EXP-3101 Apex Turf, $620.00 EXP-3102 Regional Fleet Fuel, and $410.00 EXP-3103 Metro Commercial Hardware), reclassifying Dr 5200 Job Materials COGS $2,250.00 and Dr 6180 Vehicle Fuel & Fleet $620.00 / Cr 3120 Partner Draws $2,870.00."
+    },
+    {
+      "id": "cw138a_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Preserves the October 21, 2026 $1,500.00 Lakeside Country Club charge (EXP-3104) inside 3120 Partner Draws based on 9 prior confirmed personal partner golf-dues postings, rather than reclassifying personal club dues into operating expense."
+    },
+    {
+      "id": "cw138a_c3",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Applies IRS Rev. Rul. 69-184 and Operating Agreement Section 5.2 to determine that Managing Partner Marcus Vance cannot be treated as a W-2 employee of a Form 1065 partnership, requiring his fixed $8,700.00 monthly compensation to be classified as an IRC Section 707(c) guaranteed payment in 6120 rather than 6110 W-2 Crew Wages."
+    },
+    {
+      "id": "cw138a_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Unbundles the $31,100.00 Gusto wages summary debit (JE-GUSTO-1025) out of 6110 W-2 Crew Wages via Dr 6120 Partner Guaranteed Payments $8,700.00, Dr 5300 Subcontractors COGS $2,500.00 (Canyon Stoneworks 1099 ACH), and Dr 3120 Partner Draws $1,500.00 (Elena Cho partner draw) / Cr 6110 W-2 Crew Wages $12,700.00, leaving $18,400.00 of true W-2 crew wages in 6110."
+    },
+    {
+      "id": "cw138a_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reclassifies $665.55 of erroneous employer FICA remitted on Partner Marcus Vance's non-W-2 guaranteed payment out of 6130 Employer Payroll Taxes into 1390 Payroll Tax Refund Receivable pending Form 941-X (Dr 1390 $665.55 / Cr 6130 $665.55), leaving $1,407.60 of true employer FICA in 6130."
+    },
+    {
+      "id": "cw138a_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles 3120 Partner Draws from $4,370.00 unadjusted ($1,840.00 + $620.00 + $410.00 + $1,500.00) to $3,000.00 audited ($4,370.00 less $2,870.00 commercial spend plus $1,500.00 Elena Cho Gusto draw = $1,500.00 Lakeside Country Club + $1,500.00 Elena Cho draw)."
+    },
+    {
+      "id": "cw138a_c7",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reports audited Task A P&L and receivable balances: $18,400.00 in 6110 W-2 Crew Wages, $8,700.00 in 6120 Partner Guaranteed Payments, $1,407.60 in 6130 Employer Payroll Taxes, $2,500.00 in 5300 Subcontractors COGS, and $665.55 in 1390 Payroll Tax Refund Receivable."
+    },
+    {
+      "id": "cw138a_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Explains why Gusto's payroll setup must be remediated (removing partner Marcus Vance from W-2 payroll and filing Form 941-X to recover the erroneous FICA) so future runs do not generate invalid W-2s or overpay FICA."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Precedent-Based Partner Draws, Form 1065 Partner Payroll (Rev. Rul. 69-184), Custom Clearing & Neutralized Estimates",
+    "subcategory": "Zero-Precedent Commercial Spend in Partner Draws, Form 1065 Partner W-2 & FICA Remediation, Custom Non-Regex Clearing Fee-Netted Duplicate, Equity Plug & Same-Month Neutralized Estimate Netting",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

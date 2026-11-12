@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_119_task_b",
+  "world_id": "world_119_ecommerce_payout_fx_and_sales_tax_cutoff",
+  "task_name": "World 119 Task B  -  Multi-State Sales Tax Portal Cutoff, Prepayment Split & Marketplace Facilitator Bifurcation",
+  "prompt": "Perform a comprehensive Omnichannel E-Commerce Payout Clearing, EUR/USD FX Settlement & Multi-State Sales Tax Cutoff review using the world files (`lumina_oct2026_payout_fx_and_salestax_close.xlsx`). Identify all accounting, reconciliation, cutoff, or operational variances; state the exact dollar figures, percentages, and transaction/journal/work-order IDs; propose any required correcting journal entries (with exact Debit and Credit accounts); and enforce all close certification guardrails.",
+  "context_files": [
+    "lumina_oct2026_payout_fx_and_salestax_close.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw119b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes total October 2026 omnichannel Gross Sales across all 5 channels as $215,300.00, total Non-Taxable & Marketplace Facilitator Deductions as $75,300.00 ($14,400.00 exempt direct sales + $60,900.00 marketplace facilitator sales), and Net Merchant-Taxable Sales as $140,000.00 ($80,000.00 NY + $60,000.00 NJ)."
+    },
+    {
+      "id": "cw119b_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes October 2026 merchant-liable sales tax collected as $11,075.00 ($7,100.00 on CH-SHOPIFY-NY at 8.875%, $3,180.00 on CH-SHOPIFY-NJ at 6.625%, and $795.00 on CH-INSTA-DIRECT at 6.625%)."
+    },
+    {
+      "id": "cw119b_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies that CH-AMAZON-MKT ($42,500.00 sales, $3,411.88 tax) and CH-TIKTOK-MKT ($18,400.00 sales, $1,472.00 tax) had $4,883.88 total tax withheld and remitted by marketplace facilitators, and reverses the erroneous $3,411.88 Amazon tax credit from 2180 Sales Tax Payable against 1075 Amazon Marketplace Clearing."
+    },
+    {
+      "id": "cw119b_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Catches the false marketplace exclusion on CH-INSTA-DIRECT ($12,000.00 NJ direct checkout sales where Platform_Tax_Remitted_Flag = NO, $0.00 platform tax withheld, and $795.00 collected tax settled to merchant), restoring $12,000.00 to NJ taxable sales and $795.00 to NJ tax due."
+    },
+    {
+      "id": "cw119b_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies that bank EFT payment TXN-9041 ($9,840.00 total across TXN-9041-L1 and TXN-9041-L2 on 2026-10-20) was erroneously expensed to 6810 Licenses & Taxes Expense instead of debiting 2180 Sales Tax Payable."
+    },
+    {
+      "id": "cw119b_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Splits TXN-9041 ($9,840.00 under Portal Confirmation NJ-20261020-881) into $7,700.00 settling the opening Q3 2026 liability (OPEN-Q3-2180) and $2,140.00 applied as an October 2026 NJ ST-51 prepayment."
+    },
+    {
+      "id": "cw119b_c7",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles 2180 Sales Tax Payable from the $22,186.88 unadjusted October 31 GL balance down to the $8,935.00 adjusted ending balance ($7,100.00 NY October tax due + $1,835.00 net NJ October tax due after applying the $2,140.00 ST-51 prepayment against $3,975.00 total NJ tax)."
+    },
+    {
+      "id": "cw119b_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the correcting journal entries (Dr 2180 Sales Tax Payable $3,411.88 / Cr 1075 Amazon Marketplace Clearing $3,411.88 and Dr 2180 Sales Tax Payable $9,840.00 / Cr 6810 Licenses & Taxes Expense $9,840.00) and prohibits treating social-commerce channel tags as marketplace-facilitator exempt without payout tax-withholding proof."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Omnichannel E-Commerce Payout Clearing, EUR/USD FX Settlement & Multi-State Sales Tax Cutoff",
+    "subcategory": "Shopify/Amazon Clearing & Rolling Reserve, Intercompany Loan vs Capital Symmetry, EUR AP FX Wire Fee Split & NY/NJ Facilitator Tax Bifurcation",
+    "estimated_completion_hours": 2.5
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

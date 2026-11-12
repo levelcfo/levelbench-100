@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_134_task_b",
+  "world_id": "world_134_undeposited_funds_cleanup_and_pto_bonus_accruals",
+  "task_name": "World 134 Task B  -  ASC 710 Vested PTO Rollforward with Pay-Rate Raise & FICA, Non-Vesting Sick Exclusion & Audited-Revenue Bonus Accrual",
+  "prompt": "Using the chart of accounts, audited October 2026 net product sales from the Undeposited Funds reconciliation, and the employee PTO and bonus schedules for PrecisionValve Industrial Supply LLC in mfg_oct2026_undeposited_funds_and_pto_bonus.xlsx, compute the required 2026-10-31 ASC 710 vested PTO liability (including pay-rate changes, employer FICA, and California sick-leave treatment) and October 2026 bonus accruals, provide all required journal entries, and reconcile audited October 2026 Net Income.",
+  "context_files": [
+    "mfg_oct2026_undeposited_funds_and_pto_bonus.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw134b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Values 2026-10-31 vested vacation hours at October 31 pay rates (including EMP-01's 2026-10-01 raise from $45.00/hr to $50.00/hr across all 160.0 hours = $8,000.00, EMP-02 150.0 hrs = $6,600.00, and EMP-03 100.0 hrs = $3,800.00) for $18,400.00 gross vested vacation wages."
+    },
+    {
+      "id": "cw134b_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Excludes all 84.0 non-vesting California statutory sick-leave hours ($3,816.00 gross wages across EMP-01 $2,000.00, EMP-02 $1,056.00, and EMP-03 $760.00) from the 2145 Accrued PTO liability under ASC 710-10-25-7 because sick hours do not vest or pay out at termination."
+    },
+    {
+      "id": "cw134b_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Adds 7.65% employer FICA ($1,407.60 on $18,400.00 gross vested vacation) to establish an audited 2026-10-31 ending 2145 Accrued PTO liability of $19,807.60."
+    },
+    {
+      "id": "cw134b_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Records the October 2026 PTO rollforward adjustment against the $15,953.73 opening carryforward ($14,820.00 wages + $1,133.73 FICA) via Dr 6118 PTO Wage Expense $3,580.00 and Dr 6120 Employer Payroll Taxes $273.87 / Cr 2145 Accrued PTO $3,853.87."
+    },
+    {
+      "id": "cw134b_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes the formulaic shop output bonus under PLAN-BON-01 as 2.00% of audited October 4100 Product Sales of $240,000.00 (not unadjusted $278,450.00), yielding $4,800.00 bonus wages plus 7.65% employer FICA of $367.20 = $5,167.20 total."
+    },
+    {
+      "id": "cw134b_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Records Dr 6119 Bonus Expense $4,800.00 and Dr 6120 Employer Payroll Taxes $367.20 / Cr 2135 Accrued Bonuses $5,167.20, bringing audited 6120 Employer Payroll Taxes from $4,896.00 to $5,537.07 (+$641.07 total FICA accrued across PTO and bonus)."
+    },
+    {
+      "id": "cw134b_c7",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Accrues $0.00 for MEMO-DISC-02 ($25,000.00 uncommunicated discretionary CEO pool subject to Q1 2027 Board approval) because no legal or constructive present obligation exists at 2026-10-31 under ASC 710 / ASC 450."
+    },
+    {
+      "id": "cw134b_c8",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes total October 2026 P&L adjustments across Tasks A and B as -$47,721.07 (-$38,450.00 revenue and +$9,271.07 expenses: $250.00 Stripe fee + $3,853.87 PTO & FICA + $5,167.20 bonus & FICA), reconciling October 2026 Net Income from $68,644.00 unadjusted to $20,922.93 audited ($240,000.00 revenue less $219,077.07 audited COGS and expenses)."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Undeposited Funds OBE Plug Reversal, Fee-Netted Duplicate Revenue & ASC 710 Vested PTO/Bonus Accruals",
+    "subcategory": "Cosmetic Opening Balance Equity Plug Reversal, Unmatched Bank-Feed Sales Double-Count, Stripe Fee-Netted Payout Reconciliation, Vested Vacation Pay-Rate & Employer FICA Rollforward & CA Non-Vesting Sick Exclusion",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

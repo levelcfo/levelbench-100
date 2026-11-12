@@ -1,0 +1,40 @@
+{
+  "task_id": "cw_116_task_b",
+  "world_id": "world_116_meddevice_cmo_lhr_billing",
+  "task_name": "World 116 Task B  -  QC Server Archive Hygiene, Partial-Temp & IFU Exclusion, and Lot-Locator Governance",
+  "prompt": "Perform a comprehensive Accounting & CFO Close review using the world files (`cmo_lhr_invoicing_and_qc_archive_audit_2026.xlsx`). Identify all accounting, reconciliation, cutoff, or operational variances; state the exact dollar figures, percentages, and transaction/journal/work-order IDs; propose any required correcting journal entries (with exact Debit and Credit accounts); and enforce all close certification guardrails.",
+  "context_files": [
+    "cmo_lhr_invoicing_and_qc_archive_audit_2026.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw116b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Audits the 11,044-file QC server index into 4,433 primary Work Order packets (40.14%) and 2,153 Receiving Inspection / Sub-Lot Material packets (19.49%), totaling 6,586 core manufacturing evidence packets."
+    },
+    {
+      "id": "cw116b_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies and excludes 1,161 non-LHR noise files across the QC server: 590 partial rsync temp files (.part.) and 571 Instructions-for-Use (IFU) product insert PDFs (10.51% combined noise rate across the 11,044 files)."
+    },
+    {
+      "id": "cw116b_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Quantifies the 431 special-routing lot packets across the archive: 286 alpha-prefixed Bosstent lots (C-shape), 120 OQ/PQ/First-Article validation lots, and 25 Rework/Planned Deviation companion packets."
+    },
+    {
+      "id": "cw116b_c4",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Enforces fail-closed lot-locator hygiene: exclude .part. temp files so valid lots do not fail with false-positive duplicate ambiguity, block IFU inserts from invoice attachments, restrict year-folder pruning to 20xx so 4-digit part folders (3001) are never skipped, and require human review when a Rework/PD packet is present."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Accounting Close",
+    "subcategory": "World 116 Task B  -  QC Server Archive Hygiene, Partial-Temp & IFU Exclusion, and Lot-Locator Governance",
+    "estimated_completion_hours": 2.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_118_task_b",
+  "world_id": "world_118_trades_payroll_cutoff_and_precedent_draws",
+  "task_name": "World 118 Task B  -  Client-Precedent Owner Draw Classification, Unstarted Deposit Liability & Unbilled WIP Recognition",
+  "prompt": "Review the Chart of Accounts and close policy, historical transaction precedent census, owner equity and liability records, and field-service job schedules in ironwood_trades_oct2026_close_sources.xlsx. Classify owner draws versus legitimate business expenses using historical book precedents, reconcile unstarted customer deposits and completed unbilled work, and state the close disposition for open jobs with incomplete completion evidence.",
+  "context_files": [
+    "ironwood_trades_oct2026_close_sources.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw118b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reclassifies TXN-88410 ($3,400.00 from 6999, 8 of 8 = 100.00% precedent) and TXN-88425 ($1,650.00 from 6420, 6 of 6 = 100.00% precedent) totaling $5,050.00 via Dr 3100 Owner Draws $5,050.00, Cr 6999 $3,400.00, and Cr 6420 $1,650.00."
+    },
+    {
+      "id": "cw118b_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Preserves TXN-88440 ($4,280.00 on JOB-4102) in 5210 Job Materials COGS based on 14 of 14 (100.00%) prior approved job-material purchases."
+    },
+    {
+      "id": "cw118b_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Keeps 2190 Due to Owner at $5,800.00 (JE-2026-0915) instead of $9,200.00 by routing TXN-88410 ($3,400.00) to 3100 Owner Draws."
+    },
+    {
+      "id": "cw118b_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reclassifies unstarted mobilization deposit DEP-5501 on JOB-4105 (0.00% complete on an $84,000.00 contract) via Dr 4100 Commercial HVAC Revenue $42,000.00 and Cr 2450 Customer Deposits & Unearned Revenue $42,000.00."
+    },
+    {
+      "id": "cw118b_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Accrues earned unbilled revenue on completed JOB-4108 (WO-7781 completed 2026-10-29, invoiced on INV-9012 on 2026-11-03, $11,700.00 cost) via Dr 1180 Unbilled AR / Contract Asset (WIP) $19,500.00 and Cr 4100 Commercial HVAC Revenue $19,500.00 (reversing 2026-11-01)."
+    },
+    {
+      "id": "cw118b_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes the net revenue adjustment across JOB-4105 and JOB-4108 as -$22,500.00 (+$19,500.00 earned WIP accrual less $42,000.00 unearned deposit deferral)."
+    },
+    {
+      "id": "cw118b_c7",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Refuses to plug WIP revenue to a target margin on open job JOB-4111 ($14,800.00 incurred cost with unmeasured completion census)."
+    },
+    {
+      "id": "cw118b_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Discloses the open-job WIP limitation on JOB-4111 with a 2026-11-30 true-up trigger under POL-CLOSE-STATE and reports the close state as closed with estimates rather than certified."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Commercial Trades Payroll Service-Period Cutoff, Precedent Owner Draws & WIP / Deposit Liability",
+    "subcategory": "Shared Cohort Payroll Accrual Consumption, Weekday Straddling Proration, Employee Withholding Guard & Precedent Draw vs WIP Recognition",
+    "estimated_completion_hours": 2.5
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

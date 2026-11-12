@@ -1,0 +1,40 @@
+{
+  "task_id": "cw_472_task_a",
+  "world_id": "world_472_roofing_bank_feed_and_lender_draws",
+  "task_name": "World 472 Task A  -  Commercial LLC Property-Address Check Tie-Out & Pre-Match Missing CRM Invoice Sync",
+  "prompt": "Review the pending bank-feed deposits and open Accounts Receivable / CRM sync schedules in `desert_crest_bank_feed_and_crm_nov2026.xlsx`. Reconcile every customer-identifiable deposit to its exact invoice(s), resolve commercial entity checks whose payer name differs from the billed contact, identify any unsynced field CRM invoices that must be posted before matching, and state the exact matched total and remaining invoice balances.",
+  "context_files": [
+    "desert_crest_bank_feed_and_crm_nov2026.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw472a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles the 6 customer-identifiable bank-feed deposits totaling $41,005.36 ($500.00 + $2,996.75 + $7,880.60 + $5,000.00 + $10,544.10 + $14,083.91) across 8 invoices with $0.00 variance."
+    },
+    {
+      "id": "cw472a_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Matches BF-1106A ($10,544.10 from Desert Oasis Prop I LLC) via normalized street address 1440 South Revere to W. Zheng invoices RF-545685 ($8,964.10) and RF-545698 ($1,580.00), disambiguating BF-1103A ($500.00) to RF-545747 over RF-545670."
+    },
+    {
+      "id": "cw472a_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Requires staging and syncing unsynced November CRM invoice RF-545751 ($20,458.32 for F. Navarro) before matching multi-check batch BF-1106B ($14,083.91 = $4,006.87 on RF-545661 + $10,077.04 on RF-545751, leaving $10,381.28 open on RF-545751)."
+    },
+    {
+      "id": "cw472a_c4",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Refuses to auto-add customer check or processor deposits directly to Sales revenue, which would double-count invoiced Accounts Receivable."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Bank-Feed Multi-Source Cash Application, Commercial Property-Address Matching & Pre-Invoice Financing Draws",
+    "subcategory": "Commercial LLC Check Street-Address Matching, Pre-Match Missing CRM Invoice Sync & Un-Invoiced Won Proposal 50% Financing-Draw Hold",
+    "estimated_completion_hours": 2.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

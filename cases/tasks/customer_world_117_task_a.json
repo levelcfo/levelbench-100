@@ -1,0 +1,45 @@
+{
+  "task_id": "cw_117_task_a",
+  "world_id": "world_117_medtech_close_workbook_and_cashflow_controls",
+  "task_name": "World 117 Task A  -  Cash Flow Intra-Operating Clearing Conservation & Zero-Net Equity SBC Audit",
+  "prompt": "Review the MedTech source journals in medtech_oct2026_close_workbook_controls.xlsx. Reconstruct noncash financing and stock compensation, distinguish working-capital clearing from phantom cash activity, and state which source packets warrant exclusion without erasing genuine compensation.",
+  "context_files": [
+    "medtech_oct2026_close_workbook_controls.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw117a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Preserves the -$15,000.00 prepaid and +$15,000.00 card operating reconciliation effects; combined cash effect is $0.00."
+    },
+    {
+      "id": "cw117a_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Derives October compensation $33,310.14 and YTD compensation $888,590.41 from the compensation journals."
+    },
+    {
+      "id": "cw117a_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Eliminates the $770.00 phantom non-cash equity add-back and -$770.00 Common Stock financing offset caused by a same-month reversed compound entry."
+    },
+    {
+      "id": "cw117a_c4",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Explains that intra-section Operating balance-sheet clearings (such as credit card payment clearing into AmEx and Prepaid Expenses) must not be stripped as cross-section non-cash reclassifications."
+    },
+    {
+      "id": "cw117a_c5",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Excludes the balanced no-cash financing packet without account-period netting that could erase genuine compensation in another journal."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Accounting Close",
+    "subcategory": "World 117 Task A  -  Cash Flow Intra-Operating Clearing Conservation & Zero-Net Equity SBC Audit",
+    "estimated_completion_hours": 2.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

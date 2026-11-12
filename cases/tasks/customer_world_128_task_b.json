@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_128_task_b",
+  "world_id": "world_128_asc842_lease_ti_allowance_and_equipment_cap",
+  "task_name": "World 128 Task B  -  Equipment Capitalization vs Repair Whipsaw, Noncash Autoclave Disposal & Cash-Flow Bridge Governance",
+  "prompt": "Review the chart of accounts and capitalization policies, clinical equipment and maintenance invoices, fixed-asset disposal records, lease and buildout schedules, October 2026 general ledger postings, and the draft October 2026 cash-flow worksheet for Apex Dental & Ortho Partners PLLC in apex_dental_oct2026_asc842_ti_and_fixed_assets.xlsx. Audit all equipment capitalization versus repairs and maintenance postings, first-month depreciation, and retired equipment disposals; diagnose the cash-flow bridge discrepancy and reconcile the audited Statement of Cash Flows to ending operating cash; evaluate the preparer's cash-flow check formula and reviewer sign-off controls; provide all required adjusting entries; and determine the governed October 2026 close status.",
+  "context_files": [
+    "apex_dental_oct2026_asc842_ti_and_fixed_assets.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw128b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies that the $18,000.00 3D CBCT X-ray sensor unit (INV-EQP-501 / CHK-4105, placed in service 2026-10-01 with a 60-month useful life) exceeds the $2,500.00 and 12-month capitalization policy threshold and was erroneously expensed to 6410 Repairs & Maintenance, providing the capitalizing entry Dr 1520 Clinical Equipment $18,000.00 / Cr 6410 Repairs & Maintenance $18,000.00."
+    },
+    {
+      "id": "cw128b_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes Month-1 (2026-10) straight-line depreciation on the $18,000.00 3D CBCT X-ray sensor unit (INV-EQP-501, 60-month useful life, $0.00 salvage) as $300.00 and provides the adjusting entry Dr 6520 Depreciation & Amortization $300.00 / Cr 1525 Accumulated Depreciation  -  Clinical Equipment $300.00."
+    },
+    {
+      "id": "cw128b_c3",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Identifies that the $1,850.00 routine dental handpiece sterilization tune-up (INV-MNT-509 / CHK-4112, 6-month recurring maintenance below the $2,500.00 capitalization threshold) was erroneously capitalized to 1520 Clinical Equipment and provides the reclassifying entry Dr 6410 Repairs & Maintenance $1,850.00 / Cr 1520 Clinical Equipment $1,850.00."
+    },
+    {
+      "id": "cw128b_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles 2026-10-31 Clinical Equipment balances from $226,850.00 unadjusted 1520 and $78,750.00 unadjusted 1525 to $243,000.00 audited 1520 Clinical Equipment (+$16,150.00 net adjustment), $79,050.00 audited 1525 Accumulated Depreciation  -  Clinical Equipment, $163,950.00 net Clinical Equipment carrying value, and $1,850.00 audited 6410 Repairs & Maintenance."
+    },
+    {
+      "id": "cw128b_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Verifies the 2026-10-20 disposal of retired autoclave DISP-104 ($15,000.00 original cost in 1520 less $10,500.00 accumulated depreciation in 1525 = $4,500.00 net book value scrapped for $0.00 cash proceeds in 7810 Loss on Disposal of Fixed Assets) and diagnoses that omitting the $4,500.00 noncash loss ($0.00 add-back) from Operating Cash Flow on SCF-OCT-26 left a $4,500.00 cash-flow reconciliation gap ($251,150.00 implied SCF ending cash vs. $255,650.00 actual 1000 Operating Cash)."
+    },
+    {
+      "id": "cw128b_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Requires a +$4,500.00 noncash operating add-back for DISP-104 (7810 Loss on Disposal of Fixed Assets) on the Statement of Cash Flows (SCF-OCT-26) and reconciles audited 2026-10 cash flows ($72,650.00 audited Net Income, +$7,050.00 total 6520 D&A, +$4,500.00 noncash disposal loss, +$118,000.00 net ASC 842 ROU/liability and TI incentive operating cash adjustment, and +$1,450.00 2110 accrual = $203,650.00 Operating Cash Flow; -$198,000.00 Investing CapEx; +$5,650.00 net cash increase to $255,650.00 ending 1000 Operating Cash)."
+    },
+    {
+      "id": "cw128b_c7",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Rejects the preparer's self-referential worksheet check on SCF-OCT-26 where Cash_Tie_Check_Formula='=Implied_SCF_Ending_Cash - Implied_SCF_Ending_Cash' subtracts the $251,150.00 draft SCF ending cash figure from itself to report a false $0.00 gap instead of comparing against $255,650.00 actual 1000 Operating Cash."
+    },
+    {
+      "id": "cw128b_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Refuses to certify the 2026-10 close and rejects preparer self-attestation Preparer_Status='RECONCILED' on SCF-OCT-26 (Reviewer_Signoff_Receipt is null), assigning 2026-10 close status closed_with_estimates rather than certified pending the final contractor lien waiver on INV-BLD-201 and the $1,450.00 utility/landlord CAM estimate true-up by 2026-11-30."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "ASC 842 Operating Lease & Tenant Improvement Allowance, Fixed-Asset Capitalization & Cash-Flow Bridge",
+    "subcategory": "ASC 842 Annuity PV ROU/Liability Recognition, Landlord TI Allowance Reduction vs Revenue Trap, Leasehold Term Cap, Equipment CapEx vs Repair Whipsaw & Non-Cash Disposal Cash-Flow Bridge",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

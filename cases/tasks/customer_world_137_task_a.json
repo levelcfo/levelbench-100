@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_137_task_a",
+  "world_id": "world_137_opening_balance_equity_pending_cpa_tb_and_principal_agent",
+  "task_name": "World 137 Task A  -  3900 Opening Balance Equity Unwinding, Bank-Feed Duplicate Reversal, Check #1842 Reclassification & Pending CPA TB Hold",
+  "prompt": "Review the QuickBooks Online chart of accounts, 3900 Opening Balance Equity detail and bank reconciliation setup, CPA prior-year trial-balance custody table, and posted October 2026 QuickBooks Online general ledger for Beacon Retail Media & Fulfillment LLC in beacon_retail_media_oct2026_obe_cpa_tb_and_principal_agent.xlsx. Unwind the junior bookkeeper's cosmetic $0.00 balance in 3900 Opening Balance Equity by auditing all four underlying layers (system cutover carryforward, Plaid bank-feed connection auto-opening entry on 1020 High-Yield Sweep Checking, forced cash-reconciliation plug on 1010 Operating Checking, and late-October sweep into 3200 Retained Earnings), provide all Task A correcting entries, reconcile 1010, 1020, 3200, and 3900, and determine the mandatory close hold on 3900.",
+  "context_files": [
+    "beacon_retail_media_oct2026_obe_cpa_tb_and_principal_agent.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw137a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies and reverses the unauthorized October 28 cosmetic OBE zero-out JE-OBE-229 ($55,400.00 swept into 3200 Retained Earnings without a CPA trial balance) via Dr 3200 Retained Earnings $55,400.00 / Cr 3900 Opening Balance Equity $55,400.00, restoring 3200 from $185,400.00 to $130,000.00."
+    },
+    {
+      "id": "cw137a_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies and reverses the October 4 Plaid bank-feed auto-opening entry JE-OBE-201 ($25,000.00 duplicating October 2 funding transfer TRF-104) via Dr 3900 Opening Balance Equity $25,000.00 / Cr 1020 High-Yield Sweep Checking $25,000.00."
+    },
+    {
+      "id": "cw137a_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles 1020 High-Yield Sweep Checking from $50,000.00 unadjusted QBO balance to $25,000.00 audited, tying 100.00% ($0.00 variance) to the custodied October 31 Mercury PDF statement ($25,000.00)."
+    },
+    {
+      "id": "cw137a_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reclassifies the October 15 forced cash-reconciliation plug JE-OBE-214 ($4,200.00 for cleared Check #1842 to Vanguard Print Vendor, Invoice INV-VP-882) out of 3900 via Dr 6150 Marketing & Trade Shows $4,200.00 / Cr 3900 Opening Balance Equity $4,200.00."
+    },
+    {
+      "id": "cw137a_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Verifies 1010 Operating Checking ties 100.00% ($0.00 variance) at $112,400.00 to the custodied October 31 Chase PDF statement ($140,000.00 opening - $25,000.00 TRF-104 - $4,200.00 Check #1842 + $190,000.00 PMT-7010 - $160,000.00 BILL-PMT-7020 - $28,400.00 EXP-7030)."
+    },
+    {
+      "id": "cw137a_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles 3900 Opening Balance Equity from $0.00 unadjusted (cosmetically masked) to $34,600.00 audited ($0.00 + $55,400.00 JE-OBE-229 reversal - $25,000.00 JE-OBE-201 reversal + $4,200.00 JE-OBE-214 reclass = $34,600.00 2026-01-01 cutover balance)."
+    },
+    {
+      "id": "cw137a_c7",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Retains the $34,600.00 unattributed 2026-01-01 cutover balance in 3900 Opening Balance Equity under a mandatory named close hold (pending_cpa_trial_balance) because 2025 cpa_signed_tb_status is MISSING_PENDING_EXTERNAL_CPA."
+    },
+    {
+      "id": "cw137a_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Refuses to sweep the remaining $34,600.00 cutover OBE into 3200 Retained Earnings without the signed 2025 CPA adjusted trial balance and Form 1065 K-1 capital rollforward, explaining that silent OBE-to-RE plugs corrupt prior-year tax-to-book equity tie-outs."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Opening Balance Equity Pending CPA Trial Balance Hold, Bank-Feed Opening Duplicates & ASC 606 Principal-vs-Agent",
+    "subcategory": "Unauthorized OBE-to-Retained-Earnings Sweep Reversal, Plaid Auto-Opening Duplicate Reversal, Pending CPA TB Hold & ASC 606-10-55-36 Gross-vs-Net Revenue",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

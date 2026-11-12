@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_136_task_b",
+  "world_id": "world_136_prepaid_unscheduled_balance_and_asc350_cca",
+  "task_name": "World 136 Task B  -  Adjusting Journal Entries, October P&L Prepaid/ASC 350-40 Recognition, Balance Sheet Tie-Out & Close-Readiness Hold",
+  "prompt": "Continuing your October 2026 close audit of Northstar Logistics & Cold-Chain Inc. in northstar_coldchain_oct2026_prepaids_and_asc350_cca.xlsx, provide all October 2026 adjusting and reclassifying journal entries for insurance, cloud SaaS, and ASC 350-40 implementation costs, reconcile total October 2026 prepaid and cloud expense recognition against the junior bookkeeper's unposted insurance draft, reconcile unadjusted to audited October 2026 operating expenses, Net Income, and the October 31, 2026 Balance Sheet, and determine the close-readiness gate status (evaluating both the snapshot-carryforward disclosed deposit slice and the undisclosed legacy migration carryforward).",
+  "context_files": [
+    "northstar_coldchain_oct2026_prepaids_and_asc350_cca.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw136b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Provides the October 2026 insurance and SaaS amortization entries: Dr 6310 Insurance Expense $4,500.00 / Cr 1350 $4,500.00 ($3,000.00 POL-2026-GL + $1,500.00 POL-2026-CYBER) and Dr 6420 Software, Cloud SaaS & CCA Amortization $1,500.00 / Cr 1350 $1,500.00 (Year-1 WMS subscription)."
+    },
+    {
+      "id": "cw136b_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Provides the ASC 350-40 reclassification and October recognition entries for INV-WMS-901: Dr 1370 Capitalized Cloud Implementation $24,000.00 and Dr 6430 Training & Data Migration Expense $12,000.00 / Cr 1350 $36,000.00, plus Dr 6420 $666.67 / Cr 1370 $666.67 (1/36 of $24,000.00)."
+    },
+    {
+      "id": "cw136b_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes total October 2026 P&L recognition from prepaids and ASC 350-40 as $18,666.67 ($4,500.00 in 6310 + $2,166.67 in 6420 [$1,500.00 SaaS + $666.67 CCA amortization] + $12,000.00 in 6430), +$14,166.67 higher than the junior bookkeeper's rejected $4,500.00 DRAFT-JE-409."
+    },
+    {
+      "id": "cw136b_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles total October 2026 COGS and operating expenses from $116,000.00 unadjusted ($72,000.00 5100 + $44,000.00 6110) to $134,666.67 audited (+$18,666.67 adjustment)."
+    },
+    {
+      "id": "cw136b_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles October 2026 Net Income on $160,000.00 of 4100 Revenue from $44,000.00 unadjusted ($160,000.00 less $116,000.00) to $25,333.33 audited ($160,000.00 less $134,666.67; -$18,666.67 change)."
+    },
+    {
+      "id": "cw136b_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Verifies 2190 Accrued Expenses ends October 31, 2026 at $0.00 after rejecting DRAFT-JE-409."
+    },
+    {
+      "id": "cw136b_c7",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Proves the post-close October 31, 2026 Balance Sheet tie-out: Total Assets $365,183.33 ($160,000.00 1010 + $95,000.00 1100 + $86,850.00 1350 + $23,333.33 1370) equals Total Liabilities $29,850.00 ($29,850.00 2000 + $0.00 2190) plus Total Stockholders' Equity $335,333.33 ($310,000.00 3100 Retained Earnings + $25,333.33 audited Net Income)."
+    },
+    {
+      "id": "cw136b_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Determines close status is held (not ready) due specifically to the undisclosed $14,610.00 LEGACY-LUMP-02 unscheduled_balance pending prior-CPA support, while confirming the $3,240.00 DISC-1350-UTIL disclosed slice does not block on snapshot bump 10447 -> 10555."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Prepaid Unscheduled Carryforward Holds, Snapshot-Lineage Disclosed Slices & ASC 350-40 Cloud Computing Implementation",
+    "subcategory": "Disclosed vs Undisclosed Unscheduled Carryforward Slice Across Snapshot Bump, Negative-Liability Draft Rejection, Vendor Advances & ASC 350-40 Hosted WMS Implementation",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

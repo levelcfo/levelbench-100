@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_126_task_a",
+  "world_id": "world_126_landed_cost_tariff_freight_and_fob_cutoff",
+  "task_name": "World 126 Task A  -  ASC 330 Container Landed Cost Capitalization, Embedded SKU Freight Double-Count & Outbound 3PL Reclassification",
+  "prompt": "Review the chart of accounts and inventory accounting policies, October 2026 purchase order, container, customs duty, freight, and fulfillment invoices, 3PL warehouse and Shopify SKU records, and unadjusted general ledger postings for Pacific Ridge Outdoor Gear LLC in pacific_ridge_oct2026_landed_cost_and_fob_cutoff.xlsx. Audit the alpine jacket container landed unit cost under ASC 330, evaluate the Shopify SKU cost table relief and separate customs, freight, drayage, and domestic fulfillment postings, reconcile October Product COGS, Freight-In & Duty COGS, and Outbound Shipping & Fulfillment OpEx, and provide all required adjusting and reclassifying journal entries.",
+  "context_files": [
+    "pacific_ridge_oct2026_landed_cost_and_fob_cutoff.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw126a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes capitalizable inbound landed add-on costs for container CONT-884 (PO-884, 2,000 alpine jackets received 2026-10-05 with $60,000.00 ex-factory PO cost at $30.00/u in 1210 Merchandise Inventory) as $15,000.00 ($9,000.00 Section 301 customs duty on BILL-8841 + $4,200.00 ocean freight on BILL-8842 + $1,800.00 port drayage on BILL-8843), or $7.50/u, establishing full ASC 330 landed cost of $37.50/u ($75,000.00 across 2,000 units)."
+    },
+    {
+      "id": "cw126a_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Determines from 800 physical alpine jackets sold in 2026-10 (40%) and 1,200 jackets on hand at 2026-10-31 (60%) that expensing 100% of the $15,000.00 inbound duty, ocean freight, and port drayage to 5120 Freight-In & Duty COGS overstated October COGS by $9,000.00 (60% unsold share = 1,200 units at $7.50/u), leaving $6,000.00 (40% sold share = 800 units at $7.50/u) properly recognizable in October 5120."
+    },
+    {
+      "id": "cw126a_c3",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the 2026-10-31 ASC 330 landed-cost capitalization journal entry for the 1,200 unsold CONT-884 jackets: Dr 1210 Merchandise Inventory $9,000.00 / Cr 5120 Freight-In & Duty COGS $9,000.00."
+    },
+    {
+      "id": "cw126a_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies the embedded SKU cost double-count on JE-2026-1031 where the preparer booked $26,800.00 to 5110 Product COGS for the 800 physical jackets using the $33.50/u Shopify SKU cost table rate, which embedded $3.50/u ($2,800.00) estimated freight on top of the $30.00/u ($24,000.00) factory PO cost while separate customs and freight bills were also booked in 5120."
+    },
+    {
+      "id": "cw126a_c5",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the adjusting journal entry to reverse the $2,800.00 double-counted embedded freight on JE-2026-1031: Dr 1210 Merchandise Inventory $2,800.00 / Cr 5110 Product COGS $2,800.00, refusing to retain both the $3.50/u Shopify estimated freight adder in 5110 and actual inbound duty/freight bills in 5120."
+    },
+    {
+      "id": "cw126a_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies $6,600.00 of domestic outbound 3PL fulfillment costs ($4,650.00 ShipBob pick-pack fulfillment on BILL-1031 plus $1,950.00 UPS Ground outbound parcel shipping on BILL-1032) misbooked in 5120 Freight-In & Duty COGS."
+    },
+    {
+      "id": "cw126a_c7",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the reclassifying journal entry for domestic outbound fulfillment: Dr 6320 Outbound Shipping & Fulfillment $6,600.00 / Cr 5120 Freight-In & Duty COGS $6,600.00, refusing to capitalize outbound customer shipping into 1210 Merchandise Inventory or retain it in 5120."
+    },
+    {
+      "id": "cw126a_c8",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles 2026-10 COGS and fulfillment accounts from unadjusted balances ($26,800.00 in 5110, $21,600.00 in 5120, $48,400.00 combined COGS, and $0.00 in 6320) to audited balances: $24,000.00 in 5110 Product COGS ($30.00/u), $6,000.00 in 5120 Freight-In & Duty COGS ($7.50/u), $30,000.00 combined landed COGS ($37.50/u across 800 sold units), and $6,600.00 in 6320 Outbound Shipping & Fulfillment."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "ASC 330 Landed Cost Capitalization, Customs Tariffs, Outbound Fulfillment & FOB Inventory Cutoffs",
+    "subcategory": "Embedded Landed Unit Cost vs Double-Counted Freight-In/Duty COGS, Domestic Customer Fulfillment OpEx Reclass, FOB Shipping Point vs FOB Destination Cutoffs & Virtual SKU Protection",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

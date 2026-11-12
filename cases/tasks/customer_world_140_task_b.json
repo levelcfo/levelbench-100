@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_140_task_b",
+  "world_id": "world_140_rnd_payroll_tax_credit_wrong_month_allocation",
+  "task_name": "World 140 Task B  -  Four-Month Reallocation Journal Entries, October P&L & Balance Sheet Conservation, and September Post-Close Disclosure",
+  "prompt": "Continuing your October 2026 close audit of Helios BioPhotonics Inc. in helios_biotech_oct2026_rnd_payroll_tax_credits.xlsx, provide the exact 4 period-of-origin journal entries across October 31, July 31, August 31, and September 30, 2026 under explicit originalPeriodCorrectionAuthorization (with open QBO BookCloseDate), prove net zero cumulative YTD impact on 2180 Payroll Clearing and YTD Net Income while restoring October 2026 Net Income and Balance Sheet tie-out, and specify the required post-close disclosure note for the previously reported September 2026 close.",
+  "context_files": [
+    "helios_biotech_oct2026_rnd_payroll_tax_credits.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw140b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Provides the October 31, 2026 removal entry: Dr 6120 Payroll Tax Expenses $9,096.20 and Dr 6110 Salaries & Wages $384.62 / Cr 2180 Payroll Clearing $9,480.82."
+    },
+    {
+      "id": "cw140b_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Provides the three prior-month reallocation entries: (a) 2026-07-31 Dr 2180 $2,243.21 / Cr 6120 $1,858.59 and Cr 6110 $384.62; (b) 2026-08-31 Dr 2180 $3,597.56 / Cr 6120 $3,597.56; and (c) 2026-09-30 Dr 2180 $3,640.05 / Cr 6120 $3,640.05."
+    },
+    {
+      "id": "cw140b_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Proves the 4 entries net to $0.00 cumulative impact on 2180 Payroll Clearing ($9,480.82 Oct credit exactly offset by $2,243.21 + $3,597.56 + $3,640.05 = $9,480.82 Jul-Sep debits), keeping ending October 31, 2026 2180 at $1,906.25."
+    },
+    {
+      "id": "cw140b_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles October 2026 total operating expenses (6110 + 6120 + 6210) from $55,172.31 unadjusted to $64,653.13 audited (+$9,480.82 increase), changing October Net Income from -$55,172.31 to -$64,653.13."
+    },
+    {
+      "id": "cw140b_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Proves cumulative July-October 2026 total expenses and cumulative Net Loss are unchanged at $199,486.09 (-$199,486.09 cumulative Net Income), because October's +$9,480.82 expense increase equals July-September's -$9,480.82 expense reductions."
+    },
+    {
+      "id": "cw140b_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes October 31, 2026 1010 Operating Checking as $280,513.91 ($480,000.00 opening less $209,791.72 Jul-Oct gross cash outflows plus $10,305.63 ACH-8974 refund)."
+    },
+    {
+      "id": "cw140b_c7",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Proves the October 31, 2026 Balance Sheet tie-out: Total Assets $280,513.91 equals Total Liabilities $1,906.25 (2180 Payroll Clearing) plus Total Stockholders' Equity $278,607.66 ($478,093.75 Jun 30 3100 less $199,486.09 cumulative Jul-Oct Net Loss)."
+    },
+    {
+      "id": "cw140b_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Requires staging a post-close customer-context disclosure note for previously closed September 2026 (books_close_runs:17) documenting the $3,640.05 retroactive Form 8974 R&D credit adjustment."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "IRC \u00a741(h) Form 8974 R&D Payroll-Tax Credit Wrong-Month Lumping & Multi-Month Reallocation",
+    "subcategory": "Form 8974 Single-Month Lumping Diagnosis, Negative Payroll-Tax Polarity Guard, Jul-Oct Open-Period Reallocation & Sep Post-Close Run Disclosure",
+    "estimated_completion_hours": 2.5
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

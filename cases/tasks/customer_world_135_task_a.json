@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_135_task_a",
+  "world_id": "world_135_card_bank_feed_proxy_and_parent_gl_tie",
+  "task_name": "World 135 Task A  -  Consolidated 2150 Corporate Card Hierarchy Tie-Out, Post-Cutoff Feed Exclusion, Deleted Charge Restoration & Null-Statement Proxy Hold",
+  "prompt": "Review the QuickBooks Online chart of accounts, statement and portal custody table, Amex corporate card bank-feed stream (synced through November 4, 2026), posted October 2026 QuickBooks Online general ledger, and audit log for Summit Mechanical & HVAC Corp. in summit_hvac_oct2026_bank_feed_proxy_and_card_parent_gl.xlsx. Reconcile the consolidated October 31, 2026 liability for 2150 Corporate Card Master (including standalone parent-account postings and child subaccounts 2151 and 2152), back out post-cutoff November 1 - 4 settled card feed charges, reverse any duplicate card autopayment postings, restore any deleted mid-month reconciled October card charges, and determine whether 2150 can be certified as statement-reconciled or must be held under a bank-feed proxy hold.",
+  "context_files": [
+    "summit_hvac_oct2026_bank_feed_proxy_and_card_parent_gl.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw135a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes the implied October 31, 2026 Amex corporate card bank-feed proxy liability as $29,680.00 by backing out $3,490.00 of post-cutoff November 1 - 4 settled feed charges ($2,850.00 FEED-AMEX-N1 on 2026-11-02 and $640.00 FEED-AMEX-N2 on 2026-11-03) from the November 4, 2026 live running feed balance of $33,170.00."
+    },
+    {
+      "id": "cw135a_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Includes standalone parent-account postings directly on 2150 Corporate Card Master (-$1,200.00 CC-2150-REB Carrier rebate credit and +$550.00 CC-2150-FEE annual fee, net -$650.00 before payments) alongside child subaccounts 2151 and 2152, avoiding the $30,330.00 leaf-minus-payment error that omits standalone parent activity."
+    },
+    {
+      "id": "cw135a_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies that the October 20, 2026 $25,000.00 Amex autopayment (FEED-1010-05 / FEED-AMEX-06) was posted twice in QuickBooks Online via CCP-408 and EXP-912 (-$50,000.00 combined debit), requiring reversal of EXP-912 via Dr 1010 Operating Checking $25,000.00 / Cr 2150 Corporate Card Master $25,000.00."
+    },
+    {
+      "id": "cw135a_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies from AUD-4409 and FEED-AMEX-01 that cleared October 3, 2026 Trane Commercial Supply charge TXN-8841 ($2,340.00 on 2151) was deleted on October 22, 2026, requiring restoration via Dr 5120 HVAC Parts & Refrigerant COGS $2,340.00 / Cr 2151 Card - Field Lead #9014 $2,340.00."
+    },
+    {
+      "id": "cw135a_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles unadjusted October 31, 2026 card GL balances (-$50,650.00 standalone 2150 + $29,080.00 2151 + $23,910.00 2152 = $2,340.00 consolidated) to audited balances (-$25,650.00 standalone 2150 + $31,420.00 2151 + $23,910.00 2152 = $29,680.00 consolidated), tying 100.00% ($0.00 variance) to the $29,680.00 October 31 bank-feed proxy."
+    },
+    {
+      "id": "cw135a_c6",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Refuses to mark 2150 Corporate Card Master as statement_certified because statement_doc_id is NULL and no October 2026 PDF card statement is custodied, placing a named bank_feed_proxy_hold / preliminary_bank_feed_proxy disclosure pending statement retrieval."
+    },
+    {
+      "id": "cw135a_c7",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Verifies October 2026 gross card charge subtotals by cardholder subaccount: $18,420.00 on 2151 (#9014: $2,340.00 restored TXN-8841 + $16,080.00 CC-2151-01) and $14,910.00 on 2152 (#9022: $9,400.00 CC-2152-01 + $3,110.00 CC-2152-02 + $2,400.00 CC-2152-03), on top of the $22,000.00 combined October 1 opening liability ($13,000.00 + $9,000.00)."
+    },
+    {
+      "id": "cw135a_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Confirms post-cutoff November 2 - 3 feed charges FEED-AMEX-N1 ($2,850.00) and FEED-AMEX-N2 ($640.00) represent November 2026 purchases and must not be accrued into October 2026 COGS or expenses ($0.00 October accrual)."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Bank-Feed Proxy Null-Statement Holds, Asymmetric Transfer/Feed Double-Booking & Consolidated Card Parent GL Tie",
+    "subcategory": "Null-Statement Self-Tie Rejection & Unposted For-Review Queue, Asymmetric Transfer+Deposit Double-Booking, Standalone Parent-Card GL Postings & Deleted Reconciled Charge Restoration",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

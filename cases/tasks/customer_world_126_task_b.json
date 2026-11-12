@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_126_task_b",
+  "world_id": "world_126_landed_cost_tariff_freight_and_fob_cutoff",
+  "task_name": "World 126 Task B  -  FOB Shipping Point vs. Destination Cutoff, Virtual SKU Denominator Guard & Ending Inventory Sign-Off",
+  "prompt": "Review the chart of accounts and inventory cutoff policies, late-October purchase orders and shipping terms, 3PL warehouse receiving and shipment logs, Shopify order line-item summary, unadjusted general ledger postings, and close worksheet control schedules for Pacific Ridge Outdoor Gear LLC in pacific_ridge_oct2026_landed_cost_and_fob_cutoff.xlsx. Audit all month-end FOB Shipping Point and FOB Destination inventory cutoffs, evaluate the secondary preparer's Shopify unit COGS draft schedule for non-physical SKUs, reconcile audited October 31 ending on-hand and goods-in-transit inventory balances, assess the close worksheet tie-out formula and reviewer sign-off controls, and determine the governed October 2026 close status.",
+  "context_files": [
+    "pacific_ridge_oct2026_landed_cost_and_fob_cutoff.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw126b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Evaluates PO-901 (500 glacier packs at $28.00/u = $14,000.00 shipped FOB Shipping Point Busan on 2026-10-28, arrived LA on 2026-11-06 with $0.00 booked in 2026-10), determining that legal title transferred at Busan on 2026-10-28 so $14,000.00 must be recognized as Goods in Transit at 2026-10-31."
+    },
+    {
+      "id": "cw126b_c2",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the 2026-10-31 cutoff accrual journal entry for PO-901: Dr 1220 Goods in Transit Inventory $14,000.00 / Cr 2010 Accrued Inventory Purchases $14,000.00."
+    },
+    {
+      "id": "cw126b_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Evaluates PO-902 (BILL-9020 for 300 trekking poles at $20.00/u = $6,000.00 under FOB Destination Seattle warehouse terms, shipped 2026-10-29 and delivered 2026-11-04, prematurely booked on 2026-10-29), determining that title had not passed at 2026-10-31 so $6,000.00 must be excluded from October 1210 Merchandise Inventory and 2000 Accounts Payable."
+    },
+    {
+      "id": "cw126b_c4",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the 2026-10-31 reversing journal entry for premature FOB Destination booking BILL-9020 (PO-902): Dr 2000 Accounts Payable $6,000.00 / Cr 1210 Merchandise Inventory $6,000.00, reconciling 2000 Accounts Payable from $87,600.00 unadjusted to $81,600.00 audited."
+    },
+    {
+      "id": "cw126b_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Audits the 1,050 total net Shopify order line-item units against secondary preparer schedule COGS-SCH-10 ($31,500.00 draft at $30.00/u), isolating 250 non-physical virtual units (190 Route Package Protection units + 60 Digital Trail Gift Card units) multiplied by $30.00/u ($7,500.00 excess COGS = $5,700.00 + $1,800.00 in 5110), verifying 800 true physical units sold (1,050 - 250) and refusing to book virtual SKU COGS."
+    },
+    {
+      "id": "cw126b_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles 2026-10-31 ending inventory from $39,200.00 unadjusted ($39,200.00 in 1210 and $0.00 in 1220) to $45,000.00 audited 1210 Merchandise Inventory (1,200 alpine jackets at $37.50/u: $39,200.00 + $9,000.00 CONT-884 landed cost + $2,800.00 embedded freight reversal - $6,000.00 PO-902 reversal) plus $14,000.00 audited 1220 Goods in Transit Inventory (PO-901) = $59,000.00 total ending inventory ($19,800.00 net understatement corrected)."
+    },
+    {
+      "id": "cw126b_c7",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Identifies the close worksheet defect on INV-CHK-10 where Worksheet_Formula_Text='=GL_1210_Balance - GL_1210_Balance' compares the $39,200.00 unadjusted 1210 GL balance against itself to report a false $0.00 variance while omitting CONT-884 landed costs, embedded freight double-counts, PO-901 goods in transit, and PO-902 FOB Destination cutoff."
+    },
+    {
+      "id": "cw126b_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Refuses to accept preparer self-attestation Preparer_Status='TIED_READY_TO_CERTIFY' on INV-CHK-10 because Reviewer_Signoff_Receipt is null, the worksheet check formula is self-referential, and provisional Section 301 customs liquidation on CONT-884 plus 2026-11 3PL receiving read-backs on PO-901 and PO-902 remain pending (2026-11-30 true-up deadline), assigning 2026-10 close status closed_with_estimates rather than certified."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "ASC 330 Landed Cost Capitalization, Customs Tariffs, Outbound Fulfillment & FOB Inventory Cutoffs",
+    "subcategory": "Embedded Landed Unit Cost vs Double-Counted Freight-In/Duty COGS, Domestic Customer Fulfillment OpEx Reclass, FOB Shipping Point vs FOB Destination Cutoffs & Virtual SKU Protection",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

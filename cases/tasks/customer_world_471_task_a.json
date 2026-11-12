@@ -1,0 +1,40 @@
+{
+  "task_id": "cw_471_task_a",
+  "world_id": "world_471_benadmin_payroll_edi_and_sec125_audit",
+  "task_name": "World 471 Task A  -  BenAdmin EDI Section 125 Post-Tax Domestic Partner Gap & Medical Details Bridge",
+  "prompt": "Review the Medical_Details_And_Sec125 schedule in `benadmin_ease_vs_payroll_nov2026.xlsx`. Reconcile raw medical premiums after voluntary drops and terminations, compute modeled monthly and annualized employer medical savings, quantify any omitted post-tax domestic partner deduction from the EDI sync, and explain the governing IRC Section 125 tax treatment.",
+  "context_files": [
+    "benadmin_ease_vs_payroll_nov2026.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw471a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles raw medical $29,184.11 less -$4,272.68 voluntary drops and -$965.71 terminations to $23,945.72 across 34 active enrollees ($5,390.85 ER and $5,661.02 EE per pay period)."
+    },
+    {
+      "id": "cw471a_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes modeled employer medical savings of $2,619.24 per month ($31,430.88 annualized) from the 6 voluntary drops and 2 Details-tab terminations."
+    },
+    {
+      "id": "cw471a_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies the $291.11 per-pay-period ($630.74 monthly / $7,568.86 annual) post-tax domestic partner deduction omitted when EDI syncs only $207.66 pre-tax out of $498.77 total EE ($706.43 total with $207.66 ER)."
+    },
+    {
+      "id": "cw471a_c4",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Explains that under IRC Section 125 non-tax-dependent domestic partner medical coverage cannot be deducted pre-tax and requires a separate post-tax payroll deduction code or imputed income mapping."
+    }
+  ],
+  "metadata": {
+    "domain": "Fractional_CFO",
+    "category": "BenAdmin-to-Payroll EDI, IRC Sec 125 Post-Tax Domestic Partner & Asymmetric Tab Termination Audit",
+    "subcategory": "Section 125 Non-Dependent Partner Post-Tax Split, Summary-Tab Layoff Residuals, ERISA 401(k) Cutoff & Multi-Lever Workforce Cost Bridge",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

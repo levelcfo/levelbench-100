@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_140_task_a",
+  "world_id": "world_140_rnd_payroll_tax_credit_wrong_month_allocation",
+  "task_name": "World 140 Task A  -  Wrong-Month Form 8974 R&D Payroll-Tax Credit Diagnosis & July - October Monthly Expense Reconciliation",
+  "prompt": "Review the QuickBooks Online chart of accounts, Form 8974 / payroll-provider IRC \u00a741(h) R&D payroll-tax credit schedule across July through October 2026, posted July - October 2026 payroll and credit ledger extracts, and period-lock governance facts for Helios BioPhotonics Inc. in helios_biotech_oct2026_rnd_payroll_tax_credits.xlsx. Diagnose why October 2026 6120 Payroll Tax Expenses shows a negative credit balance before adjustment, compute the exact prior-month R&D credit over-applied in October (`JE-2018`), and reconcile audited monthly 6120 Payroll Tax Expenses and 6110 Salaries & Wages across July, August, September, and October 2026.",
+  "context_files": [
+    "helios_biotech_oct2026_rnd_payroll_tax_credits.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw140a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Diagnoses unadjusted October 2026 6120 Payroll Tax Expenses as -$1,809.26 ($8,111.75 gross TAX-10 less $9,921.01 cumulative Jul-Oct FICA credit in JE-2018-A) and unadjusted October 6110 Salaries & Wages as $45,171.28 ($45,555.90 PAY-10 less $384.62 July credit in JE-2018-B)."
+    },
+    {
+      "id": "cw140a_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes the prior-month (July-September 2026) R&D credit over-applied in October as $9,480.82 ($9,096.20 prior-month 6120 FICA credits [$1,858.59 Jul + $3,597.56 Aug + $3,640.05 Sep] + $384.62 July 6110 supplemental credit), leaving only $824.81 earned in October 2026."
+    },
+    {
+      "id": "cw140a_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles audited July 2026 6120 Payroll Tax Expenses to $3,217.58 ($5,076.17 less $1,858.59) and audited July 6110 Salaries & Wages to $43,615.38 ($44,000.00 less $384.62)."
+    },
+    {
+      "id": "cw140a_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles audited August 2026 and September 2026 6120 Payroll Tax Expenses to $0.00 ($3,597.56 less $3,597.56) and $0.00 ($3,640.05 less $3,640.05), respectively."
+    },
+    {
+      "id": "cw140a_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles audited October 2026 6120 Payroll Tax Expenses to $7,286.94 ($8,111.75 gross less $824.81 October Form 8974 credit) and audited October 6110 Salaries & Wages to $45,555.90."
+    },
+    {
+      "id": "cw140a_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Proves cumulative July-October 2026 6120 Payroll Tax Expenses are conserved at $10,504.52 ($3,217.58 Jul + $0.00 Aug + $0.00 Sep + $7,286.94 Oct = $20,425.53 gross less $9,921.01 total Form 8974 FICA credits)."
+    },
+    {
+      "id": "cw140a_c7",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Explains that IRC \u00a741(h) / Form 8974 R&D payroll-tax credits offset employer payroll tax in the payroll periods in which the qualified R&D wages and FICA liabilities were incurred rather than dumping 4 months of retroactive credits into October."
+    },
+    {
+      "id": "cw140a_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Verifies QBO BookCloseDate is unset (open across Jul-Oct 2026) and originalPeriodCorrectionAuthorization=true permits in-place prior-month reallocation without ever mutating QBO closing dates."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "IRC \u00a741(h) Form 8974 R&D Payroll-Tax Credit Wrong-Month Lumping & Multi-Month Reallocation",
+    "subcategory": "Form 8974 Single-Month Lumping Diagnosis, Negative Payroll-Tax Polarity Guard, Jul-Oct Open-Period Reallocation & Sep Post-Close Run Disclosure",
+    "estimated_completion_hours": 2.5
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

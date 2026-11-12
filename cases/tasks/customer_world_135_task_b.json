@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_135_task_b",
+  "world_id": "world_135_card_bank_feed_proxy_and_parent_gl_tie",
+  "task_name": "World 135 Task B  -  1010/1020 Cash Tie-Out, Asymmetric Transfer+Deposit Reversal, Unposted For Review Queue & Post-Close Balance Sheet",
+  "prompt": "Review the QuickBooks Online chart of accounts, statement and portal custody table, 1010 PDF statement and 1020 bank-feed stream (including unposted For Review feed rows), and posted October 2026 QuickBooks Online general ledger for Summit Mechanical & HVAC Corp. in summit_hvac_oct2026_bank_feed_proxy_and_card_parent_gl.xlsx. Audit 1010 Operating Checking and 1020 Field Emergency Checking (identifying any asymmetric Transfer plus Deposit double-booking, unposted October For Review feed items, and invalid register self-tie claims without a PDF bank statement), provide all correcting journal entries across Tasks A and B, and reconcile October 2026 unadjusted to audited revenue, COGS/expenses, Net Income, and the post-close October 31, 2026 Balance Sheet.",
+  "context_files": [
+    "summit_hvac_oct2026_bank_feed_proxy_and_card_parent_gl.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw135b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles 1010 Operating Checking from $123,250.00 unadjusted QBO book balance to $148,250.00 audited by reversing duplicate $25,000.00 card autopay EXP-912, tying 100.00% ($0.00 variance) to custodied Chase PDF statement DOC-OCT-1010 ($148,250.00, statement_certified)."
+    },
+    {
+      "id": "cw135b_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Catches the asymmetric cross-entity-kind double-booking on the $15,000.00 replenishment transfer (FEED-1020-02) posted both as native Transfer TRF-801 and duplicate Deposit DEP-809 to 4100 Commercial HVAC Service Revenue, reversing DEP-809 via Dr 4100 Commercial HVAC Service Revenue $15,000.00 / Cr 1020 Field Emergency Checking $15,000.00."
+    },
+    {
+      "id": "cw135b_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies $4,400.00 of unposted October 2026 bank-feed For Review charges in 1020 (FEED-1020-RV1 $3,150.00 United Refrigeration on 2026-10-26 and FEED-1020-RV2 $1,250.00 Sunbelt Towing on 2026-10-29), booking Dr 5120 HVAC Parts & Refrigerant COGS $3,150.00 and Dr 6210 Fleet Fuel & Maintenance $1,250.00 / Cr 1020 Field Emergency Checking $4,400.00."
+    },
+    {
+      "id": "cw135b_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Rejects the junior bookkeeper's $53,800.00 statement_certified register self-tie on 1020 (where statement_doc_id is NULL), reconciling 1020 from $53,800.00 unadjusted to $34,400.00 audited ($53,800.00 - $15,000.00 DEP-809 - $4,400.00 For Review items) and capping 1020 at preliminary_bank_feed_proxy / bank_feed_proxy_hold."
+    },
+    {
+      "id": "cw135b_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles October 2026 4100 Commercial HVAC Service Revenue from $110,000.00 unadjusted ($95,000.00 INV-1001 + $15,000.00 duplicate DEP-809) to $95,000.00 audited (-$15,000.00 adjustment)."
+    },
+    {
+      "id": "cw135b_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles October 2026 total COGS and operating expenses from $83,290.00 unadjusted (5120 $24,280.00 + 5140 $6,200.00 + 6110 $46,750.00 + 6210 $3,110.00 + 6420 $2,950.00) to $90,030.00 audited (+$6,740.00 = +$2,340.00 TXN-8841 in 5120 + $3,150.00 FEED-1020-RV1 in 5120 + $1,250.00 FEED-1020-RV2 in 6210, bringing 5120 to $29,770.00 and 6210 to $4,360.00)."
+    },
+    {
+      "id": "cw135b_c7",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles October 2026 Net Income from $26,710.00 unadjusted ($110,000.00 revenue less $83,290.00 expenses) to $4,970.00 audited ($95,000.00 revenue less $90,030.00 expenses; net -$21,740.00 change)."
+    },
+    {
+      "id": "cw135b_c8",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Proves the post-close October 31, 2026 Balance Sheet tie-out: Total Assets $207,650.00 ($148,250.00 1010 + $34,400.00 1020 + $25,000.00 1100) equals Total Liabilities $47,680.00 ($18,000.00 2000 + $29,680.00 consolidated 2150) plus Total Stockholders' Equity $159,970.00 ($155,000.00 3100 Retained Earnings + $4,970.00 audited Net Income), with close status held pending 1020 and 2150 PDF statements."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Bank-Feed Proxy Null-Statement Holds, Asymmetric Transfer/Feed Double-Booking & Consolidated Card Parent GL Tie",
+    "subcategory": "Null-Statement Self-Tie Rejection & Unposted For-Review Queue, Asymmetric Transfer+Deposit Double-Booking, Standalone Parent-Card GL Postings & Deleted Reconciled Charge Restoration",
+    "estimated_completion_hours": 3.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

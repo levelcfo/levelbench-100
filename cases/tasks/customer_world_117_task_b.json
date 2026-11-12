@@ -1,0 +1,45 @@
+{
+  "task_id": "cw_117_task_b",
+  "world_id": "world_117_medtech_close_workbook_and_cashflow_controls",
+  "task_name": "World 117 Task B  -  Negative Vendor AP Investigation (Sign Is Not Prepaid Evidence), Remittance Cutoff & Itemized Accruals",
+  "prompt": "Review the MedTech invoice, payment, subledger and review-status facts in medtech_oct2026_close_workbook_controls.xlsx. Reconcile the candidate accrual population against the ending ledger, investigate negative vendor balances, and state the supported corrections, remaining source uncertainty and actual review status.",
+  "context_files": [
+    "medtech_oct2026_close_workbook_controls.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw117b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Investigates negative vendor AP $7,882.69 using invoices, credits and payments; its sign does not establish a prepaid asset. Other balances total $21,380.00."
+    },
+    {
+      "id": "cw117b_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Excludes the $9,000.00 vendor invoice already paid on October 27 (Purchase 12071) from month-end accrued expenses."
+    },
+    {
+      "id": "cw117b_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Derives invoice candidates $122,095.61 versus ending accrued GL $123,692.61 and retains unexplained inherited $1,597.00; candidate totals are not a final supported close balance."
+    },
+    {
+      "id": "cw117b_c4",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Admits vendor invoices containing 'email the payment confirmation to' remittance instructions and separates non-P&L patent accruals so unpaid patent invoices do not distort Investing cash outflows."
+    },
+    {
+      "id": "cw117b_c5",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Requires formula-based subledger totals, source period review and an actual separate review receipt; an assigned reviewer remains pending rather than fabricated as complete."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Accounting Close",
+    "subcategory": "World 117 Task B  -  Negative Vendor AP Investigation (Sign Is Not Prepaid Evidence), Remittance Cutoff & Itemized Accruals",
+    "estimated_completion_hours": 2.0
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

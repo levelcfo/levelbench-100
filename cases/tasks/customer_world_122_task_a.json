@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_122_task_a",
+  "world_id": "world_122_gusto_equal_splits_prepaid_je_custody_and_transfer_rail",
+  "task_name": "World 122 Task A  -  Equal-Dollar Gusto Payroll Splits, Micro-Leg Ordinal Bijection & Transfer-Rail Supplier Classification",
+  "prompt": "Perform a comprehensive Gusto Equal-Split Payroll Micro-Legs, Bill-to-JE Prepaid Custody & Transfer-Rail Vendor Purchase review using the world files (`kinetix_oct2026_gusto_prepaid_and_transfer_close.xlsx`). Identify all accounting, reconciliation, cutoff, or operational variances; state the exact dollar figures, percentages, and transaction/journal/work-order IDs; propose any required correcting journal entries (with exact Debit and Credit accounts); and enforce all close certification guardrails.",
+  "context_files": [
+    "kinetix_oct2026_gusto_prepaid_and_transfer_close.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw122a_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Verifies from the Gusto register and bank statement that ACH-PR-501 ($5,125.00 on 2026-10-15 for Contractor Run GUSTO-RUN-88A in 6140) and ACH-PR-502 ($5,125.00 on 2026-10-15 for Off-Cycle Engineer Run GUSTO-RUN-88B in 6110) are two distinct settled runs totaling $10,250.00 and must not be deleted as duplicates."
+    },
+    {
+      "id": "cw122a_c2",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies from Source_Ref_ID=GUSTO-RUN-88A and Bank_Trace=NONE_MANUAL that manual entry JE-2026-1019 ($5,125.00 on 2026-10-19 with $0.00 separate bank outflow) duplicates settled ACH-PR-501, overstating combined payroll and contractor expense at $15,375.00 (with 6140 R&D Contractor Compensation overstated at $10,250.00 vs $5,125.00 actual) and leaving $5,125.00 in 2140 Payroll Clearing."
+    },
+    {
+      "id": "cw122a_c3",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Provides the reversing journal entry for JE-2026-1019: Dr 2140 Payroll Clearing $5,125.00 / Cr 6140 R&D Contractor Compensation $5,125.00, reconciling 2140 Payroll Clearing to $0.00 and 6140 R&D Contractor Compensation to $5,125.00."
+    },
+    {
+      "id": "cw122a_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Verifies the 1-to-1 trace and ordinal bijection across all 4 micro-verification debits on 2026-10-06 (ROW-1 to JE-2026-1006A, ROW-2 to JE-2026-1006B, ROW-3 to JE-2026-1006C, ROW-4 to JE-2026-1006D), retaining $4.00 ($1.00 each) in 6440 Bank & Verification Fees with $0.00 duplicate deletion."
+    },
+    {
+      "id": "cw122a_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles complete settled 2026-10 bank outflows on 1000 Operating Checking across all workbook schedules as $43,504.00 ($10,250.00 Gusto ACHs + $4.00 micro-verification debits + $6,450.00 PUR-9910 + $26,800.00 paid tooling deposit and insurance ACH bill payments), bringing ending 1000 Operating Checking from $245,000.00 opening ($0.00 October inflows) to $201,496.00."
+    },
+    {
+      "id": "cw122a_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reclassifies bank purchase PUR-9910 ($6,450.00 on 2026-10-22 with memo 'Online transfer to Mercer IP Law') from 6999 Uncategorized Expense to 6610 Legal & IP Professional Fees based on custodied October patent invoice INV-MIP-204 (debit 6610 $6,450.00 / credit 6999 $6,450.00, clearing 6999 Uncategorized Expense to $0.00 and refusing to treat PUR-9910 as a transfer)."
+    },
+    {
+      "id": "cw122a_c7",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Refuses to classify PUR-9910 as an own-account bank transfer to 1020 Mercury Treasury Savings solely from 'Online transfer' memo text, confirming $0.00 matching transfer activity on 1020 on 2026-10-22."
+    },
+    {
+      "id": "cw122a_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Refuses to merge PUR-9910 with same-date equipment journal entry JE-2026-1022 ($6,450.00), preserving JE-2026-1022 (Dr 1520 Lab Robotics Equipment $6,450.00 / Cr 2610 Equipment Finance Note $6,450.00) as a separate non-cash acquisition."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Gusto Equal-Split Payroll Micro-Legs, Bill-to-JE Prepaid Custody & Transfer-Rail Vendor Purchase",
+    "subcategory": "Distinct Equal-Amount Gusto Debits vs Micro-Verification Legs, Paid Vendor-Advance Bill-to-JE Custody vs Relabeled Insurance Amortization & Transfer-Rail Legal Purchase",
+    "estimated_completion_hours": 2.5
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}

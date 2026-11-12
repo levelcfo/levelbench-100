@@ -1,0 +1,60 @@
+{
+  "task_id": "cw_121_task_b",
+  "world_id": "world_121_bank_resemblance_card_refund_and_estimate_reversal",
+  "task_name": "World 121 Task B  -  Day-1 Reversals of Prior-Period Controlled Estimates, Unbilled CRO Accrual & Close Status Classification",
+  "prompt": "Review the Chart of Accounts, controlled-estimate journal log, payroll and vendor bill settlements, and close governance policy in aether_diagnostics_oct2026_close_sources.xlsx. Distinguish prior-period Day-1 estimate reversals from current-month unbilled accrual exposure, reconcile the October R&D payroll, lab reagent consumables, and clinical CRO expense accounts including any prior-estimate true-up variance from raw service dates, and state the governed October close status and true-up deadline.",
+  "context_files": [
+    "aether_diagnostics_oct2026_close_sources.xlsx"
+  ],
+  "rubric": [
+    {
+      "id": "cw121b_c1",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Identifies JE-2026-1001A (-$12,400.00 reversing JE-2026-0930A) and JE-2026-1001B (-$6,850.00 reversing JE-2026-0930B) as $19,250.00 gross prior-period estimate reversals."
+    },
+    {
+      "id": "cw121b_c2",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Refuses to include the $19,250.00 gross 2026-10-01 reversals as new 2026-10 estimated expense exposure, preventing a $28,650.00 overstated estimate register."
+    },
+    {
+      "id": "cw121b_c3",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Isolates actual 2026-10 controlled-estimate exposure as $9,400.00 solely from unbilled CRO accrual JE-2026-1031C (debit to 6240 and credit to 2110, reversing 2026-11-01)."
+    },
+    {
+      "id": "cw121b_c4",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles 2026-10 R&D wage expense in 6110 across JE-2026-1001A (-$12,400.00), PR-2026-1005 ($24,800.00), PR-2026-1019 ($24,800.00), and PR-2026-1031 ($22,600.00) to $59,800.00 with $0.00 prior-estimate variance."
+    },
+    {
+      "id": "cw121b_c5",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Computes the +$270.00 prior-estimate true-up delta on PO-771 between BILL-5012 ($7,120.00) and JE-2026-1001B (-$6,850.00) without netting unrelated P&L accounts."
+    },
+    {
+      "id": "cw121b_c6",
+      "criterion_type": "Reasoning (numerical)",
+      "description": "Reconciles 2026-10 lab consumables expense in 5210 across JE-2026-1001B (-$6,850.00), BILL-5012 ($7,120.00), and BILL-5048 ($14,300.00) to $14,570.00."
+    },
+    {
+      "id": "cw121b_c7",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Classifies the 2026-10 close state as closed with estimates with a 2026-11-30 true-up deadline rather than certified."
+    },
+    {
+      "id": "cw121b_c8",
+      "criterion_type": "Reasoning (qualitative)",
+      "description": "Refuses to certify the 2026-10 books as finalized with no open items while unbilled CRO estimate JE-2026-1031C ($9,400.00) and missing-statement account 1030 remain open for true-up."
+    }
+  ],
+  "metadata": {
+    "domain": "Accounting",
+    "category": "Med-Tech Bank Resemblance Guard, Card Fee Refund Polarity & Day-1 Estimate Reversal Close Status",
+    "subcategory": "Institution-Resemblance Zero-Write Block, Negative Depository Checking Sign Guard, Card Fee Refund vs Merchant Fee & Prior-Period Estimate Reversal Exclusion",
+    "estimated_completion_hours": 2.5
+  },
+  "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
+  "commercial_licensing_contact": "sam@levelcfo.com",
+  "canary_watermark_token": "LEVEL-IP-CANARY-9F4A-7C2E-PERSONAL-USE-ONLY-CONTACT-SAM-AT-LEVELCFO-COM"
+}
