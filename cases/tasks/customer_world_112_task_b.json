@@ -1,7 +1,7 @@
 {
   "task_id": "cw_112_task_b",
   "world_id": "world_112_fractional_cfo_coo_ops",
-  "task_name": "World 112 Task B  -  Gift Card SPV (TGCM COLR LLC) Prior-Period ACH Cutoff & COO Contract-Adjusted Job Velocity",
+  "task_name": "World 112 Task B  -  Gift Card SPV (CRST Gift Card SPV LLC) Prior-Period ACH Cutoff & COO Contract-Adjusted Job Velocity",
   "prompt": "Perform a comprehensive Fractional COO & CFO Inventory, 3PL & Job-Board Operations review using the world files (`cfo_coo_inventory_3pl_and_spv_cutoff_2026_Q3.xlsx`). Identify all accounting, reconciliation, cutoff, or operational variances; state the exact dollar figures, percentages, and transaction/journal/work-order IDs; propose any required correcting journal entries (with exact Debit and Credit accounts); and enforce all close certification guardrails.",
   "context_files": [
     "cfo_coo_inventory_3pl_and_spv_cutoff_2026_Q3.xlsx"
@@ -10,17 +10,17 @@
     {
       "id": "cw112b_c1",
       "criterion_type": "Reasoning (numerical)",
-      "description": "Identifies TXN-51989 ($170,366.01 on 2026-01-15 with ACH memo 'DES:CASH CONC ID:COLR_M_251231') as a prior-period December 2025 holiday gift card settlement sweep to Totus Gift Card Management SPV (TGCM COLR LLC)."
+      "description": "Identifies TXN-51989 ($170,366.01 on 2026-01-15 with ACH memo 'DES:CASH CONC ID:CRST_M_251231') as a prior-period December 2025 holiday gift card settlement sweep to Retail Gift Card Clearing SPV (CRST Gift Card SPV LLC)."
     },
     {
       "id": "cw112b_c2",
       "criterion_type": "Reasoning (numerical)",
-      "description": "Identifies that TGCM COLR LLC had $244,500.00 of 2026 ACH outflows misbooked to 6210 Brand Marketing and $29,523.94 of Feb/Mar net redemption inflows misbooked as credits to COGS."
+      "description": "Identifies that CRST Gift Card SPV LLC had $244,500.00 of 2026 ACH outflows misbooked to 6210 Brand Marketing and $29,523.94 of Feb/Mar net redemption inflows misbooked as credits to COGS."
     },
     {
       "id": "cw112b_c3",
       "criterion_type": "Reasoning (qualitative)",
-      "description": "Reclassifies TGCM COLR LLC gift card issuance sweeps ($170,366.01 on TXN-51989 and $244,500.00 total outflows) and net redemption inflows ($29,523.94) to 2420 Gift Card Liability / Clearing rather than P&L Brand Marketing or COGS."
+      "description": "Reclassifies CRST Gift Card SPV LLC gift card issuance sweeps ($170,366.01 on TXN-51989 and $244,500.00 total outflows) and net redemption inflows ($29,523.94) to 2420 Gift Card Liability / Clearing rather than P&L Brand Marketing or COGS."
     },
     {
       "id": "cw112b_c4",
@@ -35,12 +35,12 @@
     {
       "id": "cw112b_c6",
       "criterion_type": "Reasoning (qualitative)",
-      "description": "Enforces the January prior-period ACH memo cutoff detector ('251231' / 'COLR_M_251231') on outflows >= $10,000.00 so prior-year liabilities are not expensed in the new fiscal year."
+      "description": "Enforces the January prior-period ACH memo cutoff detector ('251231' / 'CRST_M_251231') on outflows >= $10,000.00 so prior-year liabilities are not expensed in the new fiscal year."
     },
     {
       "id": "cw112b_c7",
       "criterion_type": "Reasoning (qualitative)",
-      "description": "Enforces the cross-section counterparty split detector when the same counterparty (TGCM COLR LLC) hits Marketing, COGS, and Uncategorized Income across months."
+      "description": "Enforces the cross-section counterparty split detector when the same counterparty (CRST Gift Card SPV LLC) hits Marketing, COGS, and Uncategorized Income across months."
     },
     {
       "id": "cw112b_c8",

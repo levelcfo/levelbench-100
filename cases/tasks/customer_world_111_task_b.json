@@ -1,8 +1,8 @@
 {
   "task_id": "cw_111_task_b",
   "world_id": "world_111_crestline_yoy_comparability_and_muse_bridge",
-  "task_name": "World 111 Task B  -  Cash-Basis BI Tool (Muse) to Accrual GAAP Bridge & 21-Month PO Conservation Proof",
-  "prompt": "Using `crestline_yoy_comparability_and_muse_bridge_2026_Q3.xlsx`, reconcile the Muse cash-basis BI revenue and operating expense figures to GAAP accrual Net Revenue and Recurring OpEx, and perform a 21-month factory PO cash-to-SKU conservation audit.",
+  "task_name": "World 111 Task B  -  Cash-Basis BI Tool (Marketing BI) to Accrual GAAP Bridge & 21-Month PO Conservation Proof",
+  "prompt": "Using `crestline_yoy_comparability_and_muse_bridge_2026_Q3.xlsx`, reconcile the Marketing BI cash-basis BI revenue and operating expense figures to GAAP accrual Net Revenue and Recurring OpEx, and perform a 21-month factory PO cash-to-SKU conservation audit.",
   "context_files": [
     "crestline_yoy_comparability_and_muse_bridge_2026_Q3.xlsx"
   ],
@@ -10,12 +10,12 @@
     {
       "id": "cw111b_c1",
       "criterion_type": "Reasoning (numerical)",
-      "description": "Reconciles Muse cash revenue ($47,012,519.65) less Shopify sales tax collected ($2,403,261.26) plus gateway fee gross-up and cutoff ($701,466.93) to GAAP Net Revenue of $45,310,725.32 ($0.00 unreconciled delta)."
+      "description": "Reconciles Marketing BI cash revenue ($47,012,519.65) less Shopify sales tax collected ($2,403,261.26) plus gateway fee gross-up and cutoff ($701,466.93) to GAAP Net Revenue of $45,310,725.32 ($0.00 unreconciled delta)."
     },
     {
       "id": "cw111b_c2",
       "criterion_type": "Reasoning (numerical)",
-      "description": "Reconciles Muse cash OpEx ($33,382,972.66) less Avalara sales tax liability remittances ($2,201,711.96) and working-capital card/payroll timing ($2,523,352.30) to GAAP Recurring OpEx of $28,657,908.40 ($0.00 unreconciled delta)."
+      "description": "Reconciles Marketing BI cash OpEx ($33,382,972.66) less Avalara sales tax liability remittances ($2,201,711.96) and working-capital card/payroll timing ($2,523,352.30) to GAAP Recurring OpEx of $28,657,908.40 ($0.00 unreconciled delta)."
     },
     {
       "id": "cw111b_c3",
@@ -31,7 +31,7 @@
   "metadata": {
     "domain": "Fractional_CFO",
     "category": "Fractional CFO Multi-Year Comparability & Cash-to-GAAP Conservation",
-    "subcategory": "Within-Section YoY Asymmetry (R49), Cash-BI (Muse) to GAAP Bridge (R47) & Full-COA Regime Flip (R50)",
+    "subcategory": "Within-Section YoY Asymmetry (R49), Cash-BI (Marketing BI) to GAAP Bridge (R47) & Full-COA Regime Flip (R50)",
     "estimated_completion_hours": 3.0
   },
   "license": "Level Personal, Academic & Non-Commercial Evaluation License v1.0 (Commercial Use Requires License from sam@levelcfo.com)",
